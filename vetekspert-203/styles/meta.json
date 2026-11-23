@@ -1,0 +1,19 @@
+{
+ "current": "vetklinika-hruminh-turbota|scandi_light",
+ "items": [
+  {
+   "n": 1,
+   "slug": "vetklinika-hruminh-turbota",
+   "palette": "medical_clean",
+   "name": "Чистий і надійний",
+   "who": "коли головне — довіра й спокій"
+  },
+  {
+   "n": 2,
+   "slug": "vetklinika-hruminh-turbota",
+   "palette": "sunny_pop",
+   "name": "Сонячний настрій",
+   "who": "тепло, яскраво, з усмішкою"
+  }
+ ]
+}
