@@ -1,0 +1,26 @@
+{
+ "current": "vetklinika-hruminh-turbota|warm_craft",
+ "items": [
+  {
+   "n": 1,
+   "slug": "vetklinika-hruminh-turbota",
+   "palette": "medical_clean",
+   "name": "Чистий і надійний",
+   "who": "коли головне — довіра й спокій"
+  },
+  {
+   "n": 2,
+   "slug": "vetklinika-hruminh-turbota",
+   "palette": "scandi_light",
+   "name": "Скандинавський світлий",
+   "who": "м'які природні тони, спокійно й тепло"
+  },
+  {
+   "n": 3,
+   "slug": "vetklinika-hruminh-turbota",
+   "palette": "sunny_pop",
+   "name": "Сонячний настрій",
+   "who": "тепло, яскраво, з усмішкою"
+  }
+ ]
+}

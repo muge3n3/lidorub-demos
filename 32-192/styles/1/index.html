@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>32+ — стоматологія</title>
+<meta content="32+ — стоматологія, вулиця Небесної Сотні 18. Запис на прийом за телефоном +380931113232." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Manrope:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f7fbfc;
+  --surface:#ffffff;
+  --text:#0f2a33;
+  --muted:#4b6670;
+  --accent:#0e7c86;
+  --on-accent:#ffffff;
+  --line:#d9e9ed;
+  --tint:#e6f4f6;
+  --radius:20px;
+  --shadow:0 8px 30px rgba(14,124,134,.09);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  font-size:18px;line-height:1.6;color:var(--text);background:var(--bg);
+  padding-bottom:88px;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.15;letter-spacing:-.02em}
+a{color:inherit}
+svg{display:block}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.demo-bar{background:var(--text);color:#fff;text-align:center;font-size:14px;padding:6px 12px;font-weight:500}
+.demo-bar span{display:inline-block;border:1px solid rgba(255,255,255,.5);border-radius:99px;padding:1px 12px}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:56px;padding:0 28px;border-radius:99px;font:600 18px "Inter",system-ui,sans-serif;
+  text-decoration:none;border:2px solid var(--accent);cursor:pointer;
+  transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease;
+}
+.btn svg{width:22px;height:22px;flex:none}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(14,124,134,.3)}
+.btn-ghost{background:var(--surface);color:var(--accent)}
+.btn-ghost:hover{transform:translateY(-2px);background:var(--tint);box-shadow:0 10px 24px rgba(14,124,134,.12)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--text);outline-offset:3px}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;min-height:calc(100vh - 34px);min-height:calc(100svh - 34px);
+  display:flex;align-items:center;padding:72px 0;
+  background:
+    radial-gradient(900px 500px at 85% 10%,rgba(14,124,134,.16),transparent 60%),
+    radial-gradient(700px 500px at 0% 100%,rgba(120,200,210,.28),transparent 60%),
+    linear-gradient(180deg,#eaf6f8 0%,var(--bg) 100%);
+}
+.hero-pattern{position:absolute;inset:0;width:100%;height:100%;opacity:.55;pointer-events:none}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{
+  display:inline-block;font:700 13px "Manrope",system-ui,sans-serif;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:14px;
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line);
+  border-radius:99px;padding:8px 16px;font-size:15px;color:var(--muted);margin-bottom:28px;box-shadow:var(--shadow);
+}
+.hero-tag svg{width:18px;height:18px;color:var(--accent)}
+.hero h1{font-size:clamp(56px,13vw,132px);font-weight:800;color:var(--text)}
+.hero h1 .plus{color:var(--accent)}
+.hero-sub{font:700 clamp(22px,3.4vw,34px)/1.25 "Manrope",system-ui,sans-serif;margin-top:14px;max-width:18em}
+.hero-lead{color:var(--muted);font-size:clamp(18px,2.2vw,21px);margin-top:18px;max-width:34em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.hero-facts{display:flex;flex-wrap:wrap;gap:12px 28px;margin-top:44px;color:var(--muted);font-size:16px}
+.hero-facts span{display:inline-flex;align-items:center;gap:8px}
+.hero-facts svg{width:20px;height:20px;color:var(--accent)}
+
+/* sections */
+section{padding:72px 0}
+.alt{background:var(--surface)}
+.sec-head{max-width:640px;margin-bottom:44px}
+.sec-head h2{font-size:clamp(30px,5vw,46px);font-weight:800}
+.sec-head p{color:var(--muted);margin-top:14px}
+.grid{display:grid;gap:20px;grid-template-columns:1fr}
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;
+  box-shadow:var(--shadow);transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease;
+}
+.alt .card{background:var(--bg)}
+.card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(14,124,134,.16);border-color:#b7dce1}
+.icon{
+  width:56px;height:56px;border-radius:16px;background:var(--tint);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;margin-bottom:18px;
+}
+.icon svg{width:30px;height:30px}
+.card h3{font-size:22px;font-weight:700;margin-bottom:8px}
+.card p{color:var(--muted);font-size:17px}
+.ph{
+  display:inline-block;background:#fff7d6;color:#5c4400;border:1px dashed #c9a227;
+  border-radius:8px;padding:0 8px;font-weight:600;
+}
+.note{margin-top:28px;color:var(--muted)}
+
+/* doctors */
+.avatar{
+  width:84px;height:84px;border-radius:50%;margin-bottom:18px;
+  background:linear-gradient(135deg,#bfe5ea,#e6f4f6);color:var(--accent);
+  display:flex;align-items:center;justify-content:center;
+}
+.avatar svg{width:42px;height:42px}
+
+/* booking */
+.book{
+  background:linear-gradient(135deg,#0e7c86 0%,#0a5f68 100%);color:var(--on-accent);
+  border-radius:28px;padding:40px 24px;text-align:center;position:relative;overflow:hidden;
+}
+.book::after{
+  content:"";position:absolute;right:-80px;top:-80px;width:260px;height:260px;border-radius:50%;
+  background:rgba(255,255,255,.08);
+}
+.book .eyebrow{color:#d3f1f4}
+.book h2{font-size:clamp(28px,5vw,44px);font-weight:800;position:relative}
+.book p{margin:14px auto 0;max-width:34em;color:#e8f8fa;position:relative}
+.book .phone{
+  display:inline-block;margin-top:26px;font:800 clamp(28px,6vw,46px) "Manrope",system-ui,sans-serif;
+  color:#fff;text-decoration:none;position:relative;letter-spacing:-.01em;
+}
+.book .phone:hover{text-decoration:underline}
+.book .btn{position:relative;margin-top:26px;background:#fff;color:#0a5f68;border-color:#fff}
+.book .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.book .btn:focus-visible{outline-color:#fff}
+
+/* hours */
+.hours{list-style:none;max-width:560px}
+.hours li{
+  display:flex;justify-content:space-between;gap:16px;padding:16px 4px;border-bottom:1px solid var(--line);font-size:19px;
+}
+.hours li:last-child{border-bottom:0}
+.hours .d{font-weight:600}
+.hours .t{color:var(--muted)}
+.hours li.off .t{color:var(--muted)}
+.hours li.today{background:var(--tint);border-radius:12px;padding:16px 14px;border-bottom-color:transparent}
+.hours li.today .d::after{content:" · сьогодні";color:var(--accent);font-weight:600}
+.hours-box{
+  background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:12px 24px;box-shadow:var(--shadow);max-width:620px;
+}
+
+/* contacts */
+.contacts{display:grid;gap:24px;grid-template-columns:1fr}
+.contact-list{display:grid;gap:16px;align-content:start}
+.contact-item{display:flex;gap:16px;align-items:flex-start}
+.contact-item .icon{margin:0;flex:none;width:48px;height:48px;border-radius:14px}
+.contact-item .icon svg{width:26px;height:26px}
+.contact-item b{display:block;font-family:"Manrope",system-ui,sans-serif;font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.contact-item a{text-decoration:none;font-weight:600}
+.contact-item a:hover{text-decoration:underline}
+.contact-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px}
+.map{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);background:var(--tint)}
+.map iframe{display:block}
+
+/* faq */
+.faq{display:grid;gap:12px;max-width:820px}
+details{
+  background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:0 22px;
+  transition:box-shadow .2s ease,border-color .2s ease;
+}
+.alt details{background:var(--bg)}
+details:hover{border-color:#b7dce1;box-shadow:var(--shadow)}
+summary{
+  list-style:none;cursor:pointer;padding:20px 0;font:700 19px "Manrope",system-ui,sans-serif;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"";flex:none;width:12px;height:12px;border-right:2.5px solid var(--accent);border-bottom:2.5px solid var(--accent);
+  transform:rotate(45deg);transition:transform .2s ease;margin-top:-4px;
+}
+details[open] summary::after{transform:rotate(-135deg);margin-top:4px}
+details p{padding:0 0 20px;color:var(--muted)}
+
+/* footer */
+footer{background:var(--text);color:#d5e6ea;padding:48px 0 40px}
+footer .wrap{display:grid;gap:24px}
+footer .brand{font:800 32px "Manrope",system-ui,sans-serif;color:#fff}
+footer .brand span{color:#7fd6de}
+footer a{color:#fff}
+footer small{font-size:15px;color:#b9d0d6;display:block}
+.foot-links{display:flex;flex-wrap:wrap;gap:8px 24px}
+
+/* mobile bar */
+.mbar{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:50;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(255,255,255,.96);border-top:1px solid var(--line);box-shadow:0 -6px 24px rgba(15,42,51,.1);
+}
+.mbar a{
+  flex:1;min-height:52px;display:flex;align-items:center;justify-content:center;gap:8px;border-radius:14px;
+  font:600 17px "Inter",system-ui,sans-serif;text-decoration:none;border:2px solid var(--accent);
+}
+.mbar a svg{width:22px;height:22px}
+.mbar .call{background:var(--accent);color:var(--on-accent)}
+.mbar .route{background:var(--surface);color:var(--accent)}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@keyframes float{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+.hero-pattern .f{animation:float 6s ease-in-out infinite alternate}
+
+@media (min-width:640px){
+  .grid.c2,.grid.c3{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:900px){
+  section{padding:96px 0}
+  .grid.c3{grid-template-columns:repeat(3,1fr)}
+  .contacts{grid-template-columns:1fr 1.3fr;gap:40px}
+  .book{padding:64px 48px}
+  footer .wrap{grid-template-columns:1fr auto;align-items:end}
+}
+@media (max-width:768px){
+  .mbar{display:flex}
+  body{padding-bottom:96px}
+  .hero-actions .btn{width:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .btn:hover,.card:hover{transform:none}
+}
+</style>
+<meta content="noindex,nofollow" name="robots"/><style id="lido-dress">
+@media (max-width:440px){nav.bar a,nav.mbar a,div.mbar a,nav[aria-label="Швидкі дії"] a{min-width:0;padding-left:4px;padding-right:4px;
+ font-size:clamp(12px,3.6vw,15px);letter-spacing:0;white-space:nowrap}}
+.lido-sample{border-bottom:1px dotted currentColor;opacity:.92}
+.lido-tag{display:inline-block;vertical-align:middle;margin-left:.5em;padding:.15em .55em;border-radius:999px;
+ border:1px dashed currentColor;font:600 11px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+h1 .lido-tag,h2 .lido-tag,h3 .lido-tag{font-size:11px;letter-spacing:.06em}
+.lido-sample-row{outline:1px dashed color-mix(in srgb,currentColor 35%,transparent);outline-offset:4px;border-radius:4px}
+.lido-ph{padding:0!important;overflow:hidden;position:relative;min-height:240px}
+.lido-ph>picture,.lido-ph>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lido-about{margin:0 auto 32px;max-width:1120px;border-radius:14px;overflow:hidden;aspect-ratio:16/7}
+.lido-about picture,.lido-about img{display:block;width:100%;height:100%;object-fit:cover}
+.lido-gallery{padding:56px 0}
+.lido-gwrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lido-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lido-gitem{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.lido-gitem:first-child{grid-column:1/-1;aspect-ratio:16/8}
+.lido-gitem picture,.lido-gitem img{display:block;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.lido-grid{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.lido-gitem,.lido-gitem:first-child{aspect-ratio:auto}
+ .lido-gitem:first-child{grid-column:auto;grid-row:span 2}}
+.lido-photo-note{font-size:12px;opacity:.7;text-align:center;margin:10px 0 0}
+.lido-chip{position:fixed;right:16px;bottom:18px;z-index:60;padding:10px 16px;border-radius:999px;
+ background:var(--accent,#1f2937);color:var(--on-accent,#fff);font:600 14px/1.2 system-ui,-apple-system,sans-serif;
+ text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.lido-chip{transition:opacity .3s,transform .3s}.lido-chip.wait{opacity:0;transform:translateY(12px);pointer-events:none}
+@media(max-width:768px){.lido-chip{bottom:92px;right:12px;font-size:13px;padding:9px 14px}}
+[data-lido-hero]{background-image:linear-gradient(180deg,rgba(247,251,252,0.82),rgba(247,251,252,0.92)),url('../../assets/stock/abde9a055a-1600.jpg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}@media(max-width:700px){[data-lido-hero]{background-image:linear-gradient(180deg,rgba(247,251,252,0.82),rgba(247,251,252,0.92)),url('../../assets/stock/abde9a055a-800.jpg')!important}}</style></head>
+<body>
+<div class="demo-bar"><span>Демо-версія сайту</span></div>
+<header class="hero" data-lido-hero="" id="top">
+<svg aria-hidden="true" class="hero-pattern" preserveaspectratio="xMidYMid slice" viewbox="0 0 800 600">
+<defs>
+<pattern height="32" id="dots" patternunits="userSpaceOnUse" width="32">
+<circle cx="2" cy="2" fill="#0e7c86" opacity=".25" r="1.6"></circle>
+</pattern>
+</defs>
+<rect fill="url(#dots)" height="600" width="800"></rect>
+<g class="f" fill="none" stroke="#0e7c86" stroke-opacity=".25" stroke-width="2">
+<circle cx="660" cy="150" r="120"></circle>
+<circle cx="660" cy="150" r="80"></circle>
+<path d="M640 150h40M660 130v40" stroke-linecap="round" stroke-width="4"></path>
+</g>
+<g class="f" fill="none" stroke="#0e7c86" stroke-opacity=".18" stroke-width="2">
+<circle cx="90" cy="520" r="90"></circle>
+</g>
+</svg>
+<div class="wrap">
+<div class="hero-tag">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
+      Черкаси · вулиця Небесної Сотні 18
+    </div>
+<p class="eyebrow">Стоматологія</p>
+<h1>32+</h1>
+<p class="hero-sub">Здорова усмішка починається зі спокійного візиту</p>
+<p class="hero-lead"><span class="ph"><span class="lido-sample">Тут буде кілька слів про вашу клініку — напишемо разом</span><span class="lido-tag">приклад</span></span></p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="tel:+380931113232">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg>
+        Зателефонувати
+      </a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.4388366,32.0658192" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 11 21 3l-8 18-2-8z"></path></svg>
+        Маршрут
+      </a>
+</div>
+<div class="hero-facts">
+<span><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>Пн–Пт 09:00–19:00, Сб 09:00–15:00</span>
+</div>
+</div>
+</header>
+<main>
+<section class="alt" id="services">
+<div class="wrap">
+<div class="sec-head reveal">
+<p class="eyebrow">Послуги</p>
+<h2>Лікуємо, відновлюємо, доглядаємо<span class="lido-tag">приклад наповнення</span></h2>
+<p>Тут буде повний перелік послуг клініки. <span class="ph"><span class="lido-sample">Тут буде перелік послуг — додамо разом</span><span class="lido-tag">приклад</span></span></p>
+</div>
+<div class="grid c3">
+<article class="card reveal lido-sample-row">
+<div class="icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M7 3c-2.5 0-4 2-4 4.5 0 2 1 3.2 1.600 5.300.700 2.400.900 8.200 3 8.200 1.700 0 1.400-5 5.400-5s3.700 5 5.400 5c2.100 0 2.300-5.800 3-8.200.600-2.100 1.600-3.300 1.600-5.300C21 5 19.500 3 17 3c-2 0-3 1-5 1S9 3 7 3z"></path></svg></div>
+<h3>Лікування</h3>
+<p><span class="ph"><span class="lido-sample">Послуга</span></span> Короткий опис — додамо разом із вами.</p>
+</article>
+<article class="card reveal lido-sample-row">
+<div class="icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 3l1.800 4.700L18.500 9l-4.700 1.800L12 15.500l-1.800-4.700L5.500 9l4.700-1.300z"></path><path d="M19 15l.8 2.200L22 18l-2.200.8L19 21l-.8-2.200L16 18l2.200-.8z"></path></svg></div>
+<h3>Гігієна й відбілювання</h3>
+<p><span class="ph"><span class="lido-sample">Послуга</span></span> Короткий опис — додамо разом із вами.</p>
+</article>
+<article class="card reveal lido-sample-row">
+<div class="icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 3v18"></path><path d="M8 7l4-4 4 4"></path><path d="M7 12h10"></path><path d="M8 17h8"></path></svg></div>
+<h3>Імплантація й протезування</h3>
+<p><span class="ph"><span class="lido-sample">Послуга</span></span> Короткий опис — додамо разом із вами.</p>
+</article>
+
+
+
+</div>
+</div>
+</section>
+<section id="doctors">
+<div class="wrap lido-ph"><picture><source srcset="../../assets/stock/053c86352d-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="530" loading="lazy" src="../../assets/stock/053c86352d-800.jpg" width="800"/></picture></div>
+</section>
+<section class="alt" id="booking">
+<div class="wrap">
+<div class="book reveal">
+<p class="eyebrow">Запис</p>
+<h2>Запишіться на прийом</h2>
+<p>Зателефонуйте — підберемо зручний час для візиту.</p>
+<a class="phone" href="tel:+380931113232">+380931113232</a><br/>
+<a class="btn" href="tel:+380931113232">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"></path></svg>
+        Записатися на прийом
+      </a>
+</div>
+</div>
+</section>
+<section id="hours">
+<div class="wrap">
+<div class="sec-head reveal">
+<p class="eyebrow">Години роботи</p>
+<h2>Коли ми працюємо</h2>
+</div>
+<div class="hours-box reveal">
+<ul class="hours" id="hoursList">
+<li data-d="1"><span class="d">Понеділок</span><span class="t">Пн–Пт 09:00–19:00, Сб 09:00–15:00</span></li>
+<li data-d="2"><span class="d">Вівторок</span><span class="t">Пн–Пт 09:00–19:00, Сб 09:00–15:00</span></li>
+<li data-d="3"><span class="d">Середа</span><span class="t">Пн–Пт 09:00–19:00, Сб 09:00–15:00</span></li>
+<li data-d="4"><span class="d">Четвер</span><span class="t">Пн–Пт 09:00–19:00, Сб 09:00–15:00</span></li>
+<li data-d="5"><span class="d">П’ятниця</span><span class="t">Пн–Пт 09:00–19:00, Сб 09:00–15:00</span></li>
+<li data-d="6"><span class="d">Субота</span><span class="t">Пн–Пт 09:00–19:00, Сб 09:00–15:00</span></li>
+<li class="off" data-d="0"><span class="d">Неділя</span><span class="t">Вихідний</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section class="alt" id="contacts">
+<div class="wrap">
+<div class="sec-head reveal">
+<p class="eyebrow">Контакти</p>
+<h2>Як нас знайти</h2>
+</div>
+<div class="contacts">
+<div class="contact-list reveal">
+<div class="contact-item">
+<div class="icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M12 21s-7-6.200-7-11.500A7 7 0 0 1 19 9.500C19 14.800 12 21 12 21z"></path><circle cx="12" cy="9.500" r="2.500"></circle></svg></div>
+<div><b>Адреса</b>Черкаси, вулиця Небесної Сотні 18</div>
+</div>
+<div class="contact-item">
+<div class="icon"><svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" viewbox="0 0 24 24"><path d="M22 16.900v3a2 2 0 0 1-2.200 2 19.800 19.800 0 0 1-8.600-3.100 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.100 4.200 2 2 0 0 1 4.100 2h3a2 2 0 0 1 2 1.700c.100 1 .400 1.900.700 2.800a2 2 0 0 1-.500 2.100L8.100 9.900a16 16 0 0 0 6 6l1.300-1.300a2 2 0 0 1 2.100-.4c.900.300 1.800.600 2.800.700a2 2 0 0 1 1.700 2z"></path></svg></div>
+<div><b>Телефон</b><a href="tel:+380931113232">+380931113232</a></div>
+</div>
+<div class="contact-actions">
+<a class="btn btn-primary" href="tel:+380931113232">Зателефонувати</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.4388366,32.0658192" rel="noopener" target="_blank">Маршрут</a>
+</div>
+</div>
+<div class="map reveal">
+<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=32.06182%2C49.43634%2C32.06982%2C49.44134&amp;layer=mapnik&amp;marker=49.43884%2C32.06582" style="border:0;width:100%;height:320px" title="Карта"></iframe>
+</div>
+</div>
+</div>
+</section>
+
+</main>
+<footer>
+<div class="wrap">
+<div>
+<div class="brand">32+</div>
+<small>Стоматологія · Черкаси, вулиця Небесної Сотні 18</small>
+<small> · </small>
+</div>
+<div>
+<div class="foot-links">
+<a href="tel:+380931113232">+380931113232</a>
+<a href="https://www.google.com/maps/dir/?api=1&amp;destination=49.4388366,32.0658192" rel="noopener" target="_blank">Маршрут</a>
+</div>
+<small style="margin-top:12px">© 32+. Демо-версія сайту.</small>
+</div>
+</div>
+<p class="lido-photo-note">Фото для прикладу — замінимо на ваші</p></footer>
+<nav aria-label="Швидкі дії" class="mbar">
+<a class="call" href="tel:+380931113232">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M22 16.900v3a2 2 0 0 1-2.200 2 19.800 19.800 0 0 1-8.600-3.100 19.500 19.500 0 0 1-6-6A19.800 19.800 0 0 1 2.100 4.200 2 2 0 0 1 4.100 2h3a2 2 0 0 1 2 1.700c.100 1 .400 1.900.700 2.800a2 2 0 0 1-.500 2.100L8.100 9.900a16 16 0 0 0 6 6l1.300-1.300a2 2 0 0 1 2.100-.4c.900.300 1.800.600 2.800.700a2 2 0 0 1 1.700 2z"></path></svg>
+    Подзвонити
+  </a>
+<a class="route" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.4388366,32.0658192" rel="noopener" target="_blank">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24"><path d="M3 11 21 3l-8 18-2-8z"></path></svg>
+    Маршрут
+  </a>
+</nav>
+<script>
+(function(){
+  var items=document.querySelectorAll('.reveal');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduce||!('IntersectionObserver' in window)){
+    items.forEach(function(e){e.classList.add('in')});
+  }else{
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
+      });
+    },{threshold:.12});
+    items.forEach(function(e){io.observe(e)});
+  }
+  var d=new Date().getDay();
+  var li=document.querySelector('#hoursList li[data-d="'+d+'"]');
+  if(li)li.classList.add('today');
+})();
+</script>
+<script id="lido-fit">(function(){function fit(){var w=document.documentElement.clientWidth;document.querySelectorAll('h1').forEach(function(h){h.style.fontSize='';var s=parseFloat(getComputedStyle(h).fontSize),i=0;while(i<40&&s>16&&(h.scrollWidth>h.clientWidth+1||h.getBoundingClientRect().right>w+1)){s*=0.93;h.style.fontSize=s+'px';i++}})}addEventListener('load',fit);addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit)})();</script><a class="lido-chip" href="../">← Усі стилі</a><script id="lido-chip-js">(function(){var c=document.querySelector('.lido-chip');if(!c)return;c.classList.add('wait');function f(){c.classList.toggle('wait',scrollY<innerHeight*.6)}addEventListener('scroll',f,{passive:true});f()})();</script></body>
+</html>

@@ -1,0 +1,33 @@
+{
+ "current": "|",
+ "items": [
+  {
+   "n": 1,
+   "slug": "avtopylot-zdorove",
+   "palette": "",
+   "name": "Класичний",
+   "who": "спокійна перевірена класика"
+  },
+  {
+   "n": 2,
+   "slug": "stomatolohiia-svizhyi",
+   "palette": "",
+   "name": "Свіжа м'ята",
+   "who": "свіжо, чисто, легко"
+  },
+  {
+   "n": 3,
+   "slug": "stomatolohiia-svizhyi",
+   "palette": "medical_clean",
+   "name": "Чистий і надійний",
+   "who": "коли головне — довіра й спокій"
+  },
+  {
+   "n": 4,
+   "slug": "stomatolohiia-svizhyi",
+   "palette": "minimal",
+   "name": "Сучасний мінімал",
+   "who": "коли хочеться чисто, світло й без зайвого"
+  }
+ ]
+}

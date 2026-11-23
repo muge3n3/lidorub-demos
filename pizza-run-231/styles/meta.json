@@ -1,0 +1,33 @@
+{
+ "current": "fastfud-strit-minimal|neon_night",
+ "items": [
+  {
+   "n": 1,
+   "slug": "fastfud-iaskravyi",
+   "palette": "",
+   "name": "Сонячний настрій",
+   "who": "тепло, яскраво, з усмішкою"
+  },
+  {
+   "n": 2,
+   "slug": "fastfud-iaskravyi",
+   "palette": "bright_young",
+   "name": "Яскравий і сміливий",
+   "who": "для молодої аудиторії та швидкого сервісу"
+  },
+  {
+   "n": 3,
+   "slug": "fastfud-iaskravyi",
+   "palette": "minimal",
+   "name": "Сучасний мінімал",
+   "who": "коли хочеться чисто, світло й без зайвого"
+  },
+  {
+   "n": 4,
+   "slug": "fastfud-iaskravyi",
+   "palette": "warm_craft",
+   "name": "Тепла класика",
+   "who": "для затишних закладів, де цінують домашню атмосферу"
+  }
+ ]
+}

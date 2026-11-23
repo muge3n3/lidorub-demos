@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Пицца ZaZa — Черкаси</title>
+<meta content="Пицца ZaZa, Черкаси, . Самовивіз і доставка." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#101214;
+  --surface:#1b1f23;
+  --text:#eef1f4;
+  --muted:#a3acb6;
+  --accent:#ff8a3d;
+  --on-accent:#14100c;
+  --line:color-mix(in srgb, var(--text) 14%, transparent);
+  --font-head:"Oswald","Arial Narrow",Impact,sans-serif;
+  --font-body:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:17px;line-height:1.6;padding-bottom:84px;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.demo{background:var(--accent);color:var(--on-accent);font:600 12px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:8px 12px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:16px 28px;font:600 15px/1 var(--font-body);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;border:1px solid var(--accent);transition:transform .2s,background .2s,color .2s,border-color .2s}
+.btn-main{background:var(--accent);color:var(--on-accent)}
+.btn-main:hover{transform:translateY(-3px);background:var(--text);border-color:var(--text);color:var(--on-accent)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn-ghost:hover{transform:translateY(-3px);border-color:var(--accent);color:var(--accent)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 30px);display:flex;align-items:center;padding:56px 0 48px;overflow:hidden;
+  background:
+   radial-gradient(900px 500px at 85% 10%,color-mix(in srgb,var(--accent) 14%,transparent),transparent 70%),
+   linear-gradient(var(--line) 1px,transparent 1px) 0 0/100% 80px,
+   linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/80px 100%,
+   var(--bg)}
+.hero .wrap{position:relative;width:100%}
+.tag{font:500 12px/1 var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:22px}
+h1{font-family:var(--font-head);font-weight:700;text-transform:uppercase;line-height:.92;letter-spacing:-.01em;font-size:clamp(3rem,12.5vw,9.5rem);overflow-wrap:anywhere}
+h1::first-letter{color:var(--accent)}
+.rule{height:1px;background:var(--line);margin:36px 0 18px;position:relative}
+.rule::before{content:"";position:absolute;left:0;top:-1px;width:72px;height:3px;background:var(--accent)}
+.labels{display:flex;flex-wrap:wrap;gap:10px 28px;font:500 13px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);list-style:none}
+.labels li::before{content:"/ ";color:var(--accent)}
+.lead{max-width:560px;margin:34px 0;color:var(--muted);font-size:19px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+
+/* sections */
+section{padding:96px 0;position:relative}
+.alt{background:var(--surface)}
+.eyebrow{display:block;font:500 12px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:14px}
+h2{font-family:var(--font-head);font-weight:600;text-transform:uppercase;font-size:clamp(2.2rem,6vw,4rem);line-height:1;margin-bottom:48px}
+.muted{color:var(--muted)}
+
+/* menu */
+.menu{list-style:none;display:grid;grid-template-columns:1fr;border-top:1px solid var(--line)}
+.menu li{display:grid;grid-template-columns:56px 1fr auto;gap:12px;align-items:baseline;padding:22px 0;border-bottom:1px solid var(--line);transition:padding .25s,background .25s}
+.menu li:hover{padding-left:12px;background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.num{font:500 15px/1 var(--mono);color:var(--accent)}
+.menu b{font:600 20px/1.2 var(--font-head);letter-spacing:.03em;text-transform:uppercase;font-weight:500}
+.menu small{display:block;color:var(--muted);font-size:14px;margin-top:4px}
+.price{font:500 14px/1 var(--mono);color:var(--muted)}
+.note{margin-top:28px;font:500 14px/1.5 var(--mono);color:var(--muted)}
+
+/* order */
+.order{text-align:left}
+.order-box{border:1px solid var(--line);padding:40px 24px;background:
+  linear-gradient(135deg,color-mix(in srgb,var(--accent) 12%,transparent),transparent 55%),var(--bg);position:relative}
+.order-box::before,.order-box::after{content:"";position:absolute;width:18px;height:18px;border:2px solid var(--accent)}
+.order-box::before{top:-2px;left:-2px;border-right:0;border-bottom:0}
+.order-box::after{bottom:-2px;right:-2px;border-left:0;border-top:0}
+.phone{display:block;font-family:var(--font-head);font-weight:700;font-size:clamp(2.2rem,9vw,6rem);line-height:1;letter-spacing:.01em;text-decoration:none;color:var(--text);margin:8px 0 28px;transition:color .2s}
+.phone:hover{color:var(--accent)}
+.order p{color:var(--muted);max-width:520px;margin-bottom:28px}
+.book{margin-top:28px;padding-top:24px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between}
+.book span{color:var(--muted);font-size:15px}
+
+/* hours + atmosphere */
+.two{display:grid;grid-template-columns:1fr;gap:40px}
+.hours-card{border:1px solid var(--line);padding:28px;background:var(--bg);font:500 18px/1.5 var(--mono);color:var(--text)}
+.hours-card span{display:block;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.photo{min-height:240px;border:1px dashed var(--line);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:8px;padding:24px;color:var(--muted);
+  background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 10%,transparent),transparent 60%),
+  repeating-linear-gradient(45deg,var(--line) 0 1px,transparent 1px 14px)}
+.photo b{font:600 22px/1 var(--font-head);text-transform:uppercase;color:var(--text);font-weight:500;letter-spacing:.04em}
+
+/* faq */
+.faq{border-top:1px solid var(--line);max-width:820px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:grid;grid-template-columns:48px 1fr 24px;gap:8px;align-items:baseline;padding:22px 0;font:500 20px/1.3 var(--font-head);text-transform:uppercase;letter-spacing:.03em;transition:color .2s}
+summary::-webkit-details-marker{display:none}
+summary:hover{color:var(--accent)}
+summary i{font-style:normal;font:500 14px/1 var(--mono);color:var(--accent)}
+summary::after{content:"+";color:var(--accent);font:500 22px/1 var(--mono);text-align:right}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);padding:0 0 24px 56px}
+
+/* contacts */
+.contacts{display:grid;grid-template-columns:1fr;gap:36px}
+.clist{list-style:none;border-top:1px solid var(--line)}
+.clist li{display:grid;grid-template-columns:110px 1fr;gap:12px;padding:18px 0;border-bottom:1px solid var(--line)}
+.clist span{font:500 12px/1.8 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.clist a{text-decoration:none}
+.clist a:hover{color:var(--accent)}
+.mapwrap{border:1px solid var(--line);padding:6px;background:var(--surface)}
+.mapwrap iframe{display:block}
+.mapbtn{margin-top:18px}
+
+footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:10px 28px;justify-content:space-between}
+footer .m{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+
+/* mobile bar */
+.bar{display:none}
+@media (max-width:768px){
+  .bar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--surface);border-top:1px solid var(--line);gap:1px}
+  .bar a{display:flex;align-items:center;justify-content:center;padding:18px 10px;font:600 14px/1 var(--font-body);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--text);background:var(--surface)}
+  .bar a.main{background:var(--accent);color:var(--on-accent)}
+  .hero .btn{width:100%}
+}
+@media (min-width:769px){
+  body{padding-bottom:0}
+  section{padding:120px 0}
+  .menu{grid-template-columns:1fr 1fr;column-gap:64px}
+  .order-box{padding:72px 64px}
+  .two{grid-template-columns:1fr 1fr;gap:64px}
+  .contacts{grid-template-columns:1fr 1.2fr;gap:64px}
+  .wrap{padding:0 32px}
+}
+
+/* motion */
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.hero .wrap>*{animation:up .8s ease both}
+.hero .wrap>*:nth-child(2){animation-delay:.1s}
+.hero .wrap>*:nth-child(3){animation-delay:.2s}
+.hero .wrap>*:nth-child(4){animation-delay:.3s}
+.hero .wrap>*:nth-child(5){animation-delay:.4s}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+<meta content="noindex,nofollow" name="robots"/><style id="lido-dress">
+@media (max-width:440px){nav.bar a,nav.mbar a,div.mbar a,nav[aria-label="Швидкі дії"] a{min-width:0;padding-left:4px;padding-right:4px;
+ font-size:clamp(12px,3.6vw,15px);letter-spacing:0;white-space:nowrap}}
+.lido-sample{border-bottom:1px dotted currentColor;opacity:.92}
+.lido-tag{display:inline-block;vertical-align:middle;margin-left:.5em;padding:.15em .55em;border-radius:999px;
+ border:1px dashed currentColor;font:600 11px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+h1 .lido-tag,h2 .lido-tag,h3 .lido-tag{font-size:11px;letter-spacing:.06em}
+.lido-sample-row{outline:1px dashed color-mix(in srgb,currentColor 35%,transparent);outline-offset:4px;border-radius:4px}
+.lido-ph{padding:0!important;overflow:hidden;position:relative;min-height:240px}
+.lido-ph>picture,.lido-ph>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lido-about{margin:0 auto 32px;max-width:1120px;border-radius:14px;overflow:hidden;aspect-ratio:16/7}
+.lido-about picture,.lido-about img{display:block;width:100%;height:100%;object-fit:cover}
+.lido-gallery{padding:56px 0}
+.lido-gwrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lido-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lido-gitem{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.lido-gitem:first-child{grid-column:1/-1;aspect-ratio:16/8}
+.lido-gitem picture,.lido-gitem img{display:block;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.lido-grid{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.lido-gitem,.lido-gitem:first-child{aspect-ratio:auto}
+ .lido-gitem:first-child{grid-column:auto;grid-row:span 2}}
+.lido-photo-note{font-size:12px;opacity:.7;text-align:center;margin:10px 0 0}
+.lido-chip{position:fixed;right:16px;bottom:18px;z-index:60;padding:10px 16px;border-radius:999px;
+ background:var(--accent,#1f2937);color:var(--on-accent,#fff);font:600 14px/1.2 system-ui,-apple-system,sans-serif;
+ text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.lido-chip{transition:opacity .3s,transform .3s}.lido-chip.wait{opacity:0;transform:translateY(12px);pointer-events:none}
+@media(max-width:768px){.lido-chip{bottom:92px;right:12px;font-size:13px;padding:9px 14px}}
+[data-lido-hero]{background-image:linear-gradient(180deg,rgba(16,18,20,0.74),rgba(16,18,20,0.88)),url('assets/stock/09a308fb42-1600.jpg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}@media(max-width:700px){[data-lido-hero]{background-image:linear-gradient(180deg,rgba(16,18,20,0.74),rgba(16,18,20,0.88)),url('assets/stock/09a308fb42-800.jpg')!important}}</style><style id="lido-protect">#lido-demo-badge{position:fixed!important;top:8px;left:8px;z-index:2147483000;display:block!important;padding:3px 9px;border-radius:999px;background:rgba(17,17,17,.78);color:#fff;font:600 11px/1.4 system-ui,-apple-system,sans-serif;letter-spacing:.04em;pointer-events:none;opacity:.9}</style><meta content="0a77fc2d89" name="lido-protect"/></head>
+<body>
+<div class="demo">Демо-версія сайту</div>
+<header class="hero" data-lido-hero="" id="top">
+<div class="wrap">
+<span class="tag">Фастфуд · Черкаси</span>
+<h1>Пицца ZaZa</h1>
+<div aria-hidden="true" class="rule"></div>
+<ul class="labels">
+<li>Самовивіз</li>
+<li>Доставка</li>
+
+</ul>
+<p class="lead"><span class="lido-sample">Тут буде кілька слів про ваш заклад — напишемо разом</span><span class="lido-tag">приклад</span></p>
+<div class="cta">
+<a class="btn btn-main" href="tel:+380938039696">Замовити доставку</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.4349974,32.006331" rel="noopener" target="_blank">Маршрут</a>
+</div>
+</div>
+</header>
+<section id="menu">
+<div class="wrap">
+<div class="rv">
+<span class="eyebrow">01 — Що в нас є</span>
+<h2>Меню<span class="lido-tag">приклад наповнення</span></h2>
+</div>
+<ul class="menu rv">
+<li class="lido-sample-row"><span class="num">01</span><div><b><span class="lido-sample">Розділ меню</span></b><small><span class="lido-sample">Тут буде ваше меню — додамо разом</span><span class="lido-tag">приклад</span></small></div><span class="price"><span class="lido-sample">ціна — уточнимо</span></span></li>
+<li class="lido-sample-row"><span class="num">02</span><div><b><span class="lido-sample">Розділ меню</span></b><small><span class="lido-sample">Короткий опис — уточнимо</span></small></div><span class="price"><span class="lido-sample">ціна — уточнимо</span></span></li>
+<li class="lido-sample-row"><span class="num">03</span><div><b><span class="lido-sample">Розділ меню</span></b><small><span class="lido-sample">Короткий опис — уточнимо</span></small></div><span class="price"><span class="lido-sample">ціна — уточнимо</span></span></li>
+
+
+
+</ul>
+<p class="note rv"><span class="lido-sample">Короткий опис — уточнимо</span> — тут буде повний перелік позицій.</p>
+</div>
+</section>
+<section class="alt order" id="order">
+<div class="wrap">
+<div class="rv">
+<span class="eyebrow">02 — Замовлення</span>
+<h2>Замовити</h2>
+</div>
+<div class="order-box rv">
+<span class="eyebrow">Телефон для замовлень</span>
+<a class="phone" href="tel:+380938039696">+380938039696</a>
+<p>Зателефонуйте — прийняти замовлення на самовивіз або доставку допоможемо одразу.</p>
+<a class="btn btn-main" href="tel:+380938039696">Замовити</a>
+<div class="book">
+<span>Хочете столик? Забронюйте по телефону.</span>
+<a class="btn btn-ghost" href="tel:+380938039696">Забронювати столик</a>
+</div>
+</div>
+</div>
+</section>
+<section id="hours">
+<div class="wrap two">
+<div class="rv">
+<span class="eyebrow">03 — Графік</span>
+<h2>Години роботи</h2>
+<div class="hours-card"><span>Щодня</span>Пн–Нд 10:00–21:30</div>
+</div>
+<div class="rv lido-ph"><picture><source srcset="assets/stock/ff7496a5b1-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="600" loading="lazy" src="assets/stock/ff7496a5b1-800.jpg" width="800"/></picture></div>
+</div>
+</section>
+
+<section id="contacts">
+<div class="wrap">
+<div class="rv">
+<span class="eyebrow">05 — Контакти</span>
+<h2>Де нас знайти</h2>
+</div>
+<div class="contacts">
+<div class="rv">
+<ul class="clist">
+<li><span>Місто</span><div>Черкаси</div></li>
+
+<li><span>Телефон</span><a href="tel:+380938039696">+380938039696</a></li>
+<li><span>Години</span><div>Пн–Нд 10:00–21:30</div></li>
+</ul>
+<a class="btn btn-main mapbtn" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.4349974,32.006331" rel="noopener" target="_blank">Маршрут</a>
+</div>
+<div class="mapwrap rv">
+<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=32.00233%2C49.43250%2C32.01033%2C49.43750&amp;layer=mapnik&amp;marker=49.43500%2C32.00633" style="border:0;width:100%;height:320px" title="Карта"></iframe>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="wrap">
+<span>Пицца ZaZa · Черкаси </span>
+<span class="m">Демо-версія сайту</span>
+</div>
+<p class="lido-photo-note">Фото для прикладу — замінимо на ваші</p></footer>
+<nav aria-label="Швидкі дії" class="bar">
+<a class="main" href="tel:+380938039696">Замовити</a>
+<a href="https://www.google.com/maps/dir/?api=1&amp;destination=49.4349974,32.006331" rel="noopener" target="_blank">Маршрут</a>
+</nav>
+<script>
+(function(){
+  var d=document.documentElement;
+  d.classList.add('js');
+  var els=document.querySelectorAll('.rv');
+  if(!('IntersectionObserver' in window)||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach(function(e){e.classList.add('in')});return;
+  }
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script id="lido-fit">(function(){function fit(){var w=document.documentElement.clientWidth;document.querySelectorAll('h1').forEach(function(h){h.style.fontSize='';var s=parseFloat(getComputedStyle(h).fontSize),i=0;while(i<40&&s>16&&(h.scrollWidth>h.clientWidth+1||h.getBoundingClientRect().right>w+1)){s*=0.93;h.style.fontSize=s+'px';i++}})}addEventListener('load',fit);addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit)})();</script><a class="lido-chip" href="styles/">Інші стилі (4) →</a><script id="lido-chip-js">(function(){var c=document.querySelector('.lido-chip');if(!c)return;c.classList.add('wait');function f(){c.classList.toggle('wait',scrollY<innerHeight*.6)}addEventListener('scroll',f,{passive:true});f()})();</script><script id="lido-badge-js">(function(){var T="Демо-версія";function has(){var b=document.body;return b&&(b.textContent||'').toLowerCase().indexOf('демо-верс')>-1}var q=0;function fix(){q=0;var b=document.body;if(!b||has())return;var d=document.createElement('div');d.id='lido-demo-badge';d.setAttribute('role','note');d.textContent=T;b.appendChild(d)}function soon(){if(!q){q=1;setTimeout(fix,300)}}addEventListener('DOMContentLoaded',fix);if(window.MutationObserver)new MutationObserver(soon).observe(document.documentElement,{childList:true,subtree:true,characterData:true})})();</script></body>
+</html>
