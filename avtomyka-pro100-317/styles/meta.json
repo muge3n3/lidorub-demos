@@ -1,0 +1,26 @@
+{
+ "current": "avtomyika-blysk|mint_fresh",
+ "items": [
+  {
+   "n": 1,
+   "slug": "avtomyika-blysk",
+   "palette": "minimal",
+   "name": "Сучасний мінімал",
+   "who": "коли хочеться чисто, світло й без зайвого"
+  },
+  {
+   "n": 2,
+   "slug": "avtomyika-blysk",
+   "palette": "sunny_pop",
+   "name": "Сонячний настрій",
+   "who": "тепло, яскраво, з усмішкою"
+  },
+  {
+   "n": 3,
+   "slug": "sto-harazh",
+   "palette": "",
+   "name": "Сталь і вогонь",
+   "who": "строго, впевнено, по-чоловічому"
+  }
+ ]
+}

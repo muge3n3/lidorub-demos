@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Єкатерина — барбершоп, Черкаси</title>
+<meta content="Єкатерина — барбершоп у місті Черкаси. Бульвар Шевченка 264. Запис за телефоном." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#101214;
+  --surface:#1b1f23;
+  --text:#eef1f4;
+  --muted:#a3acb6;
+  --accent:#ff8a3d;
+  --on-accent:#14100c;
+  --line:color-mix(in srgb, var(--text) 14%, transparent);
+  --font-head:"Oswald", Impact, "Arial Narrow", sans-serif;
+  --font-body:"Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;border-radius:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;padding-bottom:76px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.demo{background:var(--accent);color:var(--on-accent);font:600 12px/1 var(--font-body);letter-spacing:.14em;text-transform:uppercase;text-align:center;padding:9px 12px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 28px;font:600 17px/1 var(--font-head);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border:3px solid var(--accent);transition:transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease}
+.btn-main{background:var(--accent);color:var(--on-accent);box-shadow:6px 6px 0 color-mix(in srgb, var(--accent) 35%, transparent)}
+.btn-main:hover{transform:translate(-2px,-2px);box-shadow:9px 9px 0 color-mix(in srgb, var(--accent) 45%, transparent)}
+.btn-alt{background:transparent;color:var(--text);border-color:var(--text)}
+.btn-alt:hover{background:var(--text);color:var(--bg);transform:translate(-2px,-2px)}
+
+/* hero */
+.hero{position:relative;min-height:calc(100vh - 34px);min-height:calc(100svh - 34px);display:flex;align-items:center;overflow:hidden;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 63px, var(--line) 63px 64px),
+    repeating-linear-gradient(90deg, transparent 0 63px, var(--line) 63px 64px),
+    radial-gradient(ellipse at 80% 20%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 60%),
+    var(--bg)}
+.stripe{position:absolute;inset:0;background:var(--accent);clip-path:polygon(58% 0,76% 0,38% 100%,20% 100%);opacity:.92;pointer-events:none}
+.stripe2{position:absolute;inset:0;background:var(--text);clip-path:polygon(78% 0,80% 0,42% 100%,40% 100%);opacity:.2;pointer-events:none}
+.tools{position:absolute;right:-4%;bottom:6%;width:min(62vw,560px);color:var(--text);opacity:.9;pointer-events:none}
+.hero .wrap{position:relative;z-index:2;padding-top:56px;padding-bottom:56px;width:100%}
+.kicker{display:inline-block;font:600 13px/1 var(--font-body);letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.hero .kicker{background:var(--bg);padding:8px 12px;border-left:6px solid var(--accent)}
+h1{font-family:var(--font-head);font-weight:700;text-transform:uppercase;line-height:.88;letter-spacing:-.01em;font-size:clamp(64px,19vw,250px);max-width:8.2em;text-shadow:0 4px 0 var(--bg)}
+h1::first-letter{color:var(--accent)}
+.lead{margin-top:26px;max-width:460px;font-size:19px;color:var(--text);background:var(--bg);padding:12px 14px;border-left:6px solid var(--accent)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:30px}
+
+/* sections */
+section{padding:96px 0;position:relative}
+.alt{background:var(--surface)}
+.head{margin-bottom:44px;border-top:6px solid var(--accent);padding-top:18px;max-width:640px}
+.eyebrow{display:block;font:600 13px/1 var(--font-body);letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+h2{font-family:var(--font-head);font-weight:700;text-transform:uppercase;font-size:clamp(40px,7vw,76px);line-height:1;letter-spacing:.01em}
+.muted{color:var(--muted)}
+
+/* services table */
+.ph-note{font:600 18px var(--font-body);color:var(--accent);margin-bottom:22px}
+.table{border:3px solid var(--text);background:var(--bg)}
+.row{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:22px 24px;border-bottom:1px solid var(--line);transition:background .2s ease, padding .2s ease}
+.row:last-child{border-bottom:0}
+.row:hover{background:color-mix(in srgb, var(--accent) 14%, transparent);padding-left:34px}
+.row .n{font:600 clamp(22px,3.4vw,34px)/1.1 var(--font-head);text-transform:uppercase;letter-spacing:.03em}
+.row .dots{flex:1;border-bottom:2px dotted var(--muted);transform:translateY(-6px);min-width:20px}
+.row .p{font:600 clamp(22px,3.4vw,34px)/1.1 var(--font-head);color:var(--accent);white-space:nowrap}
+
+/* why */
+.why{display:grid;gap:0;border:3px solid var(--text)}
+.why article{padding:34px 28px;border-bottom:3px solid var(--text);background:var(--surface);transition:background .2s ease, transform .2s ease}
+.why article:last-child{border-bottom:0}
+.why article:hover{background:color-mix(in srgb, var(--accent) 14%, var(--surface))}
+.num{font:700 64px/1 var(--font-head);color:var(--accent)}
+.why h3{font:600 28px/1.1 var(--font-head);text-transform:uppercase;margin:10px 0 10px;letter-spacing:.03em}
+.masters{margin-top:40px;display:grid;gap:20px}
+.box{border:2px dashed var(--accent);padding:26px;background:var(--bg)}
+.box strong{display:block;font:600 22px var(--font-head);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px}
+.shot{aspect-ratio:1;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);text-align:center;padding:6px;background:repeating-linear-gradient(45deg, transparent 0 10px, var(--line) 10px 11px)}
+
+/* booking */
+.book{background:
+  linear-gradient(135deg, transparent 0 62%, color-mix(in srgb, var(--accent) 16%, transparent) 62% 80%, transparent 80%),
+  var(--bg)}
+.book-grid{display:grid;gap:34px}
+.phone-big{display:block;font:700 clamp(38px,8vw,84px)/1 var(--font-head);text-decoration:none;color:var(--text);letter-spacing:.01em;margin:6px 0 22px;border-bottom:6px solid var(--accent);width:max-content;max-width:100%;transition:color .2s ease}
+.phone-big:hover{color:var(--accent)}
+.hours-card{border:3px solid var(--text);padding:24px;background:var(--surface)}
+.hours-card b{font:700 54px/1 var(--font-head);color:var(--accent);display:block}
+.steps{list-style:none;display:grid;gap:12px;margin:22px 0 28px}
+.steps li{padding-left:18px;border-left:4px solid var(--accent)}
+
+/* faq */
+details{border:3px solid var(--text);background:var(--bg);margin-bottom:14px}
+summary{cursor:pointer;list-style:none;padding:20px 24px;font:600 24px/1.2 var(--font-head);text-transform:uppercase;letter-spacing:.03em;display:flex;justify-content:space-between;gap:16px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:34px;line-height:1;transition:transform .2s ease}
+details[open] summary::after{transform:rotate(45deg)}
+details[open] summary{background:var(--accent);color:var(--on-accent)}
+details[open] summary::after{color:var(--on-accent)}
+details p{padding:20px 24px;color:var(--muted)}
+
+/* contacts */
+.contact-grid{display:grid;gap:30px}
+.info{list-style:none;display:grid;gap:0;border:3px solid var(--text)}
+.info li{padding:18px 22px;border-bottom:1px solid var(--line);background:var(--surface)}
+.info li:last-child{border-bottom:0}
+.info span{display:block;font:600 12px/1 var(--font-body);letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.info a{text-decoration:none;font-weight:600}
+.info a:hover{color:var(--accent)}
+.map{border:3px solid var(--text);background:var(--surface);line-height:0}
+.map iframe{filter:grayscale(.6) contrast(1.05)}
+.contact-cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
+
+footer{background:var(--bg);border-top:6px solid var(--accent);padding:34px 0;color:var(--muted);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer strong{color:var(--text);font-family:var(--font-head);letter-spacing:.06em;text-transform:uppercase}
+
+/* mobile bar */
+.bar{display:none}
+@media (max-width:768px){
+  .bar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:grid;grid-template-columns:1fr 1fr;background:var(--surface);border-top:3px solid var(--accent)}
+  .bar a{display:flex;align-items:center;justify-content:center;min-height:62px;font:600 18px var(--font-head);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;color:var(--text)}
+  .bar a:first-child{background:var(--accent);color:var(--on-accent)}
+  .stripe{clip-path:polygon(50% 0,92% 0,50% 100%,8% 100%);opacity:.55}
+  .stripe2{display:none}
+  .tools{opacity:.5;right:-18%;width:96vw}
+  .hero .btn{width:100%}
+}
+@media (min-width:769px){
+  body{padding-bottom:0}
+  .why{grid-template-columns:repeat(3,1fr)}
+  .why article{border-bottom:0;border-right:3px solid var(--text)}
+  .why article:last-child{border-right:0}
+  .masters{grid-template-columns:1fr 1fr}
+  .book-grid{grid-template-columns:1.4fr 1fr;align-items:start}
+  .contact-grid{grid-template-columns:1fr 1.5fr}
+  section{padding:112px 0}
+}
+
+/* reveal */
+@keyframes up{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+@keyframes slide{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
+h1,.lead,.hero-cta,.hero .kicker{animation:slide .8s ease both}
+.lead{animation-delay:.15s}.hero-cta{animation-delay:.3s}
+@supports (animation-timeline:view()){
+  .reveal{animation:up linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;800&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><style id="lido-palette">:root{--bg:#0e0d0b;--surface:#1a1815;--text:#f3ede2;--muted:#b3a993;--accent:#c9a227;--on-accent:#14110a;--font-head:'Cormorant Garamond', Georgia, serif;--font-body:'Manrope', system-ui, -apple-system, sans-serif}</style><meta content="noindex,nofollow" name="robots"/><style id="lido-dress">
+@media (max-width:440px){nav.bar a,nav.mbar a,div.mbar a,nav[aria-label="Швидкі дії"] a{min-width:0;padding-left:4px;padding-right:4px;
+ font-size:clamp(12px,3.6vw,15px);letter-spacing:0;white-space:nowrap}}
+.lido-sample{border-bottom:1px dotted currentColor;opacity:.92}
+.lido-tag{display:inline-block;vertical-align:middle;margin-left:.5em;padding:.15em .55em;border-radius:999px;
+ border:1px dashed currentColor;font:600 11px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+h1 .lido-tag,h2 .lido-tag,h3 .lido-tag{font-size:11px;letter-spacing:.06em}
+.lido-sample-row{outline:1px dashed color-mix(in srgb,currentColor 35%,transparent);outline-offset:4px;border-radius:4px}
+.lido-ph{padding:0!important;overflow:hidden;position:relative;min-height:240px}
+.lido-ph>picture,.lido-ph>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lido-about{margin:0 auto 32px;max-width:1120px;border-radius:14px;overflow:hidden;aspect-ratio:16/7}
+.lido-about picture,.lido-about img{display:block;width:100%;height:100%;object-fit:cover}
+.lido-gallery{padding:56px 0}
+.lido-gwrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lido-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lido-gitem{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.lido-gitem:first-child{grid-column:1/-1;aspect-ratio:16/8}
+.lido-gitem picture,.lido-gitem img{display:block;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.lido-grid{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.lido-gitem,.lido-gitem:first-child{aspect-ratio:auto}
+ .lido-gitem:first-child{grid-column:auto;grid-row:span 2}}
+.lido-photo-note{font-size:12px;opacity:.7;text-align:center;margin:10px 0 0}
+.lido-chip{position:fixed;right:16px;bottom:18px;z-index:60;padding:10px 16px;border-radius:999px;
+ background:var(--accent,#1f2937);color:var(--on-accent,#fff);font:600 14px/1.2 system-ui,-apple-system,sans-serif;
+ text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.lido-chip{transition:opacity .3s,transform .3s}.lido-chip.wait{opacity:0;transform:translateY(12px);pointer-events:none}
+@media(max-width:768px){.lido-chip{bottom:92px;right:12px;font-size:13px;padding:9px 14px}}
+[data-lido-hero]{background-image:linear-gradient(180deg,rgba(16,18,20,0.74),rgba(16,18,20,0.88)),url('../../assets/stock/d385e9c9a7-1600.jpg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}@media(max-width:700px){[data-lido-hero]{background-image:linear-gradient(180deg,rgba(16,18,20,0.74),rgba(16,18,20,0.88)),url('../../assets/stock/d385e9c9a7-800.jpg')!important}}</style></head>
+<body>
+<div class="demo">Демо-версія сайту</div>
+<header class="hero" data-lido-hero="" id="top">
+<div aria-hidden="true" class="stripe"></div>
+<div aria-hidden="true" class="stripe2"></div>
+<svg aria-hidden="true" class="tools" fill="none" focusable="false" stroke="currentColor" stroke-linecap="square" stroke-linejoin="miter" stroke-width="5" viewbox="0 0 400 300">
+<!-- ножиці -->
+<circle cx="70" cy="215" r="38"></circle>
+<circle cx="70" cy="215" r="18" stroke-width="3"></circle>
+<circle cx="150" cy="255" r="34"></circle>
+<circle cx="150" cy="255" r="15" stroke-width="3"></circle>
+<path d="M96 188 L370 40 L378 56 L112 222Z"></path>
+<path d="M168 224 L380 120 L372 138 L130 236Z"></path>
+<circle cx="124" cy="208" fill="currentColor" r="6"></circle>
+<!-- бритва -->
+<path d="M230 270 L390 250 L396 268 L236 290Z" stroke-width="4"></path>
+<path d="M236 290 L200 296" stroke-width="4"></path>
+<path d="M250 266 L380 252" stroke-width="2"></path>
+</svg>
+<div class="wrap">
+<span class="kicker">Барбершоп · Черкаси</span>
+<h1>Єкатерина</h1>
+<p class="lead"><span class="lido-sample">Тут буде кілька слів про ваш барбершоп — напишемо разом</span><span class="lido-tag">приклад</span></p>
+<div class="hero-cta">
+<a class="btn btn-main" href="tel:+380681042274">Записатися на стрижку</a>
+<a class="btn btn-alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.4177743,32.0881227" rel="noopener" target="_blank">Маршрут</a>
+</div>
+</div>
+</header>
+<main>
+<section class="alt" id="services">
+<div class="wrap">
+<div class="head reveal">
+<span class="eyebrow">Прайс</span>
+<h2>Послуги<span class="lido-tag">приклад наповнення</span></h2>
+</div>
+<p class="ph-note reveal"><span class="lido-sample">Тут буде перелік послуг — додамо разом</span><span class="lido-tag">приклад</span></p>
+<div aria-label="Послуги та ціни" class="table reveal" role="table">
+<div class="row lido-sample-row" role="row"><span class="n"><span class="lido-sample">Послуга</span></span><span aria-hidden="true" class="dots"></span><span class="p"><span class="lido-sample">ціна — уточнимо</span></span></div>
+<div class="row lido-sample-row" role="row"><span class="n"><span class="lido-sample">Послуга</span></span><span aria-hidden="true" class="dots"></span><span class="p"><span class="lido-sample">ціна — уточнимо</span></span></div>
+<div class="row lido-sample-row" role="row"><span class="n"><span class="lido-sample">Послуга</span></span><span aria-hidden="true" class="dots"></span><span class="p"><span class="lido-sample">ціна — уточнимо</span></span></div>
+
+</div>
+</div>
+</section>
+<section id="why">
+<div class="wrap">
+<div class="head reveal">
+<span class="eyebrow">Переваги</span>
+<h2>Чому до нас</h2>
+</div>
+<div class="why reveal">
+<article><div class="num">01</div><h3><span class="lido-sample">Перевага — уточнимо</span></h3></article>
+<article><div class="num">02</div><h3><span class="lido-sample">Перевага — уточнимо</span></h3></article>
+<article><div class="num">03</div><h3><span class="lido-sample">Перевага — уточнимо</span></h3></article>
+</div>
+<div class="masters reveal">
+<div class="box"><strong>Майстри</strong></div>
+<div class="box lido-ph"><picture><source srcset="../../assets/stock/14eeab625c-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="1200" loading="lazy" src="../../assets/stock/14eeab625c-800.jpg" width="800"/></picture></div>
+</div>
+</div>
+</section>
+<section class="alt book" id="book">
+<div class="wrap">
+<div class="head reveal">
+<span class="eyebrow">Запис</span>
+<h2>Запис на стрижку</h2>
+</div>
+<div class="book-grid reveal">
+<div>
+<p class="muted">Запис за телефоном. Подзвоніть і оберіть зручний час.</p>
+<ol class="steps">
+<li>Наберіть номер.</li>
+<li>Скажіть, яка послуга потрібна.</li>
+<li>Приходьте в обраний час.</li>
+</ol>
+<a class="phone-big" href="tel:+380681042274">+380681042274</a>
+<a class="btn btn-main" href="tel:+380681042274">Записатися на стрижку</a>
+</div>
+<div class="hours-card">
+<span class="eyebrow">Години роботи</span>
+<b>Пн–Ср, Пт–Нд 09:00–19:00</b>
+<p class="muted" style="margin-top:10px">Бульвар Шевченка 264, Черкаси</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="alt" id="contacts">
+<div class="wrap">
+<div class="head reveal">
+<span class="eyebrow">Контакти</span>
+<h2>Де нас знайти</h2>
+</div>
+<div class="contact-grid reveal">
+<div>
+<ul class="info">
+<li><span>Адреса</span>185</li>
+<li><span>Телефон</span><a href="tel:+380681042274">+380681042274</a></li>
+<li><span>Години роботи</span>Пн–Ср, Пт–Нд 09:00–19:00</li>
+</ul>
+<div class="contact-cta">
+<a class="btn btn-main" href="tel:+380681042274">Записатися на стрижку</a>
+<a class="btn btn-alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.4177743,32.0881227" rel="noopener" target="_blank">Маршрут</a>
+</div>
+</div>
+<div class="map">
+<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=32.08412%2C49.41527%2C32.09212%2C49.42027&amp;layer=mapnik&amp;marker=49.41777%2C32.08812" style="border:0;width:100%;height:320px" title="Карта"></iframe>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<span><strong>Єкатерина</strong> · Черкаси</span>
+<span>бульвар Шевченка 264 · <a href="tel:+380681042274">+380681042274</a></span>
+<span>Демо-версія сайту</span>
+</div>
+<p class="lido-photo-note">Фото для прикладу — замінимо на ваші</p></footer>
+<nav aria-label="Швидкі дії" class="bar">
+<a href="tel:+380681042274">Записатися</a>
+<a href="https://www.google.com/maps/dir/?api=1&amp;destination=49.4177743,32.0881227" rel="noopener" target="_blank">Маршрут</a>
+</nav>
+<script id="lido-fit">(function(){function fit(){var w=document.documentElement.clientWidth;document.querySelectorAll('h1').forEach(function(h){h.style.fontSize='';var s=parseFloat(getComputedStyle(h).fontSize),i=0;while(i<40&&s>16&&(h.scrollWidth>h.clientWidth+1||h.getBoundingClientRect().right>w+1)){s*=0.93;h.style.fontSize=s+'px';i++}})}addEventListener('load',fit);addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit)})();</script><a class="lido-chip" href="../">← Усі стилі</a><script id="lido-chip-js">(function(){var c=document.querySelector('.lido-chip');if(!c)return;c.classList.add('wait');function f(){c.classList.toggle('wait',scrollY<innerHeight*.6)}addEventListener('scroll',f,{passive:true});f()})();</script></body>
+</html>

@@ -1,0 +1,33 @@
+{
+ "current": "pekarnia-solodkyi|warm_craft",
+ "items": [
+  {
+   "n": 1,
+   "slug": "pekarnia-solodkyi",
+   "palette": "editorial",
+   "name": "Журнальний",
+   "who": "стильно, з великими заголовками та фото"
+  },
+  {
+   "n": 2,
+   "slug": "pekarnia-solodkyi",
+   "palette": "scandi_light",
+   "name": "Скандинавський світлий",
+   "who": "м'які природні тони, спокійно й тепло"
+  },
+  {
+   "n": 3,
+   "slug": "bar-kraftovyi-pab",
+   "palette": "",
+   "name": "Лісова ніч",
+   "who": "темна зелень і золото — спокійна розкіш"
+  },
+  {
+   "n": 4,
+   "slug": "bar-neon-nich",
+   "palette": "",
+   "name": "Неонова ніч",
+   "who": "для барів і нічного життя"
+  }
+ ]
+}
