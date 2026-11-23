@@ -1,0 +1,33 @@
+{
+ "current": "|",
+ "items": [
+  {
+   "n": 1,
+   "slug": "mynymal-salon-krasy",
+   "palette": "",
+   "name": "Сучасний мінімал",
+   "who": "коли хочеться чисто, світло й без зайвого"
+  },
+  {
+   "n": 2,
+   "slug": "salon-krasy-liuks",
+   "palette": "",
+   "name": "Ніжна троянда",
+   "who": "м'яко й жіночно — для краси та догляду"
+  },
+  {
+   "n": 3,
+   "slug": "salon-krasy-liuks",
+   "palette": "editorial",
+   "name": "Журнальний",
+   "who": "стильно, з великими заголовками та фото"
+  },
+  {
+   "n": 4,
+   "slug": "salon-krasy-liuks",
+   "palette": "scandi_light",
+   "name": "Скандинавський світлий",
+   "who": "м'які природні тони, спокійно й тепло"
+  }
+ ]
+}

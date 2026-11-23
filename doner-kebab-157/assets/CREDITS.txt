@@ -1,0 +1,6 @@
+stock: Jack Daniels Burger v EB Dinners Hradec Králové.jpg — Ladabohac — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Jack_Daniels_Burger_v_EB_Dinners_Hradec_Kr%C3%A1lov%C3%A9.jpg — sha256 e5f50cbd4948f9c6
+stock: Chicken Shawarma Platter - Lavash 2025-02-10.jpg — Andy Li — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Chicken_Shawarma_Platter_-_Lavash_2025-02-10.jpg — sha256 909e8dfd1bed13f8
+stock: Burger Food — David Mcbee — CC0 1.0 — https://stocksnap.io/photo/burger-food-WOA0EWC9HM — sha256 b1d163ad72377c75
+stock: Hot dog vendor - September 2024 - Sarah Stierch 01.jpg — Missvain — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Hot_dog_vendor_-_September_2024_-_Sarah_Stierch_01.jpg — sha256 07667bd9643467d6
+stock: Chicken Shawarma Bake — yanayrosen — Public Domain Mark 1.0 — https://www.flickr.com/photos/187878392@N04/51306049173 — sha256 d60df7b077204ea8
+stock: Pizza 11.jpg — Kurt Kaiser — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Pizza_11.jpg — sha256 f8c5b61eb87e412b

@@ -1,0 +1,6 @@
+stock: Coffee Cappuccino — Hello Goodbye — CC0 1.0 — https://stocksnap.io/photo/coffee-cappuccino-UXO5P8KFS5 — sha256 b7246ef8e9853b26
+stock: Coffee Latte — David Bares — CC0 1.0 — https://stocksnap.io/photo/coffee-latte-WDJES619M1 — sha256 861f2bb7db44fa24
+stock: Coffee Beans — Negative Space — CC0 1.0 — https://stocksnap.io/photo/coffee-beans-X2JNLNHCT9 — sha256 047a4ee781646c54
+stock: Espresso Machine — Freestocks.org — CC0 1.0 — https://stocksnap.io/photo/espresso-machine-4GO4VAB14Z — sha256 41578a89f0951c67
+stock: Coffee Beans — Ylanite Koppens — CC0 1.0 — https://stocksnap.io/photo/coffee-beans-RGTFS21RRA — sha256 c5529ae132dde3dc
+stock: Barista Latte — Burst — CC0 1.0 — https://stocksnap.io/photo/barista-latte-V7HJ1MBGUP — sha256 ab0fdd07c3cc89db
