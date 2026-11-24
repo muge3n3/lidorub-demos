@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Євросервіс — автосервіс, Черкаси</title>
+<meta content="Євросервіс — автосервіс (СТО), Черкаси, вулиця Лейтенанта Мукана 2. Запис на ремонт за телефоном." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Oswald:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#101214;
+  --surface:#1b1f23;
+  --text:#eef1f4;
+  --muted:#a3acb6;
+  --accent:#ff8a3d;
+  --on-accent:#14100c;
+  --line:color-mix(in srgb, var(--text) 14%, transparent);
+  --font-head:"Oswald", "Arial Narrow", Impact, sans-serif;
+  --font-body:"Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --stripes:repeating-linear-gradient(-45deg, var(--accent) 0 14px, var(--bg) 14px 28px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:var(--font-body);font-size:17px;line-height:1.6;
+  padding-bottom:84px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--font-head);text-transform:uppercase;line-height:1.05;letter-spacing:.01em}
+.demo{
+  background:var(--surface);color:var(--muted);
+  text-align:center;font-size:13px;padding:7px 12px;
+  border-bottom:1px solid var(--line);letter-spacing:.04em;
+}
+.demo b{color:var(--accent);font-weight:600}
+.stripe{height:14px;background:var(--stripes)}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  min-height:52px;padding:0 28px;
+  font-family:var(--font-head);font-size:18px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  text-decoration:none;border:2px solid var(--accent);
+  transition:transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+}
+.btn-main{background:var(--accent);color:var(--on-accent)}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 10px 0 -4px color-mix(in srgb, var(--accent) 35%, transparent)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* hero */
+.hero{
+  position:relative;min-height:calc(100vh - 34px);min-height:calc(100svh - 34px);
+  display:flex;align-items:center;overflow:hidden;
+  background:
+    radial-gradient(ellipse at 80% 20%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 55%),
+    linear-gradient(180deg, var(--bg), var(--surface));
+}
+.hero svg.blueprint{position:absolute;inset:0;width:100%;height:100%;opacity:.9}
+.hero .wrap{position:relative;z-index:1;padding-top:56px;padding-bottom:56px}
+.tag-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px}
+.tag{
+  font-family:var(--font-head);font-size:15px;letter-spacing:.08em;text-transform:uppercase;
+  border:1px dashed var(--accent);color:var(--text);padding:6px 12px;
+  background:color-mix(in srgb, var(--bg) 70%, transparent);
+}
+.code{font-family:var(--font-head);color:var(--accent);letter-spacing:.14em;font-size:14px;text-transform:uppercase}
+.hero h1{
+  font-size:clamp(64px,17vw,176px);font-weight:700;letter-spacing:-.005em;
+  margin:10px 0 18px;
+}
+.hero h1::first-letter,.drop::first-letter{color:var(--accent)}
+.hero p.lead{max-width:520px;color:var(--muted);font-size:19px;margin-bottom:34px;border-left:4px solid var(--accent);padding-left:16px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero .meta{
+  display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:44px;padding-top:18px;border-top:1px solid var(--line);
+  color:var(--muted);font-size:14px;
+}
+.hero .meta span b{color:var(--text);font-weight:500}
+
+/* sections */
+section.sec{padding:72px 0}
+section.alt{background:var(--surface)}
+.eyebrow{
+  display:flex;align-items:center;gap:12px;
+  font-family:var(--font-head);font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;
+}
+.eyebrow::before{content:"";width:36px;height:2px;background:var(--accent)}
+.sec h2{font-size:clamp(34px,6vw,56px);margin-bottom:12px}
+.sec .sub{color:var(--muted);max-width:620px;margin-bottom:40px}
+
+/* services list */
+.list{list-style:none;border-top:1px solid var(--line)}
+.list li{
+  display:grid;grid-template-columns:auto 1fr;gap:6px 20px;align-items:start;
+  padding:26px 14px;border-bottom:1px solid var(--line);
+  transition:background .25s ease, transform .25s ease;
+}
+.list li:hover{background:color-mix(in srgb, var(--accent) 8%, transparent);transform:translateX(6px)}
+.list .ico{
+  width:64px;height:64px;border:1px solid var(--accent);display:grid;place-items:center;color:var(--accent);
+  grid-row:span 3;
+}
+.list .ico svg{width:38px;height:38px}
+.list .no{font-family:var(--font-head);color:var(--muted);font-size:13px;letter-spacing:.16em}
+.list h3{font-size:26px}
+.list p{color:var(--muted);font-size:16px}
+.list .price{
+  display:inline-block;margin-top:6px;font-family:var(--font-head);letter-spacing:.06em;
+  color:var(--accent);font-size:15px;text-transform:uppercase;
+}
+.note-box{
+  margin-top:28px;padding:20px 22px;border:1px dashed var(--line);color:var(--muted);
+  display:flex;flex-wrap:wrap;gap:8px 24px;
+}
+.note-box b{color:var(--accent);font-family:var(--font-head);letter-spacing:.06em;font-weight:500}
+
+/* steps */
+.steps{display:grid;gap:18px;counter-reset:s}
+.step{
+  position:relative;background:var(--bg);border:1px solid var(--line);padding:30px 24px 26px;
+  transition:transform .25s ease,border-color .25s ease;
+}
+.step:hover{transform:translateY(-5px);border-color:var(--accent)}
+.step .n{font-family:var(--font-head);font-size:64px;line-height:1;color:var(--accent);font-weight:700}
+.step h3{font-size:24px;margin:10px 0 8px}
+.step p{color:var(--muted);font-size:16px}
+.step::after{content:"";position:absolute;top:0;right:0;width:46px;height:8px;background:var(--stripes)}
+
+/* guarantee */
+.guar{display:grid;gap:30px;align-items:center}
+.seal{
+  justify-self:start;width:190px;height:190px;color:var(--accent);
+}
+.guar .box{border:1px solid var(--line);padding:26px;background:var(--surface)}
+.guar .box p{color:var(--muted)}
+.guar .box strong{color:var(--text);font-family:var(--font-head);font-size:22px;letter-spacing:.04em;text-transform:uppercase;font-weight:500;display:block;margin-bottom:6px}
+
+/* booking */
+.book{
+  position:relative;padding:72px 0;background:var(--accent);color:var(--on-accent);overflow:hidden;
+}
+.book::before,.book::after{content:"";position:absolute;left:0;right:0;height:14px;background:repeating-linear-gradient(-45deg, var(--on-accent) 0 14px, var(--accent) 14px 28px)}
+.book::before{top:0}.book::after{bottom:0}
+.book .wrap{display:grid;gap:26px;align-items:center}
+.book h2{font-size:clamp(38px,7vw,72px)}
+.book p{max-width:520px;font-size:18px;font-weight:500}
+.book .btn{background:var(--on-accent);color:var(--text);border-color:var(--on-accent);font-size:22px;min-height:62px;padding:0 36px;justify-self:start}
+.book .btn:hover{transform:translateY(-3px);background:var(--bg);box-shadow:0 10px 0 -4px color-mix(in srgb, var(--on-accent) 40%, transparent)}
+
+/* faq */
+.faq{border-top:1px solid var(--line);max-width:820px}
+.faq details{border-bottom:1px solid var(--line);padding:4px 0}
+.faq summary{
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;align-items:center;
+  font-family:var(--font-head);font-size:22px;text-transform:uppercase;letter-spacing:.03em;padding:18px 0;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";color:var(--accent);font-size:30px;line-height:1;transition:transform .25s ease}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{color:var(--muted);padding:0 0 20px;max-width:640px}
+
+/* contacts */
+.contacts{display:grid;gap:34px}
+.cards{display:grid;gap:14px;align-content:start}
+.card{
+  border:1px solid var(--line);background:var(--bg);padding:18px 20px;
+  transition:border-color .25s ease,transform .25s ease;
+}
+.card:hover{border-color:var(--accent);transform:translateY(-3px)}
+.card small{display:block;font-family:var(--font-head);letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-size:13px;margin-bottom:4px}
+.card a,.card span{font-size:19px;text-decoration:none}
+.card a:hover{color:var(--accent)}
+.mapbox{border:1px solid var(--line);background:var(--bg);padding:8px}
+.mapbox iframe{display:block;filter:grayscale(.6) contrast(1.05)}
+.route{margin-top:14px}
+
+/* footer */
+footer{background:var(--bg);border-top:1px solid var(--line);padding:34px 0;color:var(--muted);font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px}
+footer b{color:var(--text);font-family:var(--font-head);letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+
+/* mobile bar */
+.bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:8px;padding:10px 12px;
+  background:color-mix(in srgb, var(--surface) 96%, transparent);border-top:2px solid var(--accent);
+}
+.bar a{
+  flex:1;min-height:48px;display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-head);text-transform:uppercase;letter-spacing:.05em;font-size:16px;text-decoration:none;
+  border:1px solid var(--line);color:var(--text);
+}
+.bar a.p{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+
+/* animation */
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+@keyframes drift{from{transform:translateY(0)}to{transform:translateY(-10px)}}
+.hero .wrap>*{animation:rise .8s ease both}
+.hero .wrap>*:nth-child(2){animation-delay:.08s}
+.hero .wrap>*:nth-child(3){animation-delay:.16s}
+.hero .wrap>*:nth-child(4){animation-delay:.24s}
+.hero .wrap>*:nth-child(5){animation-delay:.32s}
+.hero .wrap>*:nth-child(6){animation-delay:.4s}
+.sec .wrap,.book .wrap{animation:rise .9s ease both}
+@supports (animation-timeline:view()){
+  .sec .wrap,.book .wrap{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+}
+.gear{transform-origin:center;transform-box:fill-box;animation:spin 60s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+@media (min-width:769px){
+  body{padding-bottom:0}
+  .bar{display:none}
+  section.sec{padding:104px 0}
+  .book{padding:104px 0}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .guar{grid-template-columns:220px 1fr}
+  .book .wrap{grid-template-columns:1.3fr 1fr}
+  .book .btn{justify-self:end}
+  .contacts{grid-template-columns:1fr 1.3fr}
+  .list li{grid-template-columns:auto 1fr 1fr;align-items:center;gap:6px 36px}
+  .list .ico{grid-row:auto}
+  .list .txt{display:contents}
+}
+@media (max-width:768px){
+  .list .txt{display:block}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+}
+</style>
+<meta content="noindex,nofollow" name="robots"/><style id="lido-dress">
+@media (max-width:440px){nav.bar a,nav.mbar a,div.mbar a,nav[aria-label="Швидкі дії"] a{min-width:0;padding-left:4px;padding-right:4px;
+ font-size:clamp(12px,3.6vw,15px);letter-spacing:0;white-space:nowrap}}
+.lido-sample{border-bottom:1px dotted currentColor;opacity:.92}
+.lido-tag{display:inline-block;vertical-align:middle;margin-left:.5em;padding:.15em .55em;border-radius:999px;
+ border:1px dashed currentColor;font:600 11px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+h1 .lido-tag,h2 .lido-tag,h3 .lido-tag{font-size:11px;letter-spacing:.06em}
+.lido-sample-row{outline:1px dashed color-mix(in srgb,currentColor 35%,transparent);outline-offset:4px;border-radius:4px}
+.lido-ph{padding:0!important;overflow:hidden;position:relative;min-height:240px}
+.lido-ph>picture,.lido-ph>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lido-about{margin:0 auto 32px;max-width:1120px;border-radius:14px;overflow:hidden;aspect-ratio:16/7}
+.lido-about picture,.lido-about img{display:block;width:100%;height:100%;object-fit:cover}
+.lido-gallery{padding:56px 0}
+.lido-gwrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lido-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lido-gitem{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.lido-gitem:first-child{grid-column:1/-1;aspect-ratio:16/8}
+.lido-gitem picture,.lido-gitem img{display:block;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.lido-grid{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.lido-gitem,.lido-gitem:first-child{aspect-ratio:auto}
+ .lido-gitem:first-child{grid-column:auto;grid-row:span 2}}
+.lido-photo-note{font-size:12px;opacity:.7;text-align:center;margin:10px 0 0}
+.lido-chip{position:fixed;right:16px;bottom:18px;z-index:60;padding:10px 16px;border-radius:999px;
+ background:var(--accent,#1f2937);color:var(--on-accent,#fff);font:600 14px/1.2 system-ui,-apple-system,sans-serif;
+ text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.lido-chip{transition:opacity .3s,transform .3s}.lido-chip.wait{opacity:0;transform:translateY(12px);pointer-events:none}
+@media(max-width:768px){.lido-chip{bottom:92px;right:12px;font-size:13px;padding:9px 14px}}
+[data-lido-hero]{background-image:linear-gradient(180deg,rgba(16,18,20,0.74),rgba(16,18,20,0.88)),url('../../assets/stock/4749f77036-1600.jpg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}@media(max-width:700px){[data-lido-hero]{background-image:linear-gradient(180deg,rgba(16,18,20,0.74),rgba(16,18,20,0.88)),url('../../assets/stock/4749f77036-800.jpg')!important}}</style><style id="lido-protect">#lido-demo-badge{position:fixed!important;top:8px;left:8px;z-index:2147483000;display:block!important;padding:3px 9px;border-radius:999px;background:rgba(17,17,17,.78);color:#fff;font:600 11px/1.4 system-ui,-apple-system,sans-serif;letter-spacing:.04em;pointer-events:none;opacity:.9}</style><meta content="0a77fc2d89" name="lido-protect"/></head>
+<body>
+<div class="demo"><b>Демо-версія сайту</b> · макет для ознайомлення</div>
+<header class="hero" data-lido-hero="" id="top">
+<svg aria-hidden="true" class="blueprint" focusable="false" preserveaspectratio="xMidYMid slice" viewbox="0 0 1200 800">
+<defs>
+<pattern height="24" id="g1" patternunits="userSpaceOnUse" width="24">
+<path d="M24 0H0V24" fill="none" stroke="var(--text)" stroke-opacity=".05" stroke-width="1"></path>
+</pattern>
+<pattern height="120" id="g2" patternunits="userSpaceOnUse" width="120">
+<rect fill="url(#g1)" height="120" width="120"></rect>
+<path d="M120 0H0V120" fill="none" stroke="var(--text)" stroke-opacity=".1" stroke-width="1"></path>
+</pattern>
+</defs>
+<rect fill="url(#g2)" height="800" width="1200"></rect>
+<!-- gear -->
+<g fill="none" stroke="var(--accent)" stroke-width="1.6" transform="translate(900 400)">
+<g class="gear">
+<circle r="230" stroke-opacity=".5"></circle>
+<circle r="190"></circle>
+<circle r="120" stroke-opacity=".7"></circle>
+<circle r="46"></circle>
+<path d="M-12 -190v-42h24v42M-12 190v42h24v-42M-190 -12h-42v24h42M190 -12h42v24h-42M-134 -134l-30 -30l17 -17l30 30M134 134l30 30l17 -17l-30 -30M134 -134l30 -30l17 17l-30 30M-134 134l-30 30l17 17l30 -30"></path>
+<path d="M-46 0h92M0 -46v92" stroke-opacity=".6"></path>
+</g>
+<path d="M-300 0h600M0 -300v600" stroke-dasharray="10 8" stroke-opacity=".45" stroke-width="1"></path>
+</g>
+<!-- wrench -->
+<g fill="none" stroke="var(--text)" stroke-opacity=".28" stroke-width="1.6" transform="translate(330 560) rotate(-35)">
+<path d="M-260 -16h360a46 46 0 1 0 0 -2M-260 16h360"></path>
+<path d="M-260 -16a16 16 0 0 0 0 32"></path>
+<circle cx="140" cy="0" r="14"></circle>
+</g>
+<!-- dimension lines -->
+<g fill="none" stroke="var(--accent)" stroke-opacity=".6" stroke-width="1">
+<path d="M60 740h300M60 730v20M360 730v20"></path>
+<path d="M1140 80v300M1130 80h20M1130 380h20"></path>
+</g>
+<g fill="var(--muted)" font-family="Oswald, sans-serif" font-size="13" letter-spacing="2">
+<text x="170" y="730">300 ММ</text>
+<text transform="rotate(90 1090 236)" x="1090" y="236">DETAIL A-01</text>
+</g>
+</svg>
+<div class="wrap">
+
+<div class="code">№ 01 / Автосервіс · Черкаси</div>
+<h1>Євросервіс</h1>
+<p class="lead"><span class="lido-sample">Тут буде кілька слів про ваше СТО — напишемо разом</span><span class="lido-tag">приклад</span></p>
+<div class="cta">
+<a class="btn btn-main" href="tel:+380933386323">Записатися на ремонт</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.3983644,32.0607422" rel="noopener" target="_blank">Маршрут</a>
+</div>
+<div class="meta">
+<span><b>Адреса:</b> вулиця Лейтенанта Мукана 2, Черкаси</span>
+<span><b>Тел.:</b> +380933386323</span>
+</div>
+</div>
+</header>
+<div aria-hidden="true" class="stripe"></div>
+<section class="sec alt" id="services">
+<div class="wrap">
+<div class="eyebrow">Лист 02 · Роботи</div>
+<h2>Послуги<span class="lido-tag">приклад наповнення</span></h2>
+<p class="sub"><span class="lido-sample">Тут буде перелік послуг — додамо разом</span><span class="lido-tag">приклад</span></p>
+<ul class="list">
+<li>
+<div class="ico">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 48 48"><rect height="26" rx="2" width="38" x="5" y="9"></rect><path d="M5 40h38M12 24h6l3-7 5 12 3-5h7"></path></svg>
+</div>
+<div class="txt">
+<div class="no">№ 2.01</div>
+<h3>Діагностика</h3>
+</div>
+<div class="txt lido-sample-row"><p><span class="lido-sample">Короткий опис — уточнимо</span></p><span class="price"><span class="lido-sample">ціна — уточнимо</span></span></div>
+</li>
+<li>
+<div class="ico">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 48 48"><circle cx="10" cy="34" r="5"></circle><circle cx="38" cy="34" r="5"></circle><path d="M15 34h18M10 29V14l14-6 14 6v15M24 8v26M17 20h14"></path></svg>
+</div>
+<div class="txt">
+<div class="no">№ 2.02</div>
+<h3>Ходова</h3>
+</div>
+<div class="txt lido-sample-row"><p><span class="lido-sample">Короткий опис — уточнимо</span></p><span class="price"><span class="lido-sample">ціна — уточнимо</span></span></div>
+</li>
+<li>
+<div class="ico">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 48 48"><path d="M12 14h18l4 5h6v18H12zM12 14V9h8M4 24h8M4 31h8M40 24v-5M22 14v-5"></path><circle cx="26" cy="28" r="5"></circle></svg>
+</div>
+<div class="txt">
+<div class="no">№ 2.03</div>
+<h3>Двигун</h3>
+</div>
+<div class="txt lido-sample-row"><p><span class="lido-sample">Короткий опис — уточнимо</span></p><span class="price"><span class="lido-sample">ціна — уточнимо</span></span></div>
+</li>
+<li>
+<div class="ico">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewbox="0 0 48 48"><circle cx="24" cy="24" r="18"></circle><circle cx="24" cy="24" r="6"></circle><path d="M24 6v12M24 30v12M6 24h12M30 24h12M11 11l8 8M29 29l8 8M37 11l-8 8M19 29l-8 8"></path></svg>
+</div>
+<div class="txt">
+<div class="no">№ 2.04</div>
+<h3>Шиномонтаж</h3>
+</div>
+<div class="txt lido-sample-row"><p><span class="lido-sample">Короткий опис — уточнимо</span></p><span class="price"><span class="lido-sample">ціна — уточнимо</span></span></div>
+</li>
+</ul>
+<div class="note-box lido-sample-row"><b><span class="lido-sample">ціна — уточнимо</span></b><span>Повний перелік робіт і вартість — за телефоном або в закладі.</span></div>
+</div>
+</section>
+<section class="sec" id="how">
+<div class="wrap">
+<div class="eyebrow">Лист 03 · Порядок</div>
+<h2>Як записатися</h2>
+<p class="sub">Три короткі кроки — і авто в роботі.</p>
+<div class="steps">
+<div class="step"><div class="n">01</div><h3>Зателефонуйте</h3><p>Назвіть марку авто та опишіть, що сталося.</p></div>
+<div class="step"><div class="n">02</div><h3>Оберіть час</h3><p>Узгодьте зручний день і годину візиту.</p></div>
+<div class="step"><div class="n">03</div><h3>Приїжджайте</h3><p>Привозьте авто Лейтенанта Мукана 2.</p></div>
+</div>
+</div>
+</section>
+
+<div class="book" id="book">
+<div class="wrap">
+<div>
+<h2>Запис на ремонт</h2>
+<p>Зателефонуйте — підкажемо вільний час і приймемо авто.</p>
+</div>
+<a class="btn" href="tel:+380933386323">+380933386323</a>
+</div>
+</div>
+
+<section aria-label="Фото" class="lido-gallery" id="gallery"><div class="lido-gwrap"><div class="lido-grid"><figure class="lido-gitem"><picture><source srcset="../../assets/stock/84da027b8e-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="451" loading="lazy" src="../../assets/stock/84da027b8e-800.jpg" width="800"/></picture></figure><figure class="lido-gitem"><picture><source srcset="../../assets/stock/914c657731-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="536" loading="lazy" src="../../assets/stock/914c657731-800.jpg" width="800"/></picture></figure><figure class="lido-gitem"><picture><source srcset="../../assets/stock/11a688e4b0-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="600" loading="lazy" src="../../assets/stock/11a688e4b0-800.jpg" width="800"/></picture></figure></div></div></section><section class="sec alt" id="contacts">
+<div class="wrap">
+<div class="eyebrow">Лист 06 · Контакти</div>
+<h2>Як доїхати</h2>
+<p class="sub">Автосервіс у місті Черкаси.</p>
+<div class="contacts">
+<div class="cards">
+<div class="card"><small>Адреса</small><span>вулиця Лейтенанта Мукана 2, Черкаси</span></div>
+<div class="card"><small>Телефон</small><a href="tel:+380933386323">+380933386323</a></div>
+<div class="card"><small>Години роботи</small><span id="hours">Пн–Пт 08:00–17:00</span></div>
+<a class="btn btn-main route" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.3983644,32.0607422" rel="noopener" target="_blank">Маршрут</a>
+</div>
+<div class="mapbox">
+<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=32.05674%2C49.39586%2C32.06474%2C49.40086&amp;layer=mapnik&amp;marker=49.39836%2C32.06074" style="border:0;width:100%;height:320px" title="Карта"></iframe>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="wrap">
+<span><b>Євросервіс</b> · Автосервіс / СТО · Черкаси</span>
+<span>вулиця Лейтенанта Мукана 2 · <a href="tel:+380933386323">+380933386323</a></span>
+<span>Демо-версія сайту</span>
+</div>
+<p class="lido-photo-note">Фото для прикладу — замінимо на ваші</p></footer>
+<nav aria-label="Швидкі дії" class="bar">
+<a href="tel:+380933386323">Подзвонити</a>
+<a class="p" href="#book">Записатися</a>
+<a href="https://www.google.com/maps/dir/?api=1&amp;destination=49.3983644,32.0607422" rel="noopener" target="_blank">Маршрут</a>
+</nav>
+<script id="lido-fit">(function(){function fit(){var w=document.documentElement.clientWidth;document.querySelectorAll('h1').forEach(function(h){h.style.fontSize='';var s=parseFloat(getComputedStyle(h).fontSize),i=0;while(i<40&&s>16&&(h.scrollWidth>h.clientWidth+1||h.getBoundingClientRect().right>w+1)){s*=0.93;h.style.fontSize=s+'px';i++}})}addEventListener('load',fit);addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit)})();</script><a class="lido-chip" href="../">← Усі стилі</a><script id="lido-chip-js">(function(){var c=document.querySelector('.lido-chip');if(!c)return;c.classList.add('wait');function f(){c.classList.toggle('wait',scrollY<innerHeight*.6)}addEventListener('scroll',f,{passive:true});f()})();</script><script id="lido-badge-js">(function(){var T="Демо-версія";function has(){var b=document.body;return b&&(b.textContent||'').toLowerCase().indexOf('демо-верс')>-1}var q=0;function fix(){q=0;var b=document.body;if(!b||has())return;var d=document.createElement('div');d.id='lido-demo-badge';d.setAttribute('role','note');d.textContent=T;b.appendChild(d)}function soon(){if(!q){q=1;setTimeout(fix,300)}}addEventListener('DOMContentLoaded',fix);if(window.MutationObserver)new MutationObserver(soon).observe(document.documentElement,{childList:true,subtree:true,characterData:true})})();</script></body>
+</html>

@@ -1,0 +1,6 @@
+stock: Pizza 14.jpg — Kurt Kaiser — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Pizza_14.jpg — sha256 f0186501c3e922a0
+stock: Pizza 11.jpg — Kurt Kaiser — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Pizza_11.jpg — sha256 f8c5b61eb87e412b
+stock: Pizza 13.jpg — Kurt Kaiser — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Pizza_13.jpg — sha256 aeb5b7360f6903e4
+stock: Eggs and French fries.jpg — Doglover41 — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Eggs_and_French_fries.jpg — sha256 49a3608ca421cd6d
+stock: Chicken Shawarma in Istanbul, Türkiye.jpg — Sezenkerem — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Chicken_Shawarma_in_Istanbul,_T%C3%BCrkiye.jpg — sha256 643b93954c90b7ff
+stock: Chicken Shawarma Bake — yanayrosen — Public Domain Mark 1.0 — https://www.flickr.com/photos/187878392@N04/51306862495 — sha256 b1766dcf2d23615b

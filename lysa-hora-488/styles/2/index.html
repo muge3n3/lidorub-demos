@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Лиса гора — ресторан, Київ</title>
+<meta content="Лиса гора — ресторан, Київ, Бульварно-Кудрявська вулиця. Демо-версія сайту." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f6f3ee;
+  --surface:#fffdf9;
+  --text:#2b2a26;
+  --muted:#6a675e;
+  --accent:#506a40;
+  --on-accent:#ffffff;
+  --line:color-mix(in srgb, var(--text) 14%, transparent);
+  --font-head:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --font-body:"DM Sans",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+  --shadow:0 10px 30px color-mix(in srgb, var(--text) 10%, transparent);
+  --shadow-lg:0 18px 48px color-mix(in srgb, var(--text) 16%, transparent);
+  --r:28px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;font-size:17px;overflow-x:hidden;padding-bottom:88px}
+h1,h2,h3{font-family:var(--font-head);line-height:1.1;font-weight:700;letter-spacing:-.02em}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:12px}
+
+.demo{background:var(--text);color:var(--bg);text-align:center;font-size:13px;padding:6px 12px;letter-spacing:.04em}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 28px;border-radius:999px;font:700 16px var(--font-body);text-decoration:none;border:2px solid var(--accent);cursor:pointer;transition:transform .25s,box-shadow .25s,background .25s}
+.btn-primary{background:var(--accent);color:var(--on-accent);box-shadow:var(--shadow)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn-ghost:hover{transform:translateY(-3px);background:color-mix(in srgb, var(--accent) 12%, transparent);border-color:var(--accent)}
+
+/* sections */
+.s{position:relative;padding:88px 0}
+.s-bg{--sbg:var(--bg);background:var(--sbg)}
+.s-surface{--sbg:var(--surface);background:var(--sbg)}
+.wave{position:absolute;left:0;right:0;top:-47px;height:48px;width:100%;display:block;fill:var(--sbg);pointer-events:none}
+.eyebrow{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.s h2{font-size:clamp(30px,5vw,46px);margin-bottom:16px}
+.lead{color:var(--muted);max-width:560px}
+.head{margin-bottom:44px}
+
+/* hero */
+.hero{padding:56px 0 110px;background:
+  radial-gradient(circle at 85% 20%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 55%),
+  radial-gradient(circle at 5% 90%, color-mix(in srgb, var(--accent) 10%, transparent), transparent 50%),
+  var(--bg);min-height:calc(100vh - 30px);display:flex;align-items:center}
+.hero-grid{display:grid;gap:36px;align-items:center}
+.pill{display:inline-block;background:color-mix(in srgb, var(--accent) 14%, transparent);color:var(--text);padding:7px 16px;border-radius:999px;font-size:14px;font-weight:500;margin-bottom:20px}
+.name{font-size:clamp(64px,13vw,128px);letter-spacing:-.04em;margin-bottom:18px}
+.name::first-letter{color:var(--accent)}
+.hero p.sub{font-size:20px;color:var(--muted);max-width:460px;margin-bottom:30px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.hero-art{background:var(--surface);border-radius:48px 48px 48px 120px;box-shadow:var(--shadow-lg);padding:20px;aspect-ratio:1/1;max-width:520px;width:100%;justify-self:center}
+.hero-art svg{width:100%;height:100%;display:block}
+.a-fill{fill:var(--accent)}
+.a-soft{fill:color-mix(in srgb, var(--accent) 18%, transparent)}
+.a-soft2{fill:color-mix(in srgb, var(--accent) 34%, transparent)}
+.a-line{fill:none;stroke:var(--accent);stroke-width:5;stroke-linecap:round;stroke-linejoin:round}
+.a-line-thin{fill:none;stroke:color-mix(in srgb, var(--accent) 45%, transparent);stroke-width:3;stroke-linecap:round}
+.a-bg{fill:var(--surface)}
+
+/* perks */
+.perks{display:grid;gap:20px}
+.card{background:var(--bg);border-radius:var(--r);padding:32px;box-shadow:var(--shadow);transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.s-bg .card{background:var(--surface)}
+.ico{width:64px;height:64px;border-radius:22px;background:var(--accent);display:grid;place-items:center;margin-bottom:20px}
+.ico svg{width:34px;height:34px;fill:none;stroke:var(--on-accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:22px;margin-bottom:8px}
+.card p{color:var(--muted)}
+
+/* menu */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.chip{font:500 16px var(--font-body);padding:12px 24px;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--text);cursor:pointer;transition:all .25s}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.panel{display:none;gap:16px}
+.panel.on{display:grid;animation:fade .4s both}
+.dish{background:var(--surface);border-radius:var(--r);padding:26px;box-shadow:var(--shadow);display:flex;gap:16px;align-items:center;transition:transform .3s}
+.dish:hover{transform:translateY(-4px)}
+.dish .dot{flex:none;width:52px;height:52px;border-radius:50%;background:color-mix(in srgb, var(--accent) 20%, transparent);display:grid;place-items:center;font-size:24px}
+.dish b{display:block;font-size:18px}
+.dish span{color:var(--muted);font-size:15px}
+
+/* kids & groups */
+.split{display:grid;gap:28px;align-items:stretch}
+.ph{border-radius:var(--r) var(--r) var(--r) 90px;min-height:280px;background:
+  linear-gradient(135deg,color-mix(in srgb, var(--accent) 22%, transparent),color-mix(in srgb, var(--accent) 6%, transparent));
+  border:2px dashed color-mix(in srgb, var(--accent) 50%, transparent);display:grid;place-items:center;text-align:center;padding:24px;font-weight:500}
+.ph small{display:block;color:var(--muted);font-weight:400;margin-top:6px}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.tag{background:var(--bg);border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-size:15px}
+.box{background:var(--bg);border-radius:var(--r);padding:36px;box-shadow:var(--shadow)}
+.box p{color:var(--muted);margin-bottom:10px}
+
+/* booking */
+.book{background:var(--accent);color:var(--on-accent);border-radius:44px;padding:48px 28px;text-align:center;box-shadow:var(--shadow-lg)}
+.book h2{color:var(--on-accent)}
+.book p{color:var(--on-accent);max-width:520px;margin:0 auto 26px}
+.book .eyebrow{color:var(--on-accent);opacity:.9}
+.btn-light{background:var(--surface);color:var(--text);border-color:var(--surface)}
+.btn-light:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.hours{margin-top:26px;font-weight:500}
+
+/* faq */
+.faq{max-width:800px;display:grid;gap:12px}
+details{background:var(--bg);border-radius:22px;padding:4px 24px;box-shadow:var(--shadow);transition:transform .25s}
+details:hover{transform:translateY(-2px)}
+summary{cursor:pointer;font-weight:700;padding:18px 28px 18px 0;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-size:20px;line-height:1}
+details[open] summary::after{content:"−"}
+details p{color:var(--muted);padding-bottom:20px}
+
+/* contacts */
+.contacts{display:grid;gap:28px}
+.info{display:grid;gap:18px;align-content:start}
+.row{display:flex;gap:14px;align-items:flex-start}
+.row .ico{width:48px;height:48px;border-radius:16px;margin:0;flex:none}
+.row .ico svg{width:24px;height:24px}
+.row small{display:block;color:var(--muted);font-size:14px}
+.row a{text-decoration:none;font-weight:700}
+.row a:hover{text-decoration:underline}
+.map{border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:var(--surface)}
+.map iframe{display:block}
+
+footer{background:var(--text);color:var(--bg);padding:40px 0;text-align:center}
+footer p{font-size:14px;opacity:.85;margin-top:6px}
+footer b{font-family:var(--font-head);font-size:22px}
+
+/* mobile bar */
+.bar{display:none}
+@media(max-width:768px){
+  .bar{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:var(--surface);border-top:1px solid var(--line);box-shadow:0 -8px 24px color-mix(in srgb, var(--text) 10%, transparent)}
+  .bar .btn{padding:13px 10px}
+  .hero{padding-top:32px}
+}
+@media(min-width:769px){
+  body{padding-bottom:0}
+  .s{padding:104px 0}
+  .hero-grid{grid-template-columns:1.05fr 1fr;gap:56px}
+  .perks{grid-template-columns:repeat(3,1fr)}
+  .panel.on{grid-template-columns:repeat(3,1fr)}
+  .split{grid-template-columns:1fr 1fr}
+  .contacts{grid-template-columns:.8fr 1.2fr}
+  .book{padding:72px 48px}
+  .wave{top:-79px;height:80px}
+}
+
+/* reveal */
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.js .rv.in{opacity:1;transform:none}
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .rv{opacity:1;transform:none}
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><style id="lido-palette">:root{--bg:#faf5ee;--surface:#fffaf3;--text:#3b2a1e;--muted:#7a6352;--accent:#99521a;--on-accent:#ffffff;--font-head:'Playfair Display', Georgia, serif;--font-body:'Manrope', system-ui, -apple-system, sans-serif}</style><meta content="noindex,nofollow" name="robots"/><style id="lido-dress">
+@media (max-width:440px){nav.bar a,nav.mbar a,div.mbar a,nav[aria-label="Швидкі дії"] a{min-width:0;padding-left:4px;padding-right:4px;
+ font-size:clamp(12px,3.6vw,15px);letter-spacing:0;white-space:nowrap}}
+.lido-sample{border-bottom:1px dotted currentColor;opacity:.92}
+.lido-tag{display:inline-block;vertical-align:middle;margin-left:.5em;padding:.15em .55em;border-radius:999px;
+ border:1px dashed currentColor;font:600 11px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+h1 .lido-tag,h2 .lido-tag,h3 .lido-tag{font-size:11px;letter-spacing:.06em}
+.lido-sample-row{outline:1px dashed color-mix(in srgb,currentColor 35%,transparent);outline-offset:4px;border-radius:4px}
+.lido-ph{padding:0!important;overflow:hidden;position:relative;min-height:240px}
+.lido-ph>picture,.lido-ph>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lido-about{margin:0 auto 32px;max-width:1120px;border-radius:14px;overflow:hidden;aspect-ratio:16/7}
+.lido-about picture,.lido-about img{display:block;width:100%;height:100%;object-fit:cover}
+.lido-gallery{padding:56px 0}
+.lido-gwrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lido-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lido-gitem{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.lido-gitem:first-child{grid-column:1/-1;aspect-ratio:16/8}
+.lido-gitem picture,.lido-gitem img{display:block;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.lido-grid{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.lido-gitem,.lido-gitem:first-child{aspect-ratio:auto}
+ .lido-gitem:first-child{grid-column:auto;grid-row:span 2}}
+.lido-photo-note{font-size:12px;opacity:.7;text-align:center;margin:10px 0 0}
+.lido-chip{position:fixed;right:16px;bottom:18px;z-index:60;padding:10px 16px;border-radius:999px;
+ background:var(--accent,#1f2937);color:var(--on-accent,#fff);font:600 14px/1.2 system-ui,-apple-system,sans-serif;
+ text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.lido-chip{transition:opacity .3s,transform .3s}.lido-chip.wait{opacity:0;transform:translateY(12px);pointer-events:none}
+@media(max-width:768px){.lido-chip{bottom:92px;right:12px;font-size:13px;padding:9px 14px}}
+[data-lido-hero]{background-image:linear-gradient(180deg,rgba(246,243,238,0.82),rgba(246,243,238,0.92)),url('../../assets/stock/b3b66fac80-1600.jpg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}@media(max-width:700px){[data-lido-hero]{background-image:linear-gradient(180deg,rgba(246,243,238,0.82),rgba(246,243,238,0.92)),url('../../assets/stock/b3b66fac80-800.jpg')!important}}</style><style id="lido-protect">#lido-demo-badge{position:fixed!important;top:8px;left:8px;z-index:2147483000;display:block!important;padding:3px 9px;border-radius:999px;background:rgba(17,17,17,.78);color:#fff;font:600 11px/1.4 system-ui,-apple-system,sans-serif;letter-spacing:.04em;pointer-events:none;opacity:.9}</style><meta content="0a77fc2d89" name="lido-protect"/></head>
+<body>
+<div class="demo">Демо-версія сайту</div>
+<header class="s s-bg hero" data-lido-hero="" id="top">
+<div class="wrap hero-grid">
+<div>
+<span class="pill">Ресторан · Київ</span>
+<h1 class="name">Лиса гора</h1>
+<p class="sub"><span class="lido-sample">Тут буде кілька слів про ваш ресторан — напишемо разом</span><span class="lido-tag">приклад</span></p>
+<div class="actions">
+<a class="btn btn-primary" href="tel:+380958139599">Забронювати столик</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.4532949,30.5037169" rel="noopener" target="_blank">Маршрут</a>
+</div>
+</div>
+<div aria-hidden="true" class="hero-art">
+<svg focusable="false" viewbox="0 0 400 400">
+<rect class="a-soft" height="380" rx="60" width="380" x="10" y="10"></rect>
+<circle class="a-bg" cx="200" cy="200" r="150"></circle>
+<circle class="a-line-thin" cx="200" cy="200" r="150"></circle>
+<circle class="a-soft2" cx="200" cy="200" r="112"></circle>
+<circle class="a-bg" cx="200" cy="200" r="82"></circle>
+<circle class="a-line" cx="200" cy="200" r="82"></circle>
+<circle class="a-fill" cx="172" cy="185" r="14"></circle>
+<circle class="a-soft2" cx="214" cy="170" r="10"></circle>
+<circle class="a-fill" cx="222" cy="220" r="18"></circle>
+<path class="a-line-thin" d="M168 232 q18 -14 36 0"></path>
+<path class="a-line" d="M44 120 v160 M30 120 v50 q0 20 14 20 q14 0 14 -20 v-50"></path>
+<path class="a-line" d="M356 120 q-22 30 -14 80 h14 z M356 200 v80"></path>
+<circle class="a-fill" cx="330" cy="62" r="10"></circle>
+<circle class="a-soft2" cx="62" cy="338" r="14"></circle>
+<circle class="a-fill" cx="350" cy="340" r="7"></circle>
+</svg>
+</div>
+</div>
+</header>
+<section aria-labelledby="perks-t" class="s s-surface">
+<svg aria-hidden="true" class="wave" preserveaspectratio="none" viewbox="0 0 1440 80"><path d="M0 40 C240 100 480 0 720 40 C960 80 1200 10 1440 40 V80 H0 Z"></path></svg>
+<div class="wrap">
+<div class="head rv">
+<span class="eyebrow">Чому до нас</span>
+<h2 id="perks-t">Те, за що люблять</h2>
+</div>
+<div class="perks">
+<article class="card rv">
+<div class="ico"><svg viewbox="0 0 24 24"><path d="M12 21s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.600-7 10-7 10z"></path></svg></div>
+<h3><span class="lido-sample">Тут буде ваше меню — додамо разом</span><span class="lido-tag">приклад</span></h3>
+<p><span class="lido-sample">Тут буде розповідь про ваш ресторан: що головне для гостей, чим ви відрізняєтесь. Текст підготуємо разом з вами.</span></p>
+</article>
+<article class="card rv">
+<div class="ico"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle></svg></div>
+<h3><span class="lido-sample">Короткий опис — уточнимо</span></h3>
+<p><span class="lido-sample">Короткий опис — уточнимо</span></p>
+</article>
+<article class="card rv">
+<div class="ico"><svg viewbox="0 0 24 24"><path d="M4 20c0-8 5-14 16-16-1 11-7 16-16 16z"></path><path d="M4 20c3-5 6-8 10-10"></path></svg></div>
+<h3><span class="lido-sample">Короткий опис — уточнимо</span></h3>
+<p><span class="lido-sample">Короткий опис — уточнимо</span></p>
+</article>
+</div>
+</div>
+</section>
+<section aria-labelledby="menu-t" class="s s-bg" id="menu">
+<svg aria-hidden="true" class="wave" preserveaspectratio="none" viewbox="0 0 1440 80"><path d="M0 30 C300 90 600 -10 900 40 C1100 70 1300 20 1440 40 V80 H0 Z"></path></svg>
+<div class="wrap">
+<div class="head rv">
+<span class="eyebrow">Смачно</span>
+<h2 id="menu-t">Меню<span class="lido-tag">приклад наповнення</span></h2>
+<p class="lead"><span class="lido-sample">Тут буде ваше меню — додамо разом</span><span class="lido-tag">приклад</span></p>
+</div>
+<div aria-label="Категорії меню" class="chips rv" role="tablist">
+<button aria-controls="p1" aria-selected="true" class="chip" id="t1" role="tab">Сніданки</button>
+<button aria-controls="p2" aria-selected="false" class="chip" id="t2" role="tab" tabindex="-1">Основне</button>
+<button aria-controls="p3" aria-selected="false" class="chip" id="t3" role="tab" tabindex="-1">Десерти</button>
+</div>
+<div aria-labelledby="t1" class="panel on" id="p1" role="tabpanel">
+<div class="dish"><div aria-hidden="true" class="dot">🍳</div><div class="lido-sample-row"><b><span class="lido-sample">Короткий опис — уточнимо</span></b><span><span class="lido-sample">ціна — уточнимо</span></span></div></div>
+<div class="dish"><div aria-hidden="true" class="dot">🥐</div><div class="lido-sample-row"><b><span class="lido-sample">Короткий опис — уточнимо</span></b><span><span class="lido-sample">ціна — уточнимо</span></span></div></div>
+<div class="dish"><div aria-hidden="true" class="dot">☕</div><div class="lido-sample-row"><b><span class="lido-sample">Короткий опис — уточнимо</span></b><span><span class="lido-sample">ціна — уточнимо</span></span></div></div>
+</div>
+<div aria-labelledby="t2" class="panel" hidden="" id="p2" role="tabpanel">
+<div class="dish"><div aria-hidden="true" class="dot">🍲</div><div class="lido-sample-row"><b><span class="lido-sample">Короткий опис — уточнимо</span></b><span><span class="lido-sample">ціна — уточнимо</span></span></div></div>
+<div class="dish"><div aria-hidden="true" class="dot">🥗</div><div class="lido-sample-row"><b><span class="lido-sample">Короткий опис — уточнимо</span></b><span><span class="lido-sample">ціна — уточнимо</span></span></div></div>
+<div class="dish"><div aria-hidden="true" class="dot">🍽️</div><div class="lido-sample-row"><b><span class="lido-sample">Короткий опис — уточнимо</span></b><span><span class="lido-sample">ціна — уточнимо</span></span></div></div>
+</div>
+<div aria-labelledby="t3" class="panel" hidden="" id="p3" role="tabpanel">
+<div class="dish"><div aria-hidden="true" class="dot">🍰</div><div class="lido-sample-row"><b><span class="lido-sample">Короткий опис — уточнимо</span></b><span><span class="lido-sample">ціна — уточнимо</span></span></div></div>
+<div class="dish"><div aria-hidden="true" class="dot">🍓</div><div class="lido-sample-row"><b><span class="lido-sample">Короткий опис — уточнимо</span></b><span><span class="lido-sample">ціна — уточнимо</span></span></div></div>
+<div class="dish"><div aria-hidden="true" class="dot">🍮</div><div class="lido-sample-row"><b><span class="lido-sample">Короткий опис — уточнимо</span></b><span><span class="lido-sample">ціна — уточнимо</span></span></div></div>
+</div>
+</div>
+</section>
+<section aria-labelledby="kids-t" class="s s-surface">
+<svg aria-hidden="true" class="wave" preserveaspectratio="none" viewbox="0 0 1440 80"><path d="M0 50 C200 0 500 90 760 40 C1000 0 1250 80 1440 30 V80 H0 Z"></path></svg>
+<div class="wrap split">
+<div class="rv">
+<span class="eyebrow">Атмосфера</span>
+<h2 id="kids-t">Для дітей і компаній</h2>
+<p class="lead"><span class="lido-sample">Короткий опис — уточнимо</span></p>
+
+<div class="box" style="margin-top:24px">
+<p><span class="lido-sample">Короткий опис — уточнимо</span></p>
+</div>
+</div>
+<div aria-label="Місце для фото закладу" class="ph rv lido-ph" role="img"><picture><source srcset="../../assets/stock/2b5d9e65e1-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="600" loading="lazy" src="../../assets/stock/2b5d9e65e1-800.jpg" width="800"/></picture></div>
+</div>
+</section>
+<section aria-labelledby="book-t" class="s s-bg" id="book">
+<svg aria-hidden="true" class="wave" preserveaspectratio="none" viewbox="0 0 1440 80"><path d="M0 40 C260 90 520 0 800 40 C1060 78 1260 10 1440 50 V80 H0 Z"></path></svg>
+<div class="wrap">
+<div class="book rv">
+<span class="eyebrow">Бронювання</span>
+<h2 id="book-t">Забронюйте столик</h2>
+<p>Зателефонуйте нам — підберемо зручний стіл для вас і ваших гостей.</p>
+<a class="btn btn-light" href="tel:+380958139599">Забронювати столик</a>
+
+</div>
+</div>
+</section>
+
+<section aria-labelledby="c-t" class="s s-bg" id="contacts">
+<svg aria-hidden="true" class="wave" preserveaspectratio="none" viewbox="0 0 1440 80"><path d="M0 50 C220 0 520 90 780 40 C1040 -5 1260 70 1440 30 V80 H0 Z"></path></svg>
+<div class="wrap">
+<div class="head rv">
+<span class="eyebrow">Контакти</span>
+<h2 id="c-t">Як нас знайти</h2>
+</div>
+<div class="contacts">
+<div class="info rv">
+<div class="row">
+<div class="ico"><svg viewbox="0 0 24 24"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"></path><circle cx="12" cy="10" r="2.500"></circle></svg></div>
+<div><small>Адреса</small>Київ, Бульварно-Кудрявська вулиця</div>
+</div>
+<div class="row">
+<div class="ico"><svg viewbox="0 0 24 24"><path d="M5 4h4l2 5-2.500 1.500a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></div>
+<div><small>Телефон</small><a href="tel:+380958139599">+380958139599</a></div>
+</div>
+<div class="row">
+<div class="ico"><svg viewbox="0 0 24 24"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></div>
+
+</div>
+<div class="actions" style="margin-top:6px">
+<a class="btn btn-primary" href="tel:+380958139599">Забронювати столик</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.4532949,30.5037169" rel="noopener" target="_blank">Маршрут</a>
+</div>
+</div>
+<div class="map rv">
+<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=30.49972%2C50.45079%2C30.50772%2C50.45579&amp;layer=mapnik&amp;marker=50.45329%2C30.50372" style="border:0;width:100%;height:320px" title="Карта"></iframe>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="wrap">
+<b>Лиса гора</b>
+<p>Ресторан · Київ, Бульварно-Кудрявська вулиця · <a href="tel:+380958139599">+380958139599</a></p>
+<p>Демо-версія сайту. Усі тексти, меню та фото — плейсхолдери.</p>
+</div>
+<p class="lido-photo-note">Фото для прикладу — замінимо на ваші</p></footer>
+<nav aria-label="Швидкі дії" class="bar">
+<a class="btn btn-primary" href="tel:+380958139599">Бронь</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.4532949,30.5037169" rel="noopener" target="_blank">Маршрут</a>
+</nav>
+<script>
+(function(){
+  document.documentElement.classList.add('js');
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:.12});
+    els.forEach(function(el){io.observe(el);});
+  }else{els.forEach(function(el){el.classList.add('in');});}
+
+  var tabs=[].slice.call(document.querySelectorAll('.chip'));
+  function select(t){
+    tabs.forEach(function(x){
+      var on=x===t;
+      x.setAttribute('aria-selected',on);
+      x.tabIndex=on?0:-1;
+      var p=document.getElementById(x.getAttribute('aria-controls'));
+      p.hidden=!on;
+      p.classList.toggle('on',on);
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){select(t);});
+    t.addEventListener('keydown',function(e){
+      var n=null;
+      if(e.key==='ArrowRight')n=tabs[(i+1)%tabs.length];
+      if(e.key==='ArrowLeft')n=tabs[(i-1+tabs.length)%tabs.length];
+      if(n){n.focus();select(n);e.preventDefault();}
+    });
+  });
+})();
+</script>
+<script id="lido-fit">(function(){function fit(){var w=document.documentElement.clientWidth;document.querySelectorAll('h1').forEach(function(h){h.style.fontSize='';var s=parseFloat(getComputedStyle(h).fontSize),i=0;while(i<40&&s>16&&(h.scrollWidth>h.clientWidth+1||h.getBoundingClientRect().right>w+1)){s*=0.93;h.style.fontSize=s+'px';i++}})}addEventListener('load',fit);addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit)})();</script><a class="lido-chip" href="../">← Усі стилі</a><script id="lido-chip-js">(function(){var c=document.querySelector('.lido-chip');if(!c)return;c.classList.add('wait');function f(){c.classList.toggle('wait',scrollY<innerHeight*.6)}addEventListener('scroll',f,{passive:true});f()})();</script><script id="lido-badge-js">(function(){var T="Демо-версія";function has(){var b=document.body;return b&&(b.textContent||'').toLowerCase().indexOf('демо-верс')>-1}var q=0;function fix(){q=0;var b=document.body;if(!b||has())return;var d=document.createElement('div');d.id='lido-demo-badge';d.setAttribute('role','note');d.textContent=T;b.appendChild(d)}function soon(){if(!q){q=1;setTimeout(fix,300)}}addEventListener('DOMContentLoaded',fix);if(window.MutationObserver)new MutationObserver(soon).observe(document.documentElement,{childList:true,subtree:true,characterData:true})})();</script></body>
+</html>

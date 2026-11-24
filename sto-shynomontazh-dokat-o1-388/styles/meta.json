@@ -1,0 +1,20 @@
+{
+ "current": "sto-harazh|",
+ "items": [
+  {
+   "n": 1,
+   "slug": "avtopylot-avto",
+   "palette": "",
+   "name": "Класичний",
+   "who": "спокійна перевірена класика"
+  },
+  {
+   "n": 2,
+   "slug": "sto-harazh",
+   "palette": "premium_dark",
+   "name": "Темна елегантність",
+   "who": "для вечірніх і преміальних місць"
+  }
+ ],
+ "protect": "0a77fc2d89"
+}

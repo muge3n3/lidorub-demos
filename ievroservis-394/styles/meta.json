@@ -1,0 +1,20 @@
+{
+ "current": "avtopylot-avto|",
+ "items": [
+  {
+   "n": 1,
+   "slug": "sto-harazh",
+   "palette": "",
+   "name": "Сталь і вогонь",
+   "who": "строго, впевнено, по-чоловічому"
+  },
+  {
+   "n": 2,
+   "slug": "sto-harazh",
+   "palette": "premium_dark",
+   "name": "Темна елегантність",
+   "who": "для вечірніх і преміальних місць"
+  }
+ ],
+ "protect": "0a77fc2d89"
+}

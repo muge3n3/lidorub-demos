@@ -1,0 +1,34 @@
+{
+ "current": "fastfud-iaskravyi|warm_craft",
+ "items": [
+  {
+   "n": 1,
+   "slug": "fastfud-strit-minimal",
+   "palette": "",
+   "name": "Сталь і вогонь",
+   "who": "строго, впевнено, по-чоловічому"
+  },
+  {
+   "n": 2,
+   "slug": "fastfud-iaskravyi",
+   "palette": "bright_young",
+   "name": "Яскравий і сміливий",
+   "who": "для молодої аудиторії та швидкого сервісу"
+  },
+  {
+   "n": 3,
+   "slug": "fastfud-strit-minimal",
+   "palette": "neon_night",
+   "name": "Неонова ніч",
+   "who": "для барів і нічного життя"
+  },
+  {
+   "n": 4,
+   "slug": "fastfud-iaskravyi",
+   "palette": "minimal",
+   "name": "Сучасний мінімал",
+   "who": "коли хочеться чисто, світло й без зайвого"
+  }
+ ],
+ "protect": "0a77fc2d89"
+}

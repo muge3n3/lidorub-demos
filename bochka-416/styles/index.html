@@ -1,0 +1,31 @@
+<!DOCTYPE html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Оберіть стиль сайту — Бочка</title>
+<style>
+:root{--bg:#f6f4f0;--card:#fff;--text:#1d1b18;--muted:#5f5a52;--accent:#1d1b18;--line:#e4dfd6}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:40px 16px 64px}
+.wrap{max-width:1180px;margin:0 auto}
+.top{text-align:center;margin-bottom:36px}
+.kicker{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+h1{font-size:clamp(28px,5vw,44px);line-height:1.1;margin:10px 0 12px;letter-spacing:-.01em}
+.top p{color:var(--muted);max-width:560px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:18px;display:flex;flex-direction:column;gap:16px}
+.phone{display:block;position:relative;border-radius:30px;border:8px solid #16151a;background:#16151a;overflow:hidden;aspect-ratio:390/844;
+ box-shadow:0 18px 40px rgba(0,0,0,.14)}
+.phone img{display:block;width:100%;height:100%;object-fit:cover;object-position:top}
+.phone iframe{position:absolute;top:0;left:0;width:390px;height:844px;border:0;transform-origin:0 0;pointer-events:none}
+.txt h2{font-size:19px;line-height:1.25;margin:4px 0}
+.txt p{color:var(--muted);font-size:14px}
+.badge{display:inline-block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);border-radius:999px;padding:2px 9px;color:var(--muted)}
+.open{display:inline-block;margin-top:12px;padding:10px 18px;border-radius:999px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:14px}
+.open:focus-visible,.phone:focus-visible{outline:3px solid #2f5bea;outline-offset:3px}
+.foot{text-align:center;color:var(--muted);font-size:13px;margin-top:40px}
+</style></head><body><main class="wrap">
+<header class="top"><div class="kicker">Бочка · демо-версія сайту</div><h1>Оберіть стиль сайту</h1>
+<p>Те саме наповнення — різний вигляд. Відкрийте варіанти й напишіть, який ближчий: доробимо саме його.</p></header>
+<section class="grid"><article class="card"><a class="phone" href="../" aria-label="Відкрити: Основний варіант"><img src="main.jpg" alt="Превʼю: Основний варіант" loading="lazy" width="390" height="844"></a><div class="txt"><span class="badge">зараз</span><h2>Основний варіант</h2><p>той, що ми підготували першим</p><a class="open" href="../">Відкрити →</a></div></article><article class="card"><a class="phone" href="1/" aria-label="Відкрити: Скандинавський світлий"><img src="1/shot.jpg" alt="Превʼю: Скандинавський світлий" loading="lazy" width="390" height="844"></a><div class="txt"><h2>Скандинавський світлий</h2><p>Підходить: м&#x27;які природні тони, спокійно й тепло</p><a class="open" href="1/">Відкрити →</a></div></article><article class="card"><a class="phone" href="2/" aria-label="Відкрити: Тепла класика"><img src="2/shot.jpg" alt="Превʼю: Тепла класика" loading="lazy" width="390" height="844"></a><div class="txt"><h2>Тепла класика</h2><p>Підходить: для затишних закладів, де цінують домашню атмосферу</p><a class="open" href="2/">Відкрити →</a></div></article><article class="card"><a class="phone" href="3/" aria-label="Відкрити: Темна елегантність"><img src="3/shot.jpg" alt="Превʼю: Темна елегантність" loading="lazy" width="390" height="844"></a><div class="txt"><h2>Темна елегантність</h2><p>Підходить: для вечірніх і преміальних місць</p><a class="open" href="3/">Відкрити →</a></div></article><article class="card"><a class="phone" href="4/" aria-label="Відкрити: Журнальний"><img src="4/shot.jpg" alt="Превʼю: Журнальний" loading="lazy" width="390" height="844"></a><div class="txt"><h2>Журнальний</h2><p>Підходить: стильно, з великими заголовками та фото</p><a class="open" href="4/">Відкрити →</a></div></article></section>
+<p class="foot">Фото — для прикладу, замінимо на ваші. Тексти та ціни узгодимо разом.</p>
+</main>
+<script>(function(){function fit(){document.querySelectorAll('.phone iframe').forEach(function(f){var w=f.parentNode.clientWidth;f.style.transform='scale('+(w/390)+')'})}addEventListener('resize',fit);addEventListener('load',fit);fit()})();</script>
+</body></html>

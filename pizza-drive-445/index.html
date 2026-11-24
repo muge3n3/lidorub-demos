@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Pizza Drive — Оборонна вулиця 15 | Демо-версія</title>
+<meta content="Pizza Drive, Оборонна вулиця 15. Фастфуд: гаряче і швидко. Замовляйте доставку за телефоном +380730732029." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&amp;family=Unbounded:wght@700;900&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#fffaf2;
+  --surface:#ffffff;
+  --text:#22160a;
+  --muted:#6b5643;
+  --accent:#b54708;
+  --on-accent:#ffffff;
+  --line:color-mix(in srgb, var(--text) 14%, transparent);
+  --font-head:"Unbounded", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-body:"Manrope", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --shadow:6px 6px 0 var(--text);
+  --shadow-sm:4px 4px 0 var(--text);
+  --border:3px solid var(--text);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;font-size:17px;overflow-x:hidden}
+h1,h2,h3{font-family:var(--font-head);line-height:1.05;font-weight:900}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:72px 0;position:relative}
+.alt{background:var(--surface);border-top:var(--border);border-bottom:var(--border)}
+.eyebrow{display:inline-block;font-weight:800;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.sec-title{font-size:clamp(2rem,6vw,3.4rem);margin-bottom:36px}
+.ph{display:inline-block;background:color-mix(in srgb, var(--accent) 14%, transparent);border:2px dashed var(--accent);color:var(--text);padding:2px 10px;border-radius:8px;font-weight:600}
+
+/* demo badge */
+.demo{background:var(--text);color:var(--bg);text-align:center;font-size:.8rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--font-head);font-weight:700;font-size:1rem;text-decoration:none;padding:16px 28px;border:var(--border);border-radius:999px;box-shadow:var(--shadow-sm);transition:transform .15s ease, box-shadow .15s ease;cursor:pointer}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--text)}
+.btn:active{transform:translate(3px,3px);box-shadow:1px 1px 0 var(--text)}
+.btn:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.btn-main{background:var(--accent);color:var(--on-accent)}
+.btn-alt{background:var(--surface);color:var(--text)}
+
+/* hero */
+.hero{min-height:calc(100vh - 32px);display:flex;flex-direction:column;justify-content:center;padding:56px 0 80px;overflow:hidden;
+  background:
+    radial-gradient(circle at 85% 15%, color-mix(in srgb, var(--accent) 22%, transparent) 0 22%, transparent 23%),
+    radial-gradient(circle at 10% 90%, color-mix(in srgb, var(--accent) 14%, transparent) 0 26%, transparent 27%),
+    repeating-linear-gradient(135deg, color-mix(in srgb, var(--accent) 6%, transparent) 0 14px, transparent 14px 28px),
+    var(--bg)}
+.hero .wrap{position:relative;z-index:2}
+.bubbles{position:absolute;inset:0;z-index:1;pointer-events:none}
+.bubbles svg{width:100%;height:100%}
+.b1{fill:color-mix(in srgb, var(--accent) 85%, transparent);stroke:var(--text);stroke-width:4}
+.b2{fill:var(--surface);stroke:var(--text);stroke-width:4}
+.b3{fill:color-mix(in srgb, var(--accent) 30%, transparent);stroke:var(--text);stroke-width:4}
+.b4{fill:none;stroke:var(--accent);stroke-width:6;stroke-dasharray:4 16;stroke-linecap:round}
+.kicker{display:inline-block;background:var(--surface);border:var(--border);box-shadow:var(--shadow-sm);border-radius:999px;padding:6px 16px;font-weight:800;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:24px}
+h1{font-size:clamp(3.2rem,14vw,9.5rem);letter-spacing:-.03em;text-shadow:5px 5px 0 color-mix(in srgb, var(--accent) 30%, transparent);margin-bottom:24px;max-width:9ch}
+h1::first-letter{color:var(--accent)}
+.lead{font-size:1.2rem;max-width:520px;color:var(--muted);margin-bottom:32px;font-weight:600}
+.cta{display:flex;flex-wrap:wrap;gap:16px}
+.sticker{position:absolute;z-index:3;left:-5%;right:-5%;bottom:36px;transform:rotate(-3deg);background:var(--accent);color:var(--on-accent);border-top:var(--border);border-bottom:var(--border);overflow:hidden;white-space:nowrap;box-shadow:0 6px 0 var(--text)}
+.sticker-track{display:inline-block;padding:12px 0;font-family:var(--font-head);font-weight:900;text-transform:uppercase;letter-spacing:.05em;font-size:1.05rem;animation:slide 22s linear infinite}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* steps */
+.steps{display:grid;gap:24px;grid-template-columns:1fr}
+.step{background:var(--bg);border:var(--border);border-radius:24px;box-shadow:var(--shadow);padding:28px;position:relative;transition:transform .2s ease, box-shadow .2s ease}
+.step:hover,.card:hover{transform:translate(-3px,-3px) rotate(-.6deg);box-shadow:9px 9px 0 var(--text)}
+.num{position:absolute;top:-22px;left:22px;width:50px;height:50px;border-radius:50%;background:var(--accent);color:var(--on-accent);border:var(--border);display:grid;place-items:center;font-family:var(--font-head);font-weight:900;transform:rotate(-8deg)}
+.step h3{font-size:1.4rem;margin:14px 0 10px}
+.step p{color:var(--muted)}
+.step .ph{margin-top:10px}
+
+/* menu */
+.menu-note{margin-bottom:28px;font-size:1.1rem}
+.cards{display:grid;gap:24px;grid-template-columns:1fr}
+.card{background:var(--surface);border:var(--border);border-radius:24px;box-shadow:var(--shadow);padding:20px;transition:transform .2s ease, box-shadow .2s ease}
+.pic{height:150px;border:var(--border);border-radius:16px;margin-bottom:16px;display:grid;place-items:center;font-size:3.4rem;background:
+  repeating-linear-gradient(45deg, color-mix(in srgb, var(--accent) 18%, transparent) 0 12px, color-mix(in srgb, var(--accent) 8%, transparent) 12px 24px)}
+.card h3{font-size:1.15rem;margin-bottom:8px}
+.card p{color:var(--muted);font-size:.95rem;margin-bottom:10px}
+
+/* time */
+.time-box{display:grid;gap:28px;grid-template-columns:1fr;align-items:stretch}
+.big-sticker{background:var(--accent);color:var(--on-accent);border:var(--border);border-radius:28px;box-shadow:var(--shadow);padding:36px 28px;transform:rotate(-1.5deg)}
+.big-sticker .lbl{font-weight:800;letter-spacing:.14em;text-transform:uppercase;font-size:.8rem;margin-bottom:10px}
+.big-sticker .val{font-family:var(--font-head);font-weight:900;font-size:clamp(1.6rem,5vw,2.6rem);line-height:1.15}
+.big-sticker .ph{background:var(--surface);color:var(--text);border-color:var(--text);margin-top:4px}
+.hours{background:var(--bg);border:var(--border);border-radius:28px;box-shadow:var(--shadow);padding:28px}
+.hours h3{font-size:1.4rem;margin-bottom:12px}
+
+/* atmosphere */
+.atm{display:grid;gap:28px;grid-template-columns:1fr;align-items:center}
+.photo{min-height:260px;border:var(--border);border-radius:28px;box-shadow:var(--shadow);display:grid;place-items:center;text-align:center;padding:20px;
+  background:repeating-linear-gradient(-45deg, color-mix(in srgb, var(--accent) 16%, transparent) 0 14px, color-mix(in srgb, var(--accent) 6%, var(--bg)) 14px 28px)}
+.atm h3{font-size:1.5rem;margin-bottom:12px}
+.atm p{margin-bottom:20px;color:var(--muted)}
+
+/* faq */
+.faq{display:grid;gap:16px;max-width:820px}
+details{background:var(--surface);border:var(--border);border-radius:20px;box-shadow:var(--shadow-sm);padding:0;transition:transform .15s ease}
+details:hover{transform:translate(-2px,-2px)}
+summary{cursor:pointer;list-style:none;padding:18px 22px;font-weight:800;display:flex;justify-content:space-between;gap:12px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--font-head);font-size:1.4rem;color:var(--accent)}
+details[open] summary::after{content:"−"}
+details p{padding:0 22px 20px;color:var(--muted)}
+
+/* contacts */
+.contacts{display:grid;gap:28px;grid-template-columns:1fr}
+.info{background:var(--bg);border:var(--border);border-radius:28px;box-shadow:var(--shadow);padding:28px}
+.info ul{list-style:none;display:grid;gap:14px;margin-bottom:24px}
+.info li strong{display:block;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.info a{font-weight:800;text-decoration:none;border-bottom:2px solid var(--accent)}
+.links{display:flex;flex-wrap:wrap;gap:12px}
+.mapbox{border:var(--border);border-radius:28px;box-shadow:var(--shadow);overflow:hidden;background:var(--surface)}
+.mapbox iframe{display:block}
+
+footer{background:var(--text);color:var(--bg);padding:36px 0;text-align:center;font-size:.95rem}
+footer a{color:var(--bg)}
+footer .fname{font-family:var(--font-head);font-weight:900;font-size:1.2rem;margin-bottom:6px}
+
+/* mobile bar */
+.bar{display:none}
+
+@media (min-width:700px){
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .cards{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:900px){
+  body{font-size:18px}
+  section{padding:96px 0}
+  .cards{grid-template-columns:repeat(3,1fr)}
+  .time-box{grid-template-columns:1.2fr 1fr}
+  .atm{grid-template-columns:1fr 1fr}
+  .contacts{grid-template-columns:1fr 1.3fr}
+  .hero{padding:80px 0 120px}
+}
+@media (max-width:768px){
+  body{padding-bottom:92px}
+  .bar{display:flex;gap:12px;position:fixed;left:0;right:0;bottom:0;z-index:50;padding:12px 14px;background:var(--surface);border-top:var(--border)}
+  .bar .btn{flex:1;padding:14px 10px;font-size:.9rem}
+}
+
+/* scroll reveal (CSS only) */
+@supports (animation-timeline: view()){
+  .reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+  @keyframes rise{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:none}}
+}
+.hero .wrap{animation:fade .8s ease both}
+@keyframes fade{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><style id="lido-palette">:root{--bg:#fff8f0;--surface:#ffffff;--text:#1d1235;--muted:#5a4d75;--accent:#c81d55;--on-accent:#ffffff;--font-head:'Unbounded', system-ui, -apple-system, sans-serif;--font-body:'Manrope', system-ui, -apple-system, sans-serif}</style><meta content="noindex,nofollow" name="robots"/><style id="lido-dress">
+@media (max-width:440px){nav.bar a,nav.mbar a,div.mbar a,nav[aria-label="Швидкі дії"] a{min-width:0;padding-left:4px;padding-right:4px;
+ font-size:clamp(12px,3.6vw,15px);letter-spacing:0;white-space:nowrap}}
+.lido-sample{border-bottom:1px dotted currentColor;opacity:.92}
+.lido-tag{display:inline-block;vertical-align:middle;margin-left:.5em;padding:.15em .55em;border-radius:999px;
+ border:1px dashed currentColor;font:600 11px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+h1 .lido-tag,h2 .lido-tag,h3 .lido-tag{font-size:11px;letter-spacing:.06em}
+.lido-sample-row{outline:1px dashed color-mix(in srgb,currentColor 35%,transparent);outline-offset:4px;border-radius:4px}
+.lido-ph{padding:0!important;overflow:hidden;position:relative;min-height:240px}
+.lido-ph>picture,.lido-ph>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lido-about{margin:0 auto 32px;max-width:1120px;border-radius:14px;overflow:hidden;aspect-ratio:16/7}
+.lido-about picture,.lido-about img{display:block;width:100%;height:100%;object-fit:cover}
+.lido-gallery{padding:56px 0}
+.lido-gwrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lido-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lido-gitem{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.lido-gitem:first-child{grid-column:1/-1;aspect-ratio:16/8}
+.lido-gitem picture,.lido-gitem img{display:block;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.lido-grid{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.lido-gitem,.lido-gitem:first-child{aspect-ratio:auto}
+ .lido-gitem:first-child{grid-column:auto;grid-row:span 2}}
+.lido-photo-note{font-size:12px;opacity:.7;text-align:center;margin:10px 0 0}
+.lido-chip{position:fixed;right:16px;bottom:18px;z-index:60;padding:10px 16px;border-radius:999px;
+ background:var(--accent,#1f2937);color:var(--on-accent,#fff);font:600 14px/1.2 system-ui,-apple-system,sans-serif;
+ text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.lido-chip{transition:opacity .3s,transform .3s}.lido-chip.wait{opacity:0;transform:translateY(12px);pointer-events:none}
+@media(max-width:768px){.lido-chip{bottom:92px;right:12px;font-size:13px;padding:9px 14px}}
+[data-lido-hero]{background-image:linear-gradient(180deg,rgba(255,250,242,0.82),rgba(255,250,242,0.92)),url('assets/stock/47a5a165c3-1600.jpg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}@media(max-width:700px){[data-lido-hero]{background-image:linear-gradient(180deg,rgba(255,250,242,0.82),rgba(255,250,242,0.92)),url('assets/stock/47a5a165c3-800.jpg')!important}}</style><style id="lido-protect">#lido-demo-badge{position:fixed!important;top:8px;left:8px;z-index:2147483000;display:block!important;padding:3px 9px;border-radius:999px;background:rgba(17,17,17,.78);color:#fff;font:600 11px/1.4 system-ui,-apple-system,sans-serif;letter-spacing:.04em;pointer-events:none;opacity:.9}</style><meta content="0a77fc2d89" name="lido-protect"/></head>
+<body>
+<div class="demo">Демо-версія сайту</div>
+<header class="hero" data-lido-hero="" id="top">
+<div aria-hidden="true" class="bubbles">
+<svg preserveaspectratio="xMidYMid slice" viewbox="0 0 1200 800">
+<circle class="b1" cx="1020" cy="170" r="120"></circle>
+<circle class="b2" cx="1110" cy="400" r="62"></circle>
+<circle class="b3" cx="880" cy="520" r="84"></circle>
+<circle class="b2" cx="130" cy="150" r="48"></circle>
+<circle class="b3" cx="60" cy="560" r="90"></circle>
+<circle class="b4" cx="1020" cy="170" r="160"></circle>
+<circle class="b4" cx="130" cy="150" r="80"></circle>
+</svg>
+</div>
+<div class="wrap">
+<span class="kicker">Фастфуд · Оборонна вулиця 15</span>
+<h1>Pizza Drive</h1>
+<p class="lead"><span class="ph"><span class="lido-sample">Тут буде кілька слів про ваш заклад — напишемо разом</span><span class="lido-tag">приклад</span></span></p>
+<div class="cta">
+<a class="btn btn-main" href="tel:+380730732029">📞 Замовити доставку</a>
+<a class="btn btn-alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.4380842,32.0345011" rel="noopener" target="_blank">📍 Маршрут</a>
+</div>
+</div>
+<div aria-hidden="true" class="sticker">
+<div class="sticker-track">🔥 гаряче і швидко ★ гаряче і швидко ★ гаряче і швидко ★ гаряче і швидко ★ гаряче і швидко ★ гаряче і швидко ★ гаряче і швидко ★ гаряче і швидко ★ 🔥 гаряче і швидко ★ гаряче і швидко ★ гаряче і швидко ★ гаряче і швидко ★ гаряче і швидко ★ гаряче і швидко ★ гаряче і швидко ★ гаряче і швидко ★</div>
+</div>
+</header>
+<main>
+<section class="alt" id="order">
+<div class="wrap reveal">
+<span class="eyebrow">Три способи</span>
+<h2 class="sec-title">Як замовити</h2>
+<div class="steps">
+<article class="step">
+<div class="num">1</div>
+<h3>Доставка</h3>
+<p>Оберіть страву й залиште адресу. Привеземо гарячим.</p>
+<span class="ph"><span class="lido-sample">Умови доставки — уточнимо</span></span>
+</article>
+<article class="step">
+<div class="num">2</div>
+<h3>Самовивіз</h3>
+<p>Замовте наперед і забирайте без черги. Заклад: Оборонна вулиця 15.</p>
+</article>
+<article class="step">
+<div class="num">3</div>
+<h3>Телефон</h3>
+<p>Наберіть нас, і ми все запишемо.</p>
+<a href="tel:+380730732029">+380730732029</a>
+</article>
+</div>
+</div>
+</section>
+<section id="menu">
+<div class="wrap reveal">
+<span class="eyebrow">Що смакує</span>
+<h2 class="sec-title">Меню<span class="lido-tag">приклад наповнення</span></h2>
+<p class="menu-note"><span class="ph"><span class="lido-sample">Тут буде ваше меню — додамо разом</span><span class="lido-tag">приклад</span></span></p>
+<div class="cards">
+<article class="card lido-sample-row"><div aria-hidden="true" class="pic">🌯</div><h3><span class="ph"><span class="lido-sample">Розділ меню</span></span></h3><p><span class="ph"><span class="lido-sample">Короткий опис — уточнимо</span></span></p><span class="ph"><span class="lido-sample">ціна — уточнимо</span></span></article>
+<article class="card lido-sample-row"><div aria-hidden="true" class="pic">🍔</div><h3><span class="ph"><span class="lido-sample">Розділ меню</span></span></h3><p><span class="ph"><span class="lido-sample">Короткий опис — уточнимо</span></span></p><span class="ph"><span class="lido-sample">ціна — уточнимо</span></span></article>
+<article class="card lido-sample-row"><div aria-hidden="true" class="pic">🍕</div><h3><span class="ph"><span class="lido-sample">Розділ меню</span></span></h3><p><span class="ph"><span class="lido-sample">Короткий опис — уточнимо</span></span></p><span class="ph"><span class="lido-sample">ціна — уточнимо</span></span></article>
+
+
+
+</div>
+</div>
+</section>
+
+<section id="atmosphere">
+<div class="wrap reveal">
+<span class="eyebrow">Атмосфера</span>
+<h2 class="sec-title">Заходьте в гості</h2>
+<div class="atm">
+<div class="photo lido-ph"><picture><source srcset="assets/stock/09a308fb42-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="600" loading="lazy" src="assets/stock/09a308fb42-800.jpg" width="800"/></picture></div>
+<div>
+<h3>Столик для вас</h3>
+<p><span class="ph"><span class="lido-sample">Тут буде розповідь про ваш заклад: що головне для гостей, чим ви відрізняєтесь. Текст підготуємо разом з вами.</span></span></p>
+<p>Хочете посидіти за столиком? Забронюйте його телефоном.</p>
+<a class="btn btn-main" href="tel:+380730732029">🪑 Забронювати столик</a>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contacts">
+<div class="wrap reveal">
+<span class="eyebrow">Знайдіть нас</span>
+<h2 class="sec-title">Контакти</h2>
+<div class="contacts">
+<div class="info">
+<ul>
+<li><strong>Адреса</strong>Оборонна вулиця 15</li>
+<li><strong>Телефон</strong><a href="tel:+380730732029">+380730732029</a></li>
+
+</ul>
+<div class="links">
+<a class="btn btn-main" href="tel:+380730732029">📞 Замовити доставку</a>
+<a class="btn btn-alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.4380842,32.0345011" rel="noopener" target="_blank">📍 Маршрут</a>
+</div>
+</div>
+<div class="mapbox">
+<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=32.03050%2C49.43558%2C32.03850%2C49.44058&amp;layer=mapnik&amp;marker=49.43808%2C32.03450" style="border:0;width:100%;height:320px" title="Карта"></iframe>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div class="fname">Pizza Drive</div>
+<p>Фастфуд · Оборонна вулиця 15 · <a href="tel:+380730732029">+380730732029</a></p>
+<p>Демо-версія сайту</p>
+</div>
+<p class="lido-photo-note">Фото для прикладу — замінимо на ваші</p></footer>
+<nav aria-label="Швидкі дії" class="bar">
+<a class="btn btn-main" href="tel:+380730732029">Замовити</a>
+<a class="btn btn-alt" href="https://www.google.com/maps/dir/?api=1&amp;destination=49.4380842,32.0345011" rel="noopener" target="_blank">Маршрут</a>
+</nav>
+<script id="lido-fit">(function(){function fit(){var w=document.documentElement.clientWidth;document.querySelectorAll('h1').forEach(function(h){h.style.fontSize='';var s=parseFloat(getComputedStyle(h).fontSize),i=0;while(i<40&&s>16&&(h.scrollWidth>h.clientWidth+1||h.getBoundingClientRect().right>w+1)){s*=0.93;h.style.fontSize=s+'px';i++}})}addEventListener('load',fit);addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit)})();</script><a class="lido-chip" href="styles/">Інші стилі (4) →</a><script id="lido-chip-js">(function(){var c=document.querySelector('.lido-chip');if(!c)return;c.classList.add('wait');function f(){c.classList.toggle('wait',scrollY<innerHeight*.6)}addEventListener('scroll',f,{passive:true});f()})();</script><script id="lido-badge-js">(function(){var T="Демо-версія";function has(){var b=document.body;return b&&(b.textContent||'').toLowerCase().indexOf('демо-верс')>-1}var q=0;function fix(){q=0;var b=document.body;if(!b||has())return;var d=document.createElement('div');d.id='lido-demo-badge';d.setAttribute('role','note');d.textContent=T;b.appendChild(d)}function soon(){if(!q){q=1;setTimeout(fix,300)}}addEventListener('DOMContentLoaded',fix);if(window.MutationObserver)new MutationObserver(soon).observe(document.documentElement,{childList:true,subtree:true,characterData:true})})();</script></body>
+</html>
