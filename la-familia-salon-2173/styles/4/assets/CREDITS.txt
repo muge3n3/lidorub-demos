@@ -1,0 +1,4 @@
+stock: Free manicure image — автор не указан — CC0 1.0 — https://www.rawpixel.com/image/5913229/free-manicure-image-public-domain-cc0-photo — sha256 e558405ca78b2e52
+stock: Nail Salon — DAN GAKEN IMAGES — CC0 1.0 — https://www.flickr.com/photos/37580254@N03/51416304615 — sha256 61fba2618e610b98
+stock: Hands Manicure — Tohm Brigitte — CC0 1.0 — https://stocksnap.io/photo/hands-manicure-FJBIH0V5IR — sha256 82141c4bb0478a0f
+stock: Background Fashion — Sarah Pflug — CC0 1.0 — https://stocksnap.io/photo/background-fashion-S6RLOBPAOZ — sha256 689c5befb4a95cfd

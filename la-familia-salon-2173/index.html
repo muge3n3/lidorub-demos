@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>La Familia salon — салон краси, Бровари</title>
+<meta content="La Familia salon — салон краси, Бровари, вулиця Володимира Великого 4. Запис за телефоном." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#fbf6f4;
+  --surface:#ffffff;
+  --text:#2e1f24;
+  --muted:#6e5a60;
+  --accent:#a8456a;
+  --on-accent:#ffffff;
+  --line:color-mix(in srgb, var(--text) 14%, transparent);
+  --font-head:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body:"Manrope", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.65;
+  font-size:16px;
+  -webkit-font-smoothing:antialiased;
+  padding-bottom:88px;
+}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+
+/* demo badge */
+.demo{
+  background:var(--surface);
+  border-bottom:1px solid var(--line);
+  text-align:center;
+  font-size:12px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  padding:8px 12px;
+}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:8px;
+  padding:15px 32px;
+  border-radius:999px;
+  font-family:var(--font-body);
+  font-weight:600;
+  font-size:15px;
+  letter-spacing:.04em;
+  text-decoration:none;
+  border:1px solid var(--accent);
+  transition:transform .3s ease, box-shadow .3s ease, background .3s ease, color .3s ease;
+  cursor:pointer;
+}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 28px color-mix(in srgb, var(--accent) 30%, transparent)}
+.btn-ghost{background:transparent;color:var(--accent)}
+.btn-ghost:hover{transform:translateY(-2px);background:color-mix(in srgb, var(--accent) 10%, transparent)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* hero */
+.hero{
+  position:relative;
+  min-height:calc(100vh - 34px);
+  min-height:calc(100svh - 34px);
+  display:flex;align-items:center;justify-content:center;
+  text-align:center;
+  overflow:hidden;
+  padding:56px 22px;
+  background:
+    radial-gradient(60% 50% at 15% 15%, color-mix(in srgb, var(--accent) 16%, transparent), transparent 70%),
+    radial-gradient(55% 55% at 90% 30%, color-mix(in srgb, var(--accent) 11%, transparent), transparent 70%),
+    radial-gradient(70% 50% at 50% 105%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%),
+    var(--bg);
+}
+.hero .blob{
+  position:absolute;border-radius:50%;
+  filter:blur(40px);
+  pointer-events:none;
+}
+.blob.b1{width:340px;height:340px;left:-120px;bottom:8%;background:color-mix(in srgb, var(--accent) 12%, transparent)}
+.blob.b2{width:280px;height:280px;right:-90px;top:6%;background:color-mix(in srgb, var(--accent) 9%, transparent)}
+.arch{
+  position:absolute;left:50%;top:28px;bottom:0;
+  transform:translateX(-50%);
+  width:min(620px, 96vw);height:calc(100% - 28px);
+  color:var(--accent);
+  pointer-events:none;
+}
+.arch svg{width:100%;height:100%;display:block}
+.hero-inner{position:relative;z-index:1;max-width:520px;padding:40px 0}
+.eyebrow{
+  font-size:12px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:600;
+}
+.hero h1{
+  font-family:var(--font-head);
+  font-weight:500;
+  font-size:clamp(56px, 13vw, 112px);
+  line-height:1;
+  letter-spacing:.01em;
+  margin:18px 0 14px;
+}
+.hero h1::first-letter{color:var(--accent);font-style:italic}
+.script{
+  font-family:var(--font-head);
+  font-style:italic;
+  font-size:clamp(20px, 3.4vw, 26px);
+  color:var(--muted);
+}
+.hero p.lead{margin:20px auto 30px;max-width:380px;color:var(--muted)}
+.hero .actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.hero .addr{margin-top:28px;font-size:13px;color:var(--muted);letter-spacing:.06em}
+
+/* sections */
+section{padding:96px 0;position:relative}
+.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.sec-head{text-align:center;max-width:620px;margin:0 auto 52px}
+.kicker{
+  display:block;
+  font-size:12px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--accent);
+  font-weight:600;
+  margin-bottom:12px;
+}
+h2{
+  font-family:var(--font-head);
+  font-weight:500;
+  font-size:clamp(36px, 6vw, 56px);
+  line-height:1.1;
+}
+.sub{
+  font-family:var(--font-head);
+  font-style:italic;
+  font-size:21px;
+  color:var(--muted);
+  margin-top:10px;
+}
+.orn{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:20px;color:var(--accent)}
+.orn::before,.orn::after{content:"";width:56px;height:1px;background:var(--line)}
+.orn svg{width:16px;height:16px}
+
+/* cards */
+.cards{display:grid;gap:22px;grid-template-columns:1fr}
+.card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:200px 200px 22px 22px;
+  padding:56px 28px 32px;
+  text-align:center;
+  transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease;
+}
+.alt .card{background:var(--bg)}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 22px 44px color-mix(in srgb, var(--accent) 14%, transparent);
+  border-color:color-mix(in srgb, var(--accent) 40%, transparent);
+}
+.card .ico{
+  width:64px;height:64px;margin:0 auto 18px;border-radius:50%;
+  display:grid;place-items:center;
+  font-size:28px;
+  background:color-mix(in srgb, var(--accent) 10%, transparent);
+  border:1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+.card h3{font-family:var(--font-head);font-weight:500;font-size:30px;margin-bottom:4px}
+.card .it{font-family:var(--font-head);font-style:italic;color:var(--muted);font-size:18px;margin-bottom:16px}
+.card .ph{color:var(--muted);font-size:14px;border-top:1px solid var(--line);padding-top:14px;margin-top:6px}
+.note{text-align:center;margin-top:34px;color:var(--muted);font-style:italic;font-family:var(--font-head);font-size:20px}
+
+/* steps */
+.steps{display:grid;gap:34px;grid-template-columns:1fr;counter-reset:s}
+.step{text-align:center;padding:0 10px}
+.step .num{
+  width:72px;height:72px;margin:0 auto 18px;
+  border:1px solid var(--accent);
+  border-radius:72px 72px 0 0;
+  display:grid;place-items:end center;padding-bottom:10px;
+  font-family:var(--font-head);font-size:32px;font-style:italic;color:var(--accent);
+}
+.step h3{font-family:var(--font-head);font-weight:500;font-size:28px;margin-bottom:6px}
+.step p{color:var(--muted);max-width:300px;margin:0 auto}
+
+/* team */
+.team{display:grid;gap:22px;grid-template-columns:1fr}
+.master{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:22px;
+  padding:26px;
+  text-align:center;
+  transition:transform .35s ease, box-shadow .35s ease;
+}
+.master:hover{transform:translateY(-4px);box-shadow:0 18px 36px color-mix(in srgb, var(--accent) 12%, transparent)}
+.avatar{
+  width:120px;height:150px;margin:0 auto 16px;
+  border-radius:120px 120px 14px 14px;
+  border:1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  background:linear-gradient(160deg, color-mix(in srgb, var(--accent) 18%, transparent), color-mix(in srgb, var(--accent) 4%, transparent));
+  display:grid;place-items:center;
+  color:var(--muted);font-size:13px;padding:8px;
+}
+.master .nm{font-family:var(--font-head);font-size:24px}
+.master .rl{color:var(--muted);font-size:14px}
+
+/* booking */
+.book{
+  text-align:center;
+  background:
+    radial-gradient(50% 80% at 50% 0%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%),
+    var(--bg);
+}
+.book-box{
+  max-width:720px;margin:0 auto;
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:300px 300px 28px 28px;
+  padding:80px 28px 44px;
+}
+.book-box p{color:var(--muted);max-width:420px;margin:14px auto 26px}
+.phone-big{
+  display:block;
+  font-family:var(--font-head);
+  font-size:clamp(32px, 7vw, 46px);
+  color:var(--accent);
+  text-decoration:none;
+  margin-bottom:22px;
+}
+.hours{margin-top:26px;color:var(--muted);font-size:14px;letter-spacing:.04em}
+.hours b{color:var(--text);font-weight:600}
+
+/* faq */
+.faq{max-width:760px;margin:0 auto}
+details{border-bottom:1px solid var(--line);padding:4px 0}
+summary{
+  list-style:none;cursor:pointer;
+  font-family:var(--font-head);font-size:25px;
+  padding:18px 40px 18px 0;position:relative;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";position:absolute;right:6px;top:50%;transform:translateY(-50%);
+  font-family:var(--font-body);font-size:22px;color:var(--accent);
+  transition:transform .3s ease;
+}
+details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+details p{color:var(--muted);padding:0 0 20px}
+
+/* contacts */
+.contacts{display:grid;gap:34px;grid-template-columns:1fr}
+.c-list{list-style:none;display:grid;gap:20px}
+.c-list li{border-bottom:1px solid var(--line);padding-bottom:18px}
+.c-list .lbl{display:block;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:4px}
+.c-list a{text-decoration:none}
+.c-list a:hover{color:var(--accent)}
+.c-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
+.map{
+  border:1px solid var(--line);
+  border-radius:200px 200px 18px 18px;
+  overflow:hidden;
+  background:var(--surface);
+  padding:10px;
+}
+.map iframe{display:block;border-radius:190px 190px 10px 10px}
+
+/* footer */
+footer{
+  border-top:1px solid var(--line);
+  background:var(--surface);
+  padding:40px 0 34px;
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+}
+footer .fn{font-family:var(--font-head);font-size:28px;color:var(--text);margin-bottom:4px}
+footer .fi{font-family:var(--font-head);font-style:italic;font-size:18px}
+footer p{margin-top:10px}
+
+/* mobile bar */
+.bar{display:none}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease, transform .8s ease}
+.js .reveal.in{opacity:1;transform:none}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.hero-inner{animation:rise 1s ease both}
+
+@media (min-width:640px){
+  .cards,.steps,.team{grid-template-columns:repeat(3,1fr)}
+}
+@media (min-width:900px){
+  .contacts{grid-template-columns:1fr 1.2fr;align-items:start;gap:56px}
+  .cards{gap:28px}
+}
+@media (max-width:768px){
+  section{padding:72px 0}
+  .bar{
+    display:grid;grid-template-columns:1fr 1.3fr 1fr;gap:8px;
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    background:var(--surface);
+    border-top:1px solid var(--line);
+    box-shadow:0 -10px 30px color-mix(in srgb, var(--text) 8%, transparent);
+  }
+  .bar a{
+    text-align:center;text-decoration:none;
+    padding:12px 6px;border-radius:999px;
+    font-size:14px;font-weight:600;
+    border:1px solid var(--accent);color:var(--accent);
+  }
+  .bar a.main{background:var(--accent);color:var(--on-accent)}
+}
+@media (min-width:769px){
+  body{padding-bottom:0}
+  section{padding:112px 0}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  .js .reveal{opacity:1;transform:none}
+}
+</style>
+<meta content="noindex,nofollow" name="robots"/><style id="lido-dress">
+@media (max-width:440px){nav.bar a,nav.mbar a,div.mbar a,nav[aria-label="Швидкі дії"] a{min-width:0;padding-left:4px;padding-right:4px;
+ font-size:clamp(12px,3.6vw,15px);letter-spacing:0;white-space:nowrap}}
+.lido-sample{border-bottom:1px dotted currentColor;opacity:.92}
+.lido-tag{display:inline-block;vertical-align:middle;margin-left:.5em;padding:.15em .55em;border-radius:999px;
+ border:1px dashed currentColor;font:600 11px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+h1 .lido-tag,h2 .lido-tag,h3 .lido-tag{font-size:11px;letter-spacing:.06em}
+.lido-sample-row{outline:1px dashed color-mix(in srgb,currentColor 35%,transparent);outline-offset:4px;border-radius:4px}
+.lido-ph{padding:0!important;overflow:hidden;position:relative;min-height:240px}
+.lido-ph>picture,.lido-ph>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lido-about{margin:0 auto 32px;max-width:1120px;border-radius:14px;overflow:hidden;aspect-ratio:16/7}
+.lido-about picture,.lido-about img{display:block;width:100%;height:100%;object-fit:cover}
+.lido-gallery{padding:56px 0}
+.lido-gwrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lido-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lido-gitem{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.lido-gitem:first-child{grid-column:1/-1;aspect-ratio:16/8}
+.lido-gitem picture,.lido-gitem img{display:block;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.lido-grid{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.lido-gitem,.lido-gitem:first-child{aspect-ratio:auto}
+ .lido-gitem:first-child{grid-column:auto;grid-row:span 2}}
+.lido-photo-note{font-size:12px;opacity:.7;text-align:center;margin:10px 0 0}
+.lido-chip{position:fixed;right:16px;bottom:18px;z-index:60;padding:10px 16px;border-radius:999px;
+ background:var(--accent,#1f2937);color:var(--on-accent,#fff);font:600 14px/1.2 system-ui,-apple-system,sans-serif;
+ text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.lido-chip{transition:opacity .3s,transform .3s}.lido-chip.wait{opacity:0;transform:translateY(12px);pointer-events:none}
+@media(max-width:768px){.lido-chip{bottom:92px;right:12px;font-size:13px;padding:9px 14px}}
+[data-lido-hero]{background-image:linear-gradient(180deg,rgba(251,246,244,0.82),rgba(251,246,244,0.92)),url('assets/stock/bf27ff2e21-1600.jpg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}@media(max-width:700px){[data-lido-hero]{background-image:linear-gradient(180deg,rgba(251,246,244,0.82),rgba(251,246,244,0.92)),url('assets/stock/bf27ff2e21-800.jpg')!important}}</style><style id="lido-protect">#lido-demo-badge{position:fixed!important;top:8px;left:8px;z-index:2147483000;display:block!important;padding:3px 9px;border-radius:999px;background:rgba(17,17,17,.78);color:#fff;font:600 11px/1.4 system-ui,-apple-system,sans-serif;letter-spacing:.04em;pointer-events:none;opacity:.9}</style><meta content="0a77fc2d89" name="lido-protect"/></head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+<div class="demo">Демо-версія сайту</div>
+<header class="hero" data-lido-hero="" id="top">
+<div class="blob b1"></div><div class="blob b2"></div>
+<div aria-hidden="true" class="arch">
+<svg fill="none" preserveaspectratio="none" stroke="currentColor" viewbox="0 0 600 800">
+<path d="M12 800 V310 A288 288 0 0 1 588 310 V800" stroke-width="1.2"></path>
+<path d="M38 800 V312 A262 262 0 0 1 562 312 V800" opacity=".55" stroke-width=".6"></path>
+</svg>
+</div>
+<div class="hero-inner">
+<span class="eyebrow">Салон краси · Бровари</span>
+<h1>La Familia salon</h1>
+<div class="script">краса без поспіху</div>
+<p class="lead"><span class="lido-sample">Тут буде кілька слів про ваш салон — напишемо разом</span><span class="lido-tag">приклад</span></p>
+<div class="actions">
+<a class="btn btn-primary" href="tel:+380674476232">Записатися</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.508294,30.8292577" rel="noopener" target="_blank">Маршрут</a>
+</div>
+<div class="addr">вулиця Володимира Великого 4, Бровари</div>
+</div>
+</header>
+<main>
+<section class="alt" id="services">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="kicker">Напрямки</span>
+<h2>Послуги</h2>
+<div class="sub">Три напрямки догляду</div>
+<div class="orn"><svg fill="none" stroke="currentColor" viewbox="0 0 16 16"><path d="M2 14V8a6 6 0 0 1 12 0v6" stroke-width="1"></path></svg></div>
+</div>
+<div class="cards">
+<article class="card reveal">
+<div aria-hidden="true" class="ico">💇</div>
+<h3>Волосся</h3>
+<div class="it">стрижки, догляд, колір</div>
+<p class="ph"><span class="lido-sample">Тут буде перелік послуг — додамо разом</span><span class="lido-tag">приклад</span> · Ціни</p>
+</article>
+<article class="card reveal">
+<div aria-hidden="true" class="ico">💅</div>
+<h3>Нігті</h3>
+<div class="it">манікюр і педикюр</div>
+<p class="ph"><span class="lido-sample">Короткий опис — уточнимо</span> · Ціни</p>
+</article>
+<article class="card reveal">
+<div aria-hidden="true" class="ico">🌸</div>
+<h3>Обличчя</h3>
+<div class="it">догляд і процедури</div>
+<p class="ph"><span class="lido-sample">Короткий опис — уточнимо</span> · Ціни</p>
+</article>
+</div>
+<p class="note reveal"><span class="lido-sample">Короткий опис — уточнимо</span></p>
+</div>
+</section>
+<section id="visit">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="kicker">Візит</span>
+<h2>Як проходить візит</h2>
+<div class="sub">Просто й спокійно</div>
+</div>
+<div class="steps">
+<div class="step reveal">
+<div class="num">1</div>
+<h3>Запис</h3>
+<p>Телефонуєте й обираєте зручний час.</p>
+</div>
+<div class="step reveal">
+<div class="num">2</div>
+<h3>Зустріч</h3>
+<p>Обговорюємо побажання та підбираємо процедуру.</p>
+</div>
+<div class="step reveal">
+<div class="num">3</div>
+<h3>Результат</h3>
+<p>Ви йдете з гарним настроєм і результатом.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="book" id="booking">
+<div class="wrap">
+<div class="book-box reveal">
+<span class="kicker">Запис</span>
+<h2>Запишіться на візит</h2>
+<p>Зателефонуйте — підберемо зручний час.</p>
+<a class="phone-big" href="tel:+380674476232">+380674476232</a>
+<a class="btn btn-primary" href="tel:+380674476232">Записатися</a>
+<div class="hours">Години роботи: <b>Пн–Нд 09:00–20:00</b></div>
+</div>
+</div>
+</section>
+
+<section id="contacts">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="kicker">Контакти</span>
+<h2>Чекаємо на вас</h2>
+<div class="sub">Бровари, вулиця Гоголя</div>
+</div>
+<div class="contacts">
+<div class="reveal">
+<ul class="c-list">
+<li><span class="lbl">Адреса</span>вулиця Володимира Великого 4, Бровари</li>
+<li><span class="lbl">Телефон</span><a href="tel:+380674476232">+380674476232</a></li>
+<li><span class="lbl">Години роботи</span>Пн–Нд 09:00–20:00</li>
+</ul>
+<div class="c-actions" style="margin-top:26px">
+<a class="btn btn-primary" href="tel:+380674476232">Записатися</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.508294,30.8292577" rel="noopener" target="_blank">Маршрут</a>
+</div>
+</div>
+<div class="map reveal">
+<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=30.82526%2C50.50579%2C30.83326%2C50.51079&amp;layer=mapnik&amp;marker=50.50829%2C30.82926" style="border:0;width:100%;height:320px" title="Карта"></iframe>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap lido-ph"><picture><source srcset="assets/stock/f404a5e225-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="533" loading="lazy" src="assets/stock/f404a5e225-800.jpg" width="800"/></picture></div>
+<p class="lido-photo-note">Фото для прикладу — замінимо на ваші</p></footer>
+<nav aria-label="Швидкі дії" class="bar">
+<a href="tel:+380674476232">Подзвонити</a>
+<a class="main" href="tel:+380674476232">Записатися</a>
+<a href="https://www.google.com/maps/dir/?api=1&amp;destination=50.508294,30.8292577" rel="noopener" target="_blank">Маршрут</a>
+</nav>
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}
+    });
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script id="lido-fit">(function(){function fit(){var w=document.documentElement.clientWidth;document.querySelectorAll('h1').forEach(function(h){h.style.fontSize='';var s=parseFloat(getComputedStyle(h).fontSize),i=0;while(i<40&&s>16&&(h.scrollWidth>h.clientWidth+1||h.getBoundingClientRect().right>w+1)){s*=0.93;h.style.fontSize=s+'px';i++}})}addEventListener('load',fit);addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit)})();</script><a class="lido-chip" href="styles/">Інші стилі (4) →</a><script id="lido-chip-js">(function(){var c=document.querySelector('.lido-chip');if(!c)return;c.classList.add('wait');function f(){c.classList.toggle('wait',scrollY<innerHeight*.6)}addEventListener('scroll',f,{passive:true});f()})();</script><script id="lido-badge-js">(function(){var T="Демо-версія";function has(){var b=document.body;return b&&(b.textContent||'').toLowerCase().indexOf('демо-верс')>-1}var q=0;function fix(){q=0;var b=document.body;if(!b||has())return;var d=document.createElement('div');d.id='lido-demo-badge';d.setAttribute('role','note');d.textContent=T;b.appendChild(d)}function soon(){if(!q){q=1;setTimeout(fix,300)}}addEventListener('DOMContentLoaded',fix);if(window.MutationObserver)new MutationObserver(soon).observe(document.documentElement,{childList:true,subtree:true,characterData:true})})();</script></body>
+</html>
