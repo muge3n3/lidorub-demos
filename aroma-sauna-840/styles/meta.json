@@ -1,0 +1,34 @@
+{
+ "current": "salon-krasy-liuks|scandi_light",
+ "items": [
+  {
+   "n": 1,
+   "slug": "mynymal-salon-krasy",
+   "palette": "",
+   "name": "Сучасний мінімал",
+   "who": "коли хочеться чисто, світло й без зайвого"
+  },
+  {
+   "n": 2,
+   "slug": "salon-krasy-liuks",
+   "palette": "editorial",
+   "name": "Журнальний",
+   "who": "стильно, з великими заголовками та фото"
+  },
+  {
+   "n": 3,
+   "slug": "manikiur-nizhnist",
+   "palette": "",
+   "name": "Ніжна троянда",
+   "who": "м'яко й жіночно — для краси та догляду"
+  },
+  {
+   "n": 4,
+   "slug": "masazh-spa-spokii",
+   "palette": "premium_dark",
+   "name": "Темна елегантність",
+   "who": "для вечірніх і преміальних місць"
+  }
+ ],
+ "protect": "0a77fc2d89"
+}
