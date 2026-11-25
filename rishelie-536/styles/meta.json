@@ -1,0 +1,34 @@
+{
+ "current": "restoran-simeinyi-svitlyi|warm_craft",
+ "items": [
+  {
+   "n": 1,
+   "slug": "restoran-vecheria-temnyi",
+   "palette": "",
+   "name": "Винний вечір",
+   "who": "глибокі теплі кольори — для вечері й побачень"
+  },
+  {
+   "n": 2,
+   "slug": "restoran-vecheria-temnyi",
+   "palette": "premium_dark",
+   "name": "Темна елегантність",
+   "who": "для вечірніх і преміальних місць"
+  },
+  {
+   "n": 3,
+   "slug": "restoran-simeinyi-svitlyi",
+   "palette": "editorial",
+   "name": "Журнальний",
+   "who": "стильно, з великими заголовками та фото"
+  },
+  {
+   "n": 4,
+   "slug": "restoran-vecheria-temnyi",
+   "palette": "neon_night",
+   "name": "Неонова ніч",
+   "who": "для барів і нічного життя"
+  }
+ ],
+ "protect": "0a77fc2d89"
+}
