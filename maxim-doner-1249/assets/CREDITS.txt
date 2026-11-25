@@ -1,0 +1,6 @@
+stock: Pizza 11.jpg — Kurt Kaiser — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Pizza_11.jpg — sha256 f8c5b61eb87e412b
+stock: Chicken Shawarma Bake — yanayrosen — Public Domain Mark 1.0 — https://www.flickr.com/photos/187878392@N04/51306862495 — sha256 b1766dcf2d23615b
+stock: Food Burger — Eaters Collective — CC0 1.0 — https://stocksnap.io/photo/food-burger-WYL5KWIPUD — sha256 3c475c1f4aed9263
+stock: Shawarma de frango — Tetizeraz — CC0 1.0 — https://www.flickr.com/photos/195390427@N03/52140128548 — sha256 d2755f119d30af30
+stock: Chicken Shawarma Platter - Lavash 2025-02-10.jpg — Andy Li — CC0 1.0 — https://commons.wikimedia.org/wiki/File:Chicken_Shawarma_Platter_-_Lavash_2025-02-10.jpg — sha256 909e8dfd1bed13f8
+stock: Burger Food — David Mcbee — CC0 1.0 — https://stocksnap.io/photo/burger-food-WOA0EWC9HM — sha256 b1d163ad72377c75

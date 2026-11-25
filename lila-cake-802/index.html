@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Lila Cake — Київ, Lila Cake</title>
+<meta content="Lila Cake, Київ. ." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#ffffff;--card:#ffffff;--ink:#1f1a17;--muted:#5f554d;
+  --brand:#6b3f24;--brand2:#a8693b;--accent:#f1dcc0;--line:#ece3d6;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;line-height:1.2}
+a{color:inherit}
+.wrap{width:min(1080px,92%);margin-inline:auto}
+.demo{background:var(--accent);color:var(--ink);text-align:center;font-size:.78rem;padding:6px 10px;letter-spacing:.04em;border-bottom:1px solid var(--line)}
+.demo b{background:var(--brand);color:#fff;border-radius:99px;padding:2px 10px;margin-right:6px}
+nav{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{font-family:'Playfair Display',serif;font-weight:700;color:var(--brand);text-decoration:none;font-size:1.1rem}
+nav ul{display:none;list-style:none;gap:22px}
+nav ul a{text-decoration:none;font-size:.92rem;color:var(--muted)}
+nav ul a:hover{color:var(--brand)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:99px;font-weight:600;text-decoration:none;border:2px solid transparent;transition:.2s;font-size:.98rem}
+.btn-primary{background:var(--brand);color:#fff}
+.btn-primary:hover{background:var(--brand2);transform:translateY(-2px)}
+.btn-ghost{border-color:var(--brand);color:var(--brand)}
+.btn-ghost:hover{background:var(--brand);color:#fff}
+.btn-outline{border-color:var(--brand);color:var(--brand)}
+.btn-outline:hover{background:var(--brand);color:#fff}
+.hero{position:relative;color:var(--ink);overflow:hidden;padding:84px 0 96px;background:
+  radial-gradient(circle at 80% 20%,rgba(241,220,192,.7),transparent 50%),
+  linear-gradient(135deg,#fffaf2 0%,#fbf1e2 60%,#f5e3c9 100%)}
+.hero .steam{position:absolute;right:6%;bottom:8%;font-size:8rem;opacity:.14;pointer-events:none}
+.hero small{display:inline-block;color:var(--brand2);letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;margin-bottom:14px;font-weight:600}
+.hero h1{font-size:clamp(2.3rem,8vw,4.2rem);margin-bottom:16px;max-width:14ch;color:var(--ink)}
+.hero p{max-width:46ch;color:var(--muted);margin-bottom:28px;font-size:1.05rem}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+section{padding:68px 0}
+.eyebrow{color:var(--brand2);font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+h2{font-size:clamp(1.7rem,5vw,2.4rem);color:var(--ink);margin-bottom:26px}
+.about{display:grid;gap:28px}
+.ph{border:2px dashed var(--brand2);border-radius:16px;background:repeating-linear-gradient(45deg,#fffaf2,#fffaf2 12px,#fdf3e3 12px,#fdf3e3 24px);color:var(--brand);display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;font-weight:600}
+.ph.img{min-height:240px;flex-direction:column;gap:8px;font-size:1.05rem}
+.ph.img span{font-size:2.6rem}
+.ph.txt{justify-content:flex-start;text-align:left;font-weight:500}
+.about-text p{color:var(--muted);margin-bottom:14px}
+.grid{display:grid;gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;transition:.2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(107,63,36,.1)}
+.card .ic{font-size:2rem;margin-bottom:10px}
+.card h3{font-size:1.2rem;margin-bottom:8px;color:var(--ink)}
+.card .ph{padding:10px;font-size:.9rem}
+.menu-note{margin-top:20px;color:var(--muted);font-size:.9rem}
+.alt{background:#faf6f0}
+.hours{display:grid;gap:24px}
+.hours-box{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.hours-box .big{font-family:'Playfair Display',serif;font-size:2rem;color:var(--brand);margin:6px 0}
+.row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed var(--line);font-size:.95rem}
+.row:last-child{border:0}
+.row span:last-child{font-weight:600}
+.status{display:inline-block;margin-top:14px;padding:6px 14px;border-radius:99px;font-size:.85rem;font-weight:600;background:#eee;color:var(--muted)}
+.status.open{background:#dff1de;color:#2c6a2f}
+.status.closed{background:#f6dcd8;color:#8a2c20}
+.delivery-box{display:flex;gap:18px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.delivery-box .ic{font-size:2.2rem}
+.delivery-box .ph{flex:1;min-height:90px}
+.contacts{display:grid;gap:24px}
+.clist{display:grid;gap:12px}
+.citem{display:flex;gap:14px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;text-decoration:none}
+.citem:hover{border-color:var(--brand2)}
+.citem .ci{font-size:1.5rem}
+.citem small{display:block;color:var(--muted);font-size:.78rem}
+.citem strong{font-weight:600}
+.mapbox{border-radius:20px;min-height:240px;color:var(--ink);padding:26px;display:flex;flex-direction:column;justify-content:flex-end;gap:14px;border:1px solid var(--line);background:
+  linear-gradient(rgba(255,250,242,.7),rgba(251,241,226,.92)),
+  repeating-linear-gradient(0deg,#e3d2b9 0 2px,transparent 2px 40px),
+  repeating-linear-gradient(90deg,#e3d2b9 0 2px,transparent 2px 40px),#fbf1e2}
+.mapbox h3{font-size:1.4rem}
+footer{background:#f5ece0;color:var(--muted);padding:34px 0;text-align:center;font-size:.88rem;border-top:1px solid var(--line)}
+footer .logo{color:var(--brand);display:block;margin-bottom:8px;font-size:1.2rem}
+footer p+p{margin-top:6px;opacity:.8}
+@media(min-width:760px){
+  nav ul{display:flex}
+  .about{grid-template-columns:1fr 1fr;align-items:center}
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .hours,.contacts{grid-template-columns:1fr 1fr}
+  .hero{padding:120px 0 130px}
+}
+</style>
+<meta content="noindex,nofollow" name="robots"/><style id="lido-dress">
+@media (max-width:440px){nav.bar a,nav.mbar a,div.mbar a,nav[aria-label="Швидкі дії"] a{min-width:0;padding-left:4px;padding-right:4px;
+ font-size:clamp(12px,3.6vw,15px);letter-spacing:0;white-space:nowrap}}
+.lido-sample{border-bottom:1px dotted currentColor;opacity:.92}
+.lido-tag{display:inline-block;vertical-align:middle;margin-left:.5em;padding:.15em .55em;border-radius:999px;
+ border:1px dashed currentColor;font:600 11px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+h1 .lido-tag,h2 .lido-tag,h3 .lido-tag{font-size:11px;letter-spacing:.06em}
+.lido-sample-row{outline:1px dashed color-mix(in srgb,currentColor 35%,transparent);outline-offset:4px;border-radius:4px}
+.lido-ph{padding:0!important;overflow:hidden;position:relative;min-height:240px}
+.lido-ph>picture,.lido-ph>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lido-about{margin:0 auto 32px;max-width:1120px;border-radius:14px;overflow:hidden;aspect-ratio:16/7}
+.lido-about picture,.lido-about img{display:block;width:100%;height:100%;object-fit:cover}
+.lido-gallery{padding:56px 0}
+.lido-gwrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lido-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lido-gitem{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.lido-gitem:first-child{grid-column:1/-1;aspect-ratio:16/8}
+.lido-gitem picture,.lido-gitem img{display:block;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.lido-grid{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.lido-gitem,.lido-gitem:first-child{aspect-ratio:auto}
+ .lido-gitem:first-child{grid-column:auto;grid-row:span 2}}
+.lido-photo-note{font-size:12px;opacity:.7;text-align:center;margin:10px 0 0}
+.lido-chip{position:fixed;right:16px;bottom:18px;z-index:60;padding:10px 16px;border-radius:999px;
+ background:var(--accent,#1f2937);color:var(--on-accent,#fff);font:600 14px/1.2 system-ui,-apple-system,sans-serif;
+ text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.lido-chip{transition:opacity .3s,transform .3s}.lido-chip.wait{opacity:0;transform:translateY(12px);pointer-events:none}
+@media(max-width:768px){.lido-chip{bottom:92px;right:12px;font-size:13px;padding:9px 14px}}
+[data-lido-hero]{background-image:linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,255,255,0.92)),url('assets/stock/6873d72c26-1600.jpg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}@media(max-width:700px){[data-lido-hero]{background-image:linear-gradient(180deg,rgba(255,255,255,0.82),rgba(255,255,255,0.92)),url('assets/stock/6873d72c26-800.jpg')!important}}</style><style id="lido-protect">#lido-demo-badge{position:fixed!important;top:8px;left:8px;z-index:2147483000;display:block!important;padding:3px 9px;border-radius:999px;background:rgba(17,17,17,.78);color:#fff;font:600 11px/1.4 system-ui,-apple-system,sans-serif;letter-spacing:.04em;pointer-events:none;opacity:.9}</style><meta content="0a77fc2d89" name="lido-protect"/></head>
+<body>
+
+<nav>
+<div class="wrap">
+<a class="logo" href="#top">☕ Lila Cake</a>
+<ul>
+<li><a href="#about">Про нас</a></li>
+<li><a href="#menu">Меню</a></li>
+
+<li><a href="#hours">Години</a></li>
+<li><a href="#contacts">Контакти</a></li>
+</ul>
+</div>
+</nav>
+<header class="hero" data-lido-hero="" id="top">
+<div aria-hidden="true" class="steam">☕</div>
+<div class="wrap">
+<small>Кафе · Київ</small>
+<h1>Lila Cake</h1>
+<p><span class="lido-sample">Тут буде кілька слів про вашу кав'ярню — напишемо разом</span><span class="lido-tag">приклад</span> Адреса.</p>
+<div class="cta">
+<a class="btn btn-primary" href="tel:+380674036838">📞 Зателефонувати</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.4468659,30.5092816" rel="noopener" target="_blank">📍 Прокласти маршрут</a>
+</div>
+</div>
+</header>
+<section id="about">
+<div class="wrap about">
+<div aria-label="Місце для фото закладу" class="ph img lido-ph" role="img"><picture><source srcset="assets/stock/81729bd9c8-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="532" loading="lazy" src="assets/stock/81729bd9c8-800.jpg" width="800"/></picture></div>
+<div class="about-text">
+<div class="eyebrow">Про заклад</div>
+<h2>Ласкаво просимо</h2>
+<div class="ph txt"><span class="lido-sample">Тут буде розповідь про вашу кав'ярню: що головне для гостей, чим ви відрізняєтесь. Текст підготуємо разом з вами.</span></div>
+</div>
+</div>
+</section>
+<section class="alt" id="menu">
+<div class="wrap lido-sample-row">
+<div class="eyebrow">Що ми пропонуємо</div>
+<h2>Меню та послуги<span class="lido-tag">приклад наповнення</span></h2>
+<div class="grid">
+<div class="card"><div class="ic">☕</div><h3>Кава</h3><div class="ph"><span class="lido-sample">Тут буде ваше меню — додамо разом</span><span class="lido-tag">приклад</span></div></div>
+<div class="card"><div class="ic">🫖</div><h3>Чай та напої</h3><div class="ph"><span class="lido-sample">Короткий опис — уточнимо</span></div></div>
+<div class="card"><div class="ic">🥐</div><h3>Десерти та випічка</h3><div class="ph"><span class="lido-sample">Короткий опис — уточнимо</span></div></div>
+</div>
+<p class="menu-note">Ціни: <b><span class="lido-sample">ціна — уточнимо</span></b></p>
+</div>
+</section>
+
+
+<section id="hours">
+<div class="wrap hours">
+<div>
+<div class="eyebrow">Графік</div>
+<h2>Години роботи</h2>
+<p style="color:var(--muted)">Пн–Нд 10:00–20:00</p>
+<span class="status" id="status">Перевіряємо…</span>
+</div>
+<div class="hours-box">
+<div style="color:var(--muted);font-size:.85rem">Графік</div>
+<div class="big">Пн–Нд 10:00–20:00</div>
+<div id="days"></div>
+</div>
+</div>
+</section>
+<section class="alt" id="contacts">
+<div class="wrap contacts">
+<div>
+<div class="eyebrow">Зв'яжіться з нами</div>
+<h2>Контакти</h2>
+
+</div>
+<div class="mapbox">
+<h3>Чекаємо на вас!</h3>
+
+<a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.4468659,30.5092816" rel="noopener" style="align-self:flex-start" target="_blank">🧭 Маршрут</a>
+</div>
+</div>
+</section>
+<footer>
+<div class="wrap">
+<span class="logo">☕ Lila Cake</span>
+
+<p>Демо-версія сайту · <span id="y"></span></p>
+</div>
+<p class="lido-photo-note">Фото для прикладу — замінимо на ваші</p></footer>
+<script>
+(function(){
+  document.getElementById('y').textContent=new Date().getFullYear();
+  var el=document.getElementById('status'); if(el) el.hidden=true; /* «відчинено/зачинено» — тільки за справжнім графіком */
+})();
+</script>
+<script id="lido-fit">(function(){function fit(){var w=document.documentElement.clientWidth;document.querySelectorAll('h1').forEach(function(h){h.style.fontSize='';var s=parseFloat(getComputedStyle(h).fontSize),i=0;while(i<40&&s>16&&(h.scrollWidth>h.clientWidth+1||h.getBoundingClientRect().right>w+1)){s*=0.93;h.style.fontSize=s+'px';i++}})}addEventListener('load',fit);addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit)})();</script><a class="lido-chip" href="styles/">Інші стилі (4) →</a><script id="lido-chip-js">(function(){var c=document.querySelector('.lido-chip');if(!c)return;c.classList.add('wait');function f(){c.classList.toggle('wait',scrollY<innerHeight*.6)}addEventListener('scroll',f,{passive:true});f()})();</script><script id="lido-badge-js">(function(){var T="Демо-версія";function has(){var b=document.body;return b&&(b.textContent||'').toLowerCase().indexOf('демо-верс')>-1}var q=0;function fix(){q=0;var b=document.body;if(!b||has())return;var d=document.createElement('div');d.id='lido-demo-badge';d.setAttribute('role','note');d.textContent=T;b.appendChild(d)}function soon(){if(!q){q=1;setTimeout(fix,300)}}addEventListener('DOMContentLoaded',fix);if(window.MutationObserver)new MutationObserver(soon).observe(document.documentElement,{childList:true,subtree:true,characterData:true})})();</script></body>
+</html>

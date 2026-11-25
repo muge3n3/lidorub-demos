@@ -1,0 +1,6 @@
+stock: Cafe Restaurant — donterase — CC0 1.0 — https://stocksnap.io/photo/cafe-restaurant-HOHJK6B7TD — sha256 c8d69542dfcec1ff
+stock: Coffee Latte — Drew Coffman — CC0 1.0 — https://stocksnap.io/photo/coffee-latte-D322D377AD — sha256 d2523a385d95ff40
+stock: Espresso Machine — Freestocks.org — CC0 1.0 — https://stocksnap.io/photo/espresso-machine-T2BR0Q91BM — sha256 a68c148dda5f4bf8
+stock: Coffee Cappuccino — Hello Goodbye — CC0 1.0 — https://stocksnap.io/photo/coffee-cappuccino-UXO5P8KFS5 — sha256 b7246ef8e9853b26
+stock: Cappuccino — Mustang Joe — CC0 1.0 — https://www.flickr.com/photos/63234672@N04/50544608617 — sha256 1f2c429610c2bfda
+stock: Coffee Beans — Anastasia Zhenina — CC0 1.0 — https://stocksnap.io/photo/coffee-beans-X2HTBSJDKF — sha256 94153c14520a1c1b

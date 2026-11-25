@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>B12 Candy Bar — кав'ярня, Київ</title>
+<meta content="B12 Candy Bar — кафе та кав'ярня Хрещатик, Київ. Демо-версія сайту." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#f6f3ee;
+  --surface:#fffdf9;
+  --text:#2b2a26;
+  --muted:#6a675e;
+  --accent:#506a40;
+  --on-accent:#ffffff;
+  --line:color-mix(in srgb, var(--text) 14%, transparent);
+  --font-head:"DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-body:"DM Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --radius:20px;
+  --shadow:0 10px 30px color-mix(in srgb, var(--text) 8%, transparent);
+  --shadow-lg:0 18px 44px color-mix(in srgb, var(--text) 13%, transparent);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--font-body);
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  font-size:17px;
+  padding-bottom:84px;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--font-head);font-weight:500;line-height:1.1;letter-spacing:-0.02em}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+.cap{
+  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--muted);font-weight:500;
+}
+.demo{
+  background:var(--text);color:var(--bg);
+  text-align:center;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+  padding:7px 12px;
+}
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:15px 28px;border-radius:999px;text-decoration:none;
+  font-family:var(--font-body);font-weight:500;font-size:16px;
+  border:1px solid var(--accent);
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  cursor:pointer;
+}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 24px color-mix(in srgb, var(--accent) 35%, transparent)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn-ghost:hover{transform:translateY(-2px);background:color-mix(in srgb, var(--accent) 10%, transparent);border-color:var(--accent)}
+.btn:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* hero */
+.hero{
+  min-height:calc(100vh - 31px);min-height:calc(100svh - 31px);
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;
+  background:
+    radial-gradient(ellipse at 80% 10%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 55%),
+    linear-gradient(180deg, var(--bg), color-mix(in srgb, var(--surface) 70%, var(--bg)));
+}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:linear-gradient(to right, var(--line) 1px, transparent 1px);
+  background-size:calc(100% / 4) 100%;
+  opacity:.55;
+}
+.nav{
+  position:relative;z-index:2;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:22px 0;border-bottom:1px solid var(--line);
+}
+.nav b{font-weight:700;letter-spacing:.02em}
+.nav a{text-decoration:none;color:var(--muted);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+.nav a:hover{color:var(--accent)}
+.hero-grid{
+  position:relative;z-index:1;flex:1;
+  display:grid;grid-template-columns:1fr;
+  padding-top:24px;padding-bottom:48px;gap:12px;
+}
+.hero-art{
+  justify-self:end;align-self:start;
+  width:min(62vw,420px);color:var(--accent);
+}
+.hero-art svg{width:100%;height:auto;display:block}
+.steam path{stroke-dasharray:6 10;animation:rise 6s linear infinite}
+.steam path:nth-child(2){animation-delay:-2s}
+.steam path:nth-child(3){animation-delay:-4s}
+@keyframes rise{to{stroke-dashoffset:-64}}
+.hero-text{align-self:end;max-width:640px}
+.hero h1{
+  font-size:clamp(64px,17vw,176px);
+  font-weight:500;letter-spacing:-0.045em;line-height:.9;margin:14px 0 22px;
+}
+.hero h1::first-letter{color:var(--accent)}
+.hero p.lead{font-size:19px;color:var(--muted);max-width:440px;margin-bottom:28px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.hero-meta{
+  position:relative;z-index:1;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:8px 32px;padding:16px 0;
+  font-size:13px;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;
+}
+
+/* sections */
+section{padding:72px 0}
+.s-bg{background:var(--bg)}
+.s-surface{background:var(--surface)}
+.sec-head{margin-bottom:44px;border-top:1px solid var(--line);padding-top:18px}
+.sec-head h2{font-size:clamp(34px,6vw,60px);margin-top:12px}
+.cols{display:grid;gap:18px;grid-template-columns:1fr}
+.card{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:30px 26px;box-shadow:var(--shadow);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.card:hover{transform:translateY(-4px);box-shadow:var(--shadow-lg)}
+.card .num{font-size:12px;letter-spacing:.18em;color:var(--accent);font-weight:700}
+.card h3{font-size:28px;margin:16px 0 18px}
+.ph{
+  border:1px dashed color-mix(in srgb, var(--accent) 55%, transparent);
+  background:color-mix(in srgb, var(--accent) 7%, transparent);
+  color:var(--text);border-radius:14px;padding:14px 16px;font-size:15px;margin-top:10px;
+}
+.card .ph + .ph{margin-top:8px}
+
+/* takeaway */
+.take{display:grid;gap:30px;align-items:center;grid-template-columns:1fr}
+.take-box{
+  background:var(--accent);color:var(--on-accent);
+  border-radius:28px;padding:40px 28px;box-shadow:var(--shadow-lg);
+  position:relative;overflow:hidden;
+}
+.take-box::after{
+  content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;
+  border:1px solid color-mix(in srgb, var(--on-accent) 30%, transparent);
+}
+.take-box .cap{color:color-mix(in srgb, var(--on-accent) 85%, transparent)}
+.take-box h2{font-size:clamp(32px,5.5vw,52px);margin:12px 0 14px}
+.take-box p{max-width:420px;margin-bottom:26px;color:var(--on-accent)}
+.btn-light{background:var(--surface);color:var(--text);border-color:var(--surface)}
+.btn-light:hover{transform:translateY(-2px);box-shadow:0 10px 24px color-mix(in srgb, var(--text) 25%, transparent)}
+.take-side p{color:var(--muted)}
+
+/* space */
+.space-grid{display:grid;gap:18px;grid-template-columns:1fr}
+.photo{
+  min-height:300px;border-radius:var(--radius);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:20px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--accent) 14%, transparent), color-mix(in srgb, var(--text) 5%, transparent)),
+    var(--surface);
+  box-shadow:var(--shadow);font-size:18px;
+}
+.book{
+  background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 26px;box-shadow:var(--shadow);display:flex;flex-direction:column;justify-content:space-between;gap:20px;
+}
+.book h3{font-size:28px;margin:10px 0}
+.book p{color:var(--muted)}
+
+/* faq */
+.faq{max-width:780px}
+details{border-top:1px solid var(--line);padding:4px 0}
+details:last-child{border-bottom:1px solid var(--line)}
+summary{
+  list-style:none;cursor:pointer;padding:20px 0;font-size:19px;font-weight:500;
+  display:flex;justify-content:space-between;gap:16px;align-items:center;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:24px;color:var(--accent);transition:transform .25s ease}
+details[open] summary::after{transform:rotate(45deg)}
+details .ans{padding:0 0 22px;color:var(--muted)}
+
+/* contacts */
+.contact-grid{display:grid;gap:24px;grid-template-columns:1fr}
+.info{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px}
+.info dl{display:grid;gap:20px;margin-bottom:26px}
+.info dt{margin-bottom:4px}
+.info dd{font-size:19px}
+.info dd a{text-decoration:none;border-bottom:1px solid var(--line)}
+.info dd a:hover{border-color:var(--accent);color:var(--accent)}
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--bg)}
+.map iframe{display:block}
+
+footer{background:var(--text);color:var(--bg);padding:40px 0;font-size:14px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+footer a{color:var(--bg)}
+footer .m{color:color-mix(in srgb, var(--bg) 75%, transparent)}
+
+/* mobile bar */
+.bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;display:none;gap:10px;
+  padding:12px 14px calc(12px + env(safe-area-inset-bottom));
+  background:color-mix(in srgb, var(--surface) 94%, transparent);
+  border-top:1px solid var(--line);backdrop-filter:blur(10px);
+}
+.bar .btn{flex:1;padding:14px 10px}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease, transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+.no-js .reveal{opacity:1;transform:none}
+
+@media (max-width:768px){
+  .bar{display:flex}
+}
+@media (min-width:769px){
+  body{padding-bottom:0}
+  section{padding:104px 0}
+  .hero-grid{grid-template-columns:1.1fr .9fr;padding-top:40px;padding-bottom:64px}
+  .hero-art{grid-column:2;grid-row:1;width:min(100%,460px);justify-self:end}
+  .hero-text{grid-column:1 / -1;grid-row:1;align-self:end}
+  .hero-grid{align-items:stretch}
+  .hero-art{align-self:start}
+  .cols{grid-template-columns:repeat(3,1fr)}
+  .take{grid-template-columns:1.2fr .8fr;gap:56px}
+  .take-box{padding:56px 48px}
+  .space-grid{grid-template-columns:1.5fr 1fr}
+  .photo{min-height:420px}
+  .contact-grid{grid-template-columns:.9fr 1.1fr}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700;800&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><style id="lido-palette">:root{--bg:#fffaf2;--surface:#ffffff;--text:#22160a;--muted:#6b5643;--accent:#b54708;--on-accent:#ffffff;--font-head:'Unbounded', system-ui, -apple-system, sans-serif;--font-body:'Manrope', system-ui, -apple-system, sans-serif}</style><meta content="noindex,nofollow" name="robots"/><style id="lido-dress">
+@media (max-width:440px){nav.bar a,nav.mbar a,div.mbar a,nav[aria-label="Швидкі дії"] a{min-width:0;padding-left:4px;padding-right:4px;
+ font-size:clamp(12px,3.6vw,15px);letter-spacing:0;white-space:nowrap}}
+.lido-sample{border-bottom:1px dotted currentColor;opacity:.92}
+.lido-tag{display:inline-block;vertical-align:middle;margin-left:.5em;padding:.15em .55em;border-radius:999px;
+ border:1px dashed currentColor;font:600 11px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+h1 .lido-tag,h2 .lido-tag,h3 .lido-tag{font-size:11px;letter-spacing:.06em}
+.lido-sample-row{outline:1px dashed color-mix(in srgb,currentColor 35%,transparent);outline-offset:4px;border-radius:4px}
+.lido-ph{padding:0!important;overflow:hidden;position:relative;min-height:240px}
+.lido-ph>picture,.lido-ph>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lido-about{margin:0 auto 32px;max-width:1120px;border-radius:14px;overflow:hidden;aspect-ratio:16/7}
+.lido-about picture,.lido-about img{display:block;width:100%;height:100%;object-fit:cover}
+.lido-gallery{padding:56px 0}
+.lido-gwrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lido-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lido-gitem{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.lido-gitem:first-child{grid-column:1/-1;aspect-ratio:16/8}
+.lido-gitem picture,.lido-gitem img{display:block;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.lido-grid{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.lido-gitem,.lido-gitem:first-child{aspect-ratio:auto}
+ .lido-gitem:first-child{grid-column:auto;grid-row:span 2}}
+.lido-photo-note{font-size:12px;opacity:.7;text-align:center;margin:10px 0 0}
+.lido-chip{position:fixed;right:16px;bottom:18px;z-index:60;padding:10px 16px;border-radius:999px;
+ background:var(--accent,#1f2937);color:var(--on-accent,#fff);font:600 14px/1.2 system-ui,-apple-system,sans-serif;
+ text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.lido-chip{transition:opacity .3s,transform .3s}.lido-chip.wait{opacity:0;transform:translateY(12px);pointer-events:none}
+@media(max-width:768px){.lido-chip{bottom:92px;right:12px;font-size:13px;padding:9px 14px}}
+[data-lido-hero]{background-image:linear-gradient(180deg,rgba(246,243,238,0.82),rgba(246,243,238,0.92)),url('../../assets/stock/4707a7c548-1600.jpg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}@media(max-width:700px){[data-lido-hero]{background-image:linear-gradient(180deg,rgba(246,243,238,0.82),rgba(246,243,238,0.92)),url('../../assets/stock/4707a7c548-800.jpg')!important}}</style><style id="lido-protect">#lido-demo-badge{position:fixed!important;top:8px;left:8px;z-index:2147483000;display:block!important;padding:3px 9px;border-radius:999px;background:rgba(17,17,17,.78);color:#fff;font:600 11px/1.4 system-ui,-apple-system,sans-serif;letter-spacing:.04em;pointer-events:none;opacity:.9}</style><meta content="0a77fc2d89" name="lido-protect"/></head>
+<body class="no-js">
+<script>document.body.classList.remove('no-js');</script>
+<div class="demo">Демо-версія сайту</div>
+<header class="hero" data-lido-hero="">
+<div class="wrap" style="display:flex;flex-direction:column;flex:1;position:relative;z-index:1">
+<div class="nav">
+<b>B12 Candy Bar</b>
+<a href="#contacts">Контакти</a>
+</div>
+<div class="hero-grid">
+<div aria-hidden="true" class="hero-art">
+<svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewbox="0 0 400 420">
+<g class="steam">
+<path d="M150 150 C130 120 170 100 150 70 C135 48 160 30 150 10"></path>
+<path d="M200 160 C180 125 225 105 200 70 C185 45 210 25 200 0"></path>
+<path d="M250 150 C230 120 270 100 250 70 C235 48 260 30 250 10"></path>
+</g>
+<path d="M70 190 H330 V270 C330 330 290 372 200 372 C110 372 70 330 70 270 Z" fill="color-mix(in srgb, var(--accent) 10%, transparent)"></path>
+<path d="M330 215 H350 C382 215 382 285 346 285 H326"></path>
+<ellipse cx="200" cy="190" rx="130" ry="14"></ellipse>
+<ellipse cx="200" cy="190" rx="112" ry="9" stroke-opacity=".5"></ellipse>
+<path d="M40 392 H360"></path>
+<path d="M90 392 C120 408 280 408 310 392" stroke-opacity=".5"></path>
+</svg>
+</div>
+<div class="hero-text">
+<span class="cap">Кафе / кав'ярня · Київ</span>
+<h1>B12 Candy Bar</h1>
+<p class="lead"><span class="lido-sample">Тут буде кілька слів про вашу кав'ярню — напишемо разом</span><span class="lido-tag">приклад</span></p>
+<div class="btns">
+<a class="btn btn-primary" href="tel:+380965732539">Замовити з собою</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.4684985,30.5132696" rel="noopener" target="_blank">Маршрут</a>
+</div>
+</div>
+</div>
+
+</div>
+</header>
+<section class="s-surface" id="menu">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="cap">01 — Що в нас є</span>
+<h2>Меню<span class="lido-tag">приклад наповнення</span></h2>
+</div>
+<div class="cols">
+<article class="card reveal">
+<span class="num">01</span>
+<h3>Кава</h3>
+<div class="ph"><span class="lido-sample">Тут буде ваше меню — додамо разом</span><span class="lido-tag">приклад</span></div>
+<div class="ph lido-sample-row"><span class="lido-sample">ціна — уточнимо</span></div>
+</article>
+<article class="card reveal">
+<span class="num">02</span>
+<h3>Десерти</h3>
+<div class="ph"><span class="lido-sample">Короткий опис — уточнимо</span></div>
+<div class="ph lido-sample-row"><span class="lido-sample">ціна — уточнимо</span></div>
+</article>
+
+</div>
+</div>
+</section>
+<section class="s-bg" id="takeaway">
+<div class="wrap take">
+<div class="take-box reveal">
+<span class="cap">З собою</span>
+<h2>Кава в дорогу</h2>
+<p>Зателефонуйте — ми приготуємо замовлення, а ви зайдете й заберете.</p>
+<a class="btn btn-light" href="tel:+380965732539">Замовити з собою</a>
+</div>
+<div class="take-side reveal">
+<span class="cap">Як це працює</span>
+<div class="ph"><span class="lido-sample">Короткий опис — уточнимо</span></div>
+</div>
+</div>
+</section>
+<section class="s-surface" id="space">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="cap">02 — Атмосфера</span>
+<h2></h2>
+</div>
+<div class="space-grid">
+<div class="photo reveal lido-ph"><picture><source srcset="../../assets/stock/b09eee52d3-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="533" loading="lazy" src="../../assets/stock/b09eee52d3-800.jpg" width="800"/></picture></div>
+<div class="book reveal">
+<div>
+<span class="cap">Бронювання</span>
+<h3>Столик на вашу компанію</h3>
+<p>Зателефонуйте — домовимося про час.</p>
+<div class="ph"><span class="lido-sample">Тут буде розповідь про вашу кав'ярню: що головне для гостей, чим ви відрізняєтесь. Текст підготуємо разом з вами.</span></div>
+<div class="ph lido-ph"><picture><source srcset="../../assets/stock/ed572a07c4-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="534" loading="lazy" src="../../assets/stock/ed572a07c4-800.jpg" width="800"/></picture></div>
+</div>
+<a class="btn btn-primary" href="tel:+380965732539">Забронювати столик</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="s-surface" id="contacts">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="cap">04 — Знайти нас</span>
+<h2>Контакти</h2>
+</div>
+<div class="contact-grid">
+<div class="info reveal">
+<dl>
+
+<div><dt class="cap">Телефон</dt><dd><a href="tel:+380965732539">+380965732539</a></dd></div>
+<div><dt class="cap">Години роботи</dt><dd data-hours="">Пн–Нд 12:00–22:00</dd></div>
+</dl>
+<div class="btns">
+<a class="btn btn-primary" href="tel:+380965732539">Зателефонувати</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.4684985,30.5132696" rel="noopener" target="_blank">Маршрут</a>
+</div>
+</div>
+<div class="map reveal">
+<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=30.50927%2C50.46600%2C30.51727%2C50.47100&amp;layer=mapnik&amp;marker=50.46850%2C30.51327" style="border:0;width:100%;height:320px" title="Карта"></iframe>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="wrap">
+<span>© B12 Candy Bar · Київ</span>
+<span class="m">Демо-версія сайту · <a href="tel:+380965732539">+380965732539</a></span>
+</div>
+<p class="lido-photo-note">Фото для прикладу — замінимо на ваші</p></footer>
+<nav aria-label="Швидкі дії" class="bar">
+<a class="btn btn-primary" href="tel:+380965732539">Замовити</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.4684985,30.5132696" rel="noopener" target="_blank">Маршрут</a>
+</nav>
+<script>
+(function(){
+  // Reveal on scroll
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}
+      });
+    },{threshold:.12});
+    els.forEach(function(el){io.observe(el);});
+  }else{
+    els.forEach(function(el){el.classList.add('in');});
+  }
+
+  // Render opening_hours (OSM format) in Ukrainian
+  var days=['Пн','Вт','Ср','Чт','Пт','Сб','Нд'];
+  var codes=['Mo','Tu','We','Th','Fr','Sa','Su'];
+  function fmt(raw){
+    try{
+      var parts=raw.split(';').map(function(p){
+        var m=p.trim().match(/^([A-Za-z]{2})(?:-([A-Za-z]{2}))?\s+(\d{1,2}:\d{2})-(\d{1,2}:\d{2})$/);
+        if(!m)throw 0;
+        var a=codes.indexOf(m[1]),b=m[2]?codes.indexOf(m[2]):a;
+        if(a<0||b<0)throw 0;
+        var d=(a===0&&b===6)?'Щодня':(a===b?days[a]:days[a]+'–'+days[b]);
+        return d+' '+m[3]+'–'+m[4];
+      });
+      return parts.join(', ');
+    }catch(e){return raw;}
+  }
+  document.querySelectorAll('[data-hours]').forEach(function(el){
+    var raw=el.textContent.trim();
+    el.textContent=raw?fmt(raw):'[години роботи]';
+  });
+})();
+</script>
+<script id="lido-fit">(function(){function fit(){var w=document.documentElement.clientWidth;document.querySelectorAll('h1').forEach(function(h){h.style.fontSize='';var s=parseFloat(getComputedStyle(h).fontSize),i=0;while(i<40&&s>16&&(h.scrollWidth>h.clientWidth+1||h.getBoundingClientRect().right>w+1)){s*=0.93;h.style.fontSize=s+'px';i++}})}addEventListener('load',fit);addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit)})();</script><a class="lido-chip" href="../">← Усі стилі</a><script id="lido-chip-js">(function(){var c=document.querySelector('.lido-chip');if(!c)return;c.classList.add('wait');function f(){c.classList.toggle('wait',scrollY<innerHeight*.6)}addEventListener('scroll',f,{passive:true});f()})();</script><script id="lido-badge-js">(function(){var T="Демо-версія";function has(){var b=document.body;return b&&(b.textContent||'').toLowerCase().indexOf('демо-верс')>-1}var q=0;function fix(){q=0;var b=document.body;if(!b||has())return;var d=document.createElement('div');d.id='lido-demo-badge';d.setAttribute('role','note');d.textContent=T;b.appendChild(d)}function soon(){if(!q){q=1;setTimeout(fix,300)}}addEventListener('DOMContentLoaded',fix);if(window.MutationObserver)new MutationObserver(soon).observe(document.documentElement,{childList:true,subtree:true,characterData:true})})();</script></body>
+</html>

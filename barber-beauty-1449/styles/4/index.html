@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Barber &amp; Beauty — Массаж / SPA, Київ</title>
+<meta content="Barber &amp; Beauty — масаж і SPA Івана Франка 4, Київ. Запис за телефоном." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0f1a15;
+  --surface:#18271f;
+  --text:#f1ede0;
+  --muted:#b2b8a6;
+  --accent:#e9c46a;
+  --on-accent:#1a1608;
+  --line:color-mix(in srgb, var(--text) 14%, transparent);
+  --font-head:"Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:"Manrope", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --maxw:1120px;
+  --pad:clamp(72px,10vw,128px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:var(--font-body);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* demo badge */
+.demo{
+  background:var(--surface);color:var(--muted);
+  text-align:center;font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+  padding:8px 12px;border-bottom:1px solid var(--line);
+}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:15px 30px;border-radius:999px;text-decoration:none;
+  font-family:var(--font-body);font-weight:600;font-size:16px;
+  border:1px solid transparent;cursor:pointer;
+  transition:transform .35s ease, background .35s ease, border-color .35s ease, box-shadow .35s ease;
+}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 10px 30px color-mix(in srgb, var(--accent) 28%, transparent)}
+.btn-ghost{border-color:color-mix(in srgb, var(--text) 30%, transparent);color:var(--text);background:transparent}
+.btn-ghost:hover{transform:translateY(-2px);border-color:var(--accent);background:color-mix(in srgb, var(--accent) 10%, transparent)}
+
+/* hero */
+.hero{
+  position:relative;overflow:hidden;
+  min-height:calc(100vh - 34px);min-height:calc(100svh - 34px);
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  background:
+    radial-gradient(ellipse at 50% 40%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 60%),
+    linear-gradient(180deg, var(--bg), color-mix(in srgb, var(--surface) 70%, var(--bg)));
+}
+.breath{
+  position:absolute;left:50%;top:50%;
+  width:min(78vw,620px);aspect-ratio:1;margin:calc(min(78vw,620px) / -2) 0 0 calc(min(78vw,620px) / -2);
+  border-radius:50%;pointer-events:none;
+  border:1px solid color-mix(in srgb, var(--accent) 35%, transparent);
+  background:radial-gradient(circle, color-mix(in srgb, var(--accent) 12%, transparent), transparent 68%);
+  animation:breathe 9s ease-in-out infinite;
+}
+.breath.b2{transform:scale(1.35);border-color:color-mix(in srgb, var(--text) 14%, transparent);background:none;animation:breathe2 9s ease-in-out infinite}
+.breath.b3{transform:scale(1.8);border-color:color-mix(in srgb, var(--text) 8%, transparent);background:none;animation:breathe2 9s ease-in-out infinite .6s}
+@keyframes breathe{0%,100%{transform:scale(.82);opacity:.7}50%{transform:scale(1.04);opacity:1}}
+@keyframes breathe2{0%,100%{transform:scale(1.2);opacity:.5}50%{transform:scale(1.45);opacity:1}}
+.leaf-bg{position:absolute;color:var(--accent);opacity:.28;pointer-events:none}
+.leaf-bg.l1{left:-30px;bottom:-20px;width:min(46vw,340px);transform:rotate(8deg)}
+.leaf-bg.l2{right:-30px;top:30px;width:min(40vw,300px);transform:rotate(190deg);opacity:.2}
+.hero-inner{position:relative;z-index:2;padding:72px 24px;max-width:780px}
+.eyebrow{
+  font-size:12.5px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);font-weight:600;
+}
+.brand-name{
+  font-family:var(--font-head);font-weight:300;
+  font-size:clamp(56px,13vw,128px);line-height:1;letter-spacing:-.02em;margin:22px 0 22px;
+  font-variation-settings:"opsz" 144;
+}
+.brand-name::first-letter{color:var(--accent);font-weight:400}
+.hero p.lead{color:var(--muted);font-size:clamp(17px,2.2vw,20px);max-width:520px;margin:0 auto 38px}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+.hero-meta{margin-top:34px;color:var(--muted);font-size:14px}
+
+/* sections */
+section.sec{padding:var(--pad) 0;position:relative}
+.alt{background:var(--surface)}
+.sec-head{max-width:640px;margin-bottom:56px}
+.sec-head.center{margin-left:auto;margin-right:auto;text-align:center}
+.kicker{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;display:block;margin-bottom:14px}
+h2{font-family:var(--font-head);font-weight:300;font-size:clamp(34px,5vw,54px);line-height:1.1;letter-spacing:-.01em}
+.sec-head p{color:var(--muted);margin-top:16px}
+.ph{color:var(--accent);font-weight:500}
+
+/* cards */
+.cards{display:grid;gap:22px;grid-template-columns:1fr}
+.card{
+  background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:34px 30px;
+  transition:transform .4s ease, border-color .4s ease, background .4s ease;
+}
+.card:hover{transform:translateY(-6px);border-color:color-mix(in srgb, var(--accent) 50%, transparent);background:color-mix(in srgb, var(--accent) 5%, var(--surface))}
+.card svg{width:44px;height:44px;color:var(--accent);margin-bottom:22px}
+.card h3{font-family:var(--font-head);font-weight:400;font-size:24px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:15.5px}
+.services-note{
+  margin-top:28px;border:1px dashed color-mix(in srgb, var(--accent) 50%, transparent);
+  border-radius:24px;padding:26px;text-align:center;font-size:20px;
+  font-family:var(--font-head);color:var(--accent);font-weight:300;
+}
+.masters{margin-top:64px;display:grid;gap:22px;grid-template-columns:1fr}
+.masters .box{border:1px solid var(--line);border-radius:28px;padding:30px;background:color-mix(in srgb, var(--surface) 60%, var(--bg))}
+.masters h3{font-family:var(--font-head);font-weight:400;font-size:22px;margin-bottom:10px}
+.masters p{color:var(--muted)}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.photos span{
+  aspect-ratio:1;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--accent) 18%, transparent), color-mix(in srgb, var(--text) 5%, transparent));
+  border:1px solid var(--line);
+}
+
+/* steps */
+.steps{display:grid;gap:40px;grid-template-columns:1fr;counter-reset:s}
+.step{text-align:center;position:relative;padding:0 8px}
+.step .circle{
+  width:112px;height:112px;border-radius:50%;margin:0 auto 24px;
+  border:1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--font-head);font-weight:300;font-size:44px;color:var(--accent);
+  background:radial-gradient(circle, color-mix(in srgb, var(--accent) 10%, transparent), transparent 70%);
+}
+.step h3{font-family:var(--font-head);font-weight:400;font-size:24px;margin-bottom:8px}
+.step p{color:var(--muted);max-width:300px;margin:0 auto}
+
+/* gift */
+.gift{
+  position:relative;overflow:hidden;text-align:center;
+  border:1px solid var(--line);border-radius:40px;padding:clamp(48px,8vw,88px) 24px;
+  background:
+    radial-gradient(circle at 50% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 60%),
+    var(--bg);
+}
+.gift .leaf-bg{opacity:.18}
+.gift .leaf-bg.g1{left:-20px;top:-10px;width:200px;transform:rotate(100deg)}
+.gift .leaf-bg.g2{right:-20px;bottom:-20px;width:220px;transform:rotate(-80deg)}
+.gift-in{position:relative;z-index:1;max-width:560px;margin:0 auto}
+.gift p{color:var(--muted);margin:18px 0 30px}
+
+/* booking */
+.book{display:grid;gap:36px;grid-template-columns:1fr;align-items:center}
+.book-box{
+  background:var(--surface);border:1px solid var(--line);border-radius:32px;padding:40px 32px;text-align:center;
+}
+.book .alt-bg{}
+.phone-big{display:block;font-family:var(--font-head);font-weight:300;font-size:clamp(30px,6vw,44px);text-decoration:none;margin:8px 0 24px;color:var(--text)}
+.phone-big:hover{color:var(--accent)}
+.hours{color:var(--muted);font-size:15px;margin-top:18px}
+.hours b{color:var(--text);font-weight:600}
+
+/* faq */
+.faq{max-width:760px;margin:0 auto}
+details{border-bottom:1px solid var(--line);padding:6px 0}
+summary{
+  list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:20px 0;font-family:var(--font-head);font-size:21px;font-weight:400;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:28px;font-weight:300;transition:transform .3s ease}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--muted);padding:0 0 22px;max-width:620px}
+
+/* contacts */
+.contacts{display:grid;gap:36px;grid-template-columns:1fr}
+.c-list{list-style:none;display:grid;gap:22px;margin:28px 0 32px}
+.c-list li small{display:block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:4px}
+.c-list a{text-decoration:none}
+.c-list a:hover{color:var(--accent)}
+.mapbox{border-radius:28px;overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.mapbox iframe{display:block}
+
+footer{background:var(--surface);border-top:1px solid var(--line);padding:48px 0;text-align:center;color:var(--muted);font-size:14.5px}
+footer .f-name{font-family:var(--font-head);font-weight:300;font-size:28px;color:var(--text);margin-bottom:8px}
+footer .leafline{width:64px;margin:0 auto 18px;color:var(--accent);display:block}
+
+/* sticky bar */
+.bar{display:none}
+
+/* reveal */
+.js .reveal{opacity:0;transform:translateY(26px);transition:opacity 1s ease, transform 1s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+@media (min-width:700px){
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:repeat(3,1fr)}
+  .masters{grid-template-columns:repeat(2,1fr)}
+}
+@media (min-width:960px){
+  .cards{grid-template-columns:repeat(4,1fr)}
+  .book{grid-template-columns:1.1fr 1fr;gap:64px}
+  .book-box{text-align:left}
+  .contacts{grid-template-columns:1fr 1.3fr;gap:64px;align-items:center}
+}
+@media (max-width:768px){
+  body{padding-bottom:88px;font-size:16.5px}
+  .bar{
+    display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:50;
+    padding:12px 14px calc(12px + env(safe-area-inset-bottom));
+    background:color-mix(in srgb, var(--bg) 94%, transparent);
+    border-top:1px solid var(--line);
+    backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  }
+  .bar .btn{flex:1;padding:14px 10px}
+}
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .js .reveal{opacity:1;transform:none}
+  .breath{transform:scale(.95)}
+  .breath.b2{transform:scale(1.35)}
+  .breath.b3{transform:scale(1.8)}
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;800&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><style id="lido-palette">:root{--bg:#0e0d0b;--surface:#1a1815;--text:#f3ede2;--muted:#b3a993;--accent:#c9a227;--on-accent:#14110a;--font-head:'Cormorant Garamond', Georgia, serif;--font-body:'Manrope', system-ui, -apple-system, sans-serif}</style><meta content="noindex,nofollow" name="robots"/><style id="lido-dress">
+@media (max-width:440px){nav.bar a,nav.mbar a,div.mbar a,nav[aria-label="Швидкі дії"] a{min-width:0;padding-left:4px;padding-right:4px;
+ font-size:clamp(12px,3.6vw,15px);letter-spacing:0;white-space:nowrap}}
+.lido-sample{border-bottom:1px dotted currentColor;opacity:.92}
+.lido-tag{display:inline-block;vertical-align:middle;margin-left:.5em;padding:.15em .55em;border-radius:999px;
+ border:1px dashed currentColor;font:600 11px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+h1 .lido-tag,h2 .lido-tag,h3 .lido-tag{font-size:11px;letter-spacing:.06em}
+.lido-sample-row{outline:1px dashed color-mix(in srgb,currentColor 35%,transparent);outline-offset:4px;border-radius:4px}
+.lido-ph{padding:0!important;overflow:hidden;position:relative;min-height:240px}
+.lido-ph>picture,.lido-ph>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lido-about{margin:0 auto 32px;max-width:1120px;border-radius:14px;overflow:hidden;aspect-ratio:16/7}
+.lido-about picture,.lido-about img{display:block;width:100%;height:100%;object-fit:cover}
+.lido-gallery{padding:56px 0}
+.lido-gwrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lido-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lido-gitem{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.lido-gitem:first-child{grid-column:1/-1;aspect-ratio:16/8}
+.lido-gitem picture,.lido-gitem img{display:block;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.lido-grid{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.lido-gitem,.lido-gitem:first-child{aspect-ratio:auto}
+ .lido-gitem:first-child{grid-column:auto;grid-row:span 2}}
+.lido-photo-note{font-size:12px;opacity:.7;text-align:center;margin:10px 0 0}
+.lido-chip{position:fixed;right:16px;bottom:18px;z-index:60;padding:10px 16px;border-radius:999px;
+ background:var(--accent,#1f2937);color:var(--on-accent,#fff);font:600 14px/1.2 system-ui,-apple-system,sans-serif;
+ text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.lido-chip{transition:opacity .3s,transform .3s}.lido-chip.wait{opacity:0;transform:translateY(12px);pointer-events:none}
+@media(max-width:768px){.lido-chip{bottom:92px;right:12px;font-size:13px;padding:9px 14px}}
+[data-lido-hero]{background-image:linear-gradient(180deg,rgba(15,26,21,0.74),rgba(15,26,21,0.88)),url('../../assets/stock/bde6791b80-1600.jpg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}@media(max-width:700px){[data-lido-hero]{background-image:linear-gradient(180deg,rgba(15,26,21,0.74),rgba(15,26,21,0.88)),url('../../assets/stock/bde6791b80-800.jpg')!important}}</style><style id="lido-protect">#lido-demo-badge{position:fixed!important;top:8px;left:8px;z-index:2147483000;display:block!important;padding:3px 9px;border-radius:999px;background:rgba(17,17,17,.78);color:#fff;font:600 11px/1.4 system-ui,-apple-system,sans-serif;letter-spacing:.04em;pointer-events:none;opacity:.9}</style><meta content="0a77fc2d89" name="lido-protect"/></head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+<div class="demo">Демо-версія сайту</div>
+<header class="hero" data-lido-hero="" id="top">
+<div aria-hidden="true" class="breath b3"></div>
+<div aria-hidden="true" class="breath b2"></div>
+<div aria-hidden="true" class="breath"></div>
+<svg aria-hidden="true" class="leaf-bg l1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.2" viewbox="0 0 200 260">
+<path d="M20 250C40 170 70 100 120 20"></path>
+<path d="M44 190c-28-6-40-26-42-48 24 2 40 16 42 48z"></path>
+<path d="M58 150c30-4 46-22 50-46-26 0-46 14-50 46z"></path>
+<path d="M78 110c-24-6-34-24-34-42 20 2 32 14 34 42z"></path>
+<path d="M98 70c22-2 34-16 38-34-20 0-34 10-38 34z"></path>
+</svg>
+<svg aria-hidden="true" class="leaf-bg l2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.2" viewbox="0 0 200 260">
+<path d="M20 250C40 170 70 100 120 20"></path>
+<path d="M44 190c-28-6-40-26-42-48 24 2 40 16 42 48z"></path>
+<path d="M58 150c30-4 46-22 50-46-26 0-46 14-50 46z"></path>
+<path d="M78 110c-24-6-34-24-34-42 20 2 32 14 34 42z"></path>
+</svg>
+<div class="hero-inner">
+<span class="eyebrow">Массаж / SPA · Київ</span>
+<h1 class="brand-name">Barber &amp; Beauty</h1>
+<p class="lead ph"><span class="lido-sample">Тут буде кілька слів про ваш салон — напишемо разом</span><span class="lido-tag">приклад</span></p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="tel:+380994990859">Записатися</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.45255,30.4904701" rel="noopener" target="_blank">Маршрут</a>
+</div>
+
+</div>
+</header>
+<main>
+<section class="sec" id="services">
+<div class="wrap">
+<div class="sec-head reveal">
+<span class="kicker">Послуги</span>
+<h2>Послуги<span class="lido-tag">приклад наповнення</span></h2>
+<p>Тут з’явиться перелік послуг. Поки що — місце для вашого опису.</p>
+</div>
+<div class="cards">
+<article class="card reveal lido-sample-row">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.3" viewbox="0 0 48 48"><path d="M8 40C14 24 24 12 40 8c-2 16-14 28-32 32z"></path><path d="M8 40l20-20"></path></svg>
+<h3><span class="lido-sample">Послуга</span></h3>
+<p><span class="lido-sample">Короткий опис — уточнимо</span></p>
+</article>
+<article class="card reveal lido-sample-row">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.3" viewbox="0 0 48 48"><circle cx="24" cy="24" r="16"></circle><circle cx="24" cy="24" r="8"></circle></svg>
+<h3><span class="lido-sample">Послуга</span></h3>
+<p><span class="lido-sample">Короткий опис — уточнимо</span></p>
+</article>
+<article class="card reveal lido-sample-row">
+<svg aria-hidden="true" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.3" viewbox="0 0 48 48"><path d="M24 42V12"></path><path d="M24 30c-10 0-14-6-14-14 8 0 14 4 14 14z"></path><path d="M24 22c8 0 12-5 12-12-7 0-12 4-12 12z"></path></svg>
+<h3><span class="lido-sample">Послуга</span></h3>
+<p><span class="lido-sample">Короткий опис — уточнимо</span></p>
+</article>
+
+</div>
+<div class="services-note reveal"><span class="lido-sample">Тут буде перелік послуг — додамо разом</span><span class="lido-tag">приклад</span></div>
+<div class="masters">
+<div class="box reveal">
+<h3>Майстри</h3>
+
+</div>
+<div class="box reveal lido-ph"><picture><source srcset="../../assets/stock/edc322c28b-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="534" loading="lazy" src="../../assets/stock/edc322c28b-800.jpg" width="800"/></picture></div>
+</div>
+</div>
+</section>
+<section class="sec alt" id="session">
+<div class="wrap">
+<div class="sec-head center reveal">
+<span class="kicker">Сеанс</span>
+<h2>Як проходить сеанс</h2>
+</div>
+<div class="steps">
+<div class="step reveal">
+<div class="circle">1</div>
+<h3>Запис</h3>
+<p>Телефонуєте й обираєте зручний час. Решту ми візьмемо на себе.</p>
+</div>
+<div class="step reveal">
+<div class="circle">2</div>
+<h3>Сеанс</h3>
+<p>Тиша, спокій і увага до вашого тіла. Без поспіху.</p>
+</div>
+<div class="step reveal">
+<div class="circle">3</div>
+<h3>Відпочинок</h3>
+<p>Після сеансу не поспішайте. Дайте собі хвилину, щоб видихнути.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="sec" id="gift">
+<div class="wrap">
+<div class="gift reveal">
+<svg aria-hidden="true" class="leaf-bg g1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.2" viewbox="0 0 200 260"><path d="M20 250C40 170 70 100 120 20"></path><path d="M44 190c-28-6-40-26-42-48 24 2 40 16 42 48z"></path><path d="M58 150c30-4 46-22 50-46-26 0-46 14-50 46z"></path><path d="M78 110c-24-6-34-24-34-42 20 2 32 14 34 42z"></path></svg>
+<svg aria-hidden="true" class="leaf-bg g2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.2" viewbox="0 0 200 260"><path d="M20 250C40 170 70 100 120 20"></path><path d="M44 190c-28-6-40-26-42-48 24 2 40 16 42 48z"></path><path d="M58 150c30-4 46-22 50-46-26 0-46 14-50 46z"></path><path d="M78 110c-24-6-34-24-34-42 20 2 32 14 34 42z"></path></svg>
+<div class="gift-in">
+<span class="kicker">Подарунок</span>
+<h2>Сертифікати в подарунок</h2>
+
+<a class="btn btn-ghost" href="tel:+380994990859">Дізнатися за телефоном</a>
+</div>
+</div>
+</div>
+</section>
+<section class="sec alt" id="book">
+<div class="wrap book">
+<div class="reveal">
+<span class="kicker">Запис</span>
+<h2>Запишіться на масаж</h2>
+<p style="color:var(--muted);margin-top:16px;max-width:460px">Найпростіше — зателефонувати. Підкажемо вільний час і відповімо на запитання.</p>
+</div>
+<div class="book-box reveal">
+<span class="kicker">Телефон</span>
+<a class="phone-big" href="tel:+380994990859">+380994990859</a>
+<a class="btn btn-primary" href="tel:+380994990859">Записатися</a>
+<p class="hours"><b>Години роботи:</b> <span id="hours-a">Вт–Нд 10:00–20:00</span></p>
+</div>
+</div>
+</section>
+
+<section class="sec alt" id="contacts">
+<div class="wrap contacts">
+<div class="reveal">
+<span class="kicker">Контакти</span>
+<h2>Ми поруч</h2>
+<ul class="c-list">
+
+<li><small>Телефон</small><a href="tel:+380994990859">+380994990859</a></li>
+<li><small>Години роботи</small><span id="hours-b">Вт–Нд 10:00–20:00</span></li>
+</ul>
+<a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.45255,30.4904701" rel="noopener" target="_blank">Маршрут</a>
+</div>
+<div class="mapbox reveal">
+<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=30.48647%2C50.45005%2C30.49447%2C50.45505&amp;layer=mapnik&amp;marker=50.45255%2C30.49047" style="border:0;width:100%;height:320px" title="Карта"></iframe>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<svg aria-hidden="true" class="leafline" fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.2" viewbox="0 0 64 24"><path d="M4 12h56"></path><path d="M32 12c-6-2-8-6-8-10 6 1 8 5 8 10z"></path><path d="M32 12c6 2 8 6 8 10-6-1-8-5-8-10z"></path></svg>
+<div class="f-name">Barber &amp; Beauty</div>
+
+<p style="margin-top:6px"><a href="tel:+380994990859">+380994990859</a></p>
+<p style="margin-top:18px;font-size:13px">Демо-версія сайту · © Barber &amp; Beauty</p>
+</div>
+<p class="lido-photo-note">Фото для прикладу — замінимо на ваші</p></footer>
+<nav aria-label="Швидкі дії" class="bar">
+<a class="btn btn-primary" href="tel:+380994990859">Записатися</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.45255,30.4904701" rel="noopener" target="_blank">Маршрут</a>
+</nav>
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(en){
+    en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}});
+  },{threshold:.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+<script id="lido-fit">(function(){function fit(){var w=document.documentElement.clientWidth;document.querySelectorAll('h1').forEach(function(h){h.style.fontSize='';var s=parseFloat(getComputedStyle(h).fontSize),i=0;while(i<40&&s>16&&(h.scrollWidth>h.clientWidth+1||h.getBoundingClientRect().right>w+1)){s*=0.93;h.style.fontSize=s+'px';i++}})}addEventListener('load',fit);addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit)})();</script><a class="lido-chip" href="../">← Усі стилі</a><script id="lido-chip-js">(function(){var c=document.querySelector('.lido-chip');if(!c)return;c.classList.add('wait');function f(){c.classList.toggle('wait',scrollY<innerHeight*.6)}addEventListener('scroll',f,{passive:true});f()})();</script><script id="lido-badge-js">(function(){var T="Демо-версія";function has(){var b=document.body;return b&&(b.textContent||'').toLowerCase().indexOf('демо-верс')>-1}var q=0;function fix(){q=0;var b=document.body;if(!b||has())return;var d=document.createElement('div');d.id='lido-demo-badge';d.setAttribute('role','note');d.textContent=T;b.appendChild(d)}function soon(){if(!q){q=1;setTimeout(fix,300)}}addEventListener('DOMContentLoaded',fix);if(window.MutationObserver)new MutationObserver(soon).observe(document.documentElement,{childList:true,subtree:true,characterData:true})})();</script></body>
+</html>
