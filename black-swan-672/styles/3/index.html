@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Black Swan — бар / паб, Київ</title>
+<meta content="Black Swan — крафтовий бар / паб. . Демо-версія сайту." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&amp;family=Manrope:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0f1a15;
+  --surface:#18271f;
+  --text:#f1ede0;
+  --muted:#b2b8a6;
+  --accent:#e9c46a;
+  --on-accent:#1a1608;
+  --line:color-mix(in srgb, var(--text) 14%, transparent);
+  --font-head:"Fraunces", Georgia, "Times New Roman", serif;
+  --font-body:"Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:17px;
+  line-height:1.6;
+  padding-bottom:84px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:var(--font-head);line-height:1.1;font-weight:800}
+
+/* demo strip */
+.demo{
+  background:var(--accent);
+  color:var(--on-accent);
+  text-align:center;
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:.06em;
+  padding:6px 12px;
+}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  padding:14px 26px;
+  border-radius:999px;
+  font-weight:700;font-size:16px;
+  text-decoration:none;
+  border:2px solid var(--accent);
+  transition:transform .25s ease, background .25s ease, color .25s ease, box-shadow .25s ease;
+}
+.btn-primary{background:var(--accent);color:var(--on-accent)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 24px color-mix(in srgb, var(--accent) 28%, transparent)}
+.btn-ghost{background:transparent;color:var(--accent)}
+.btn-ghost:hover{background:color-mix(in srgb, var(--accent) 16%, transparent);transform:translateY(-3px)}
+.btn:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+
+/* hero */
+.hero{
+  min-height:calc(100vh - 31px);
+  display:flex;align-items:center;
+  padding:56px 0 72px;
+  background:
+    radial-gradient(ellipse at 85% 20%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 55%),
+    repeating-linear-gradient(90deg, color-mix(in srgb, var(--text) 3%, transparent) 0 2px, transparent 2px 46px),
+    linear-gradient(180deg, var(--bg), var(--surface));
+  border-bottom:2px dashed var(--line);
+}
+.hero-grid{display:grid;gap:40px;align-items:center}
+.eyebrow{
+  text-transform:uppercase;letter-spacing:.2em;
+  font-size:12.5px;font-weight:700;color:var(--accent);
+  margin-bottom:14px;
+}
+.hero h1{
+  font-size:clamp(3rem,13vw,7rem);
+  letter-spacing:-.02em;
+  margin-bottom:20px;
+}
+.hero h1::first-letter{color:var(--accent)}
+.hero .lead{color:var(--muted);font-size:1.15rem;max-width:30em;margin-bottom:12px}
+.hero .addr{color:var(--text);font-weight:500;margin-bottom:30px;font-size:15px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.seal-box{display:flex;justify-content:center}
+.seal{
+  width:min(78vw,380px);height:auto;
+  color:var(--accent);
+  filter:drop-shadow(0 0 0 transparent);
+}
+.seal .ring{animation:spin 40s linear infinite;transform-origin:100px 100px}
+.seal text{font-family:var(--font-body);font-weight:700;font-size:14.5px;letter-spacing:.12em;text-transform:uppercase;fill:var(--accent)}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* sections */
+section.blk{padding:88px 0}
+section.alt{background:var(--surface)}
+.head{margin-bottom:40px;max-width:38em}
+.head h2{font-size:clamp(2rem,6vw,3.2rem)}
+.head p{color:var(--muted);margin-top:12px}
+.stamp-line{display:inline-block;border:2px dashed var(--accent);color:var(--accent);padding:3px 12px;border-radius:6px;transform:rotate(-2deg);font-size:12.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;margin-bottom:16px}
+
+/* chalk board */
+.board{
+  border:10px solid color-mix(in srgb, var(--accent) 38%, var(--bg));
+  outline:2px dashed var(--line);outline-offset:6px;
+  border-radius:10px;
+  background:
+    radial-gradient(ellipse at 30% 20%, color-mix(in srgb, var(--text) 6%, transparent), transparent 60%),
+    var(--bg);
+  padding:34px 26px;
+  box-shadow:inset 0 0 40px color-mix(in srgb, var(--bg) 70%, transparent);
+}
+.board h3{font-size:1.4rem;color:var(--accent);margin-bottom:6px}
+.tap-list{list-style:none;margin-top:20px}
+.tap-list li{
+  display:flex;align-items:baseline;gap:10px;
+  padding:14px 0;
+  border-bottom:2px dotted var(--line);
+  font-size:1.05rem;
+}
+.tap-list li:last-child{border-bottom:0}
+.tap-list .n{font-family:var(--font-head);color:var(--accent);font-weight:800;min-width:2ch}
+.tap-list .t{flex:1;color:var(--text)}
+.tap-list .p{color:var(--muted);font-size:.95rem;white-space:nowrap}
+.board-note{color:var(--muted);font-size:14.5px;margin-top:18px;text-align:center}
+
+/* cards */
+.grid{display:grid;gap:20px}
+.card{
+  border:2px dashed var(--line);
+  border-radius:14px;
+  padding:26px;
+  background:color-mix(in srgb, var(--text) 3%, transparent);
+  transition:transform .3s ease, border-color .3s ease, background .3s ease;
+}
+.card:hover{transform:translateY(-5px);border-color:var(--accent);background:color-mix(in srgb, var(--accent) 7%, transparent)}
+.card h3{font-size:1.25rem;margin-bottom:8px}
+.card p{color:var(--muted)}
+.ph{
+  display:block;
+  border:2px dashed var(--accent);
+  color:var(--accent);
+  border-radius:12px;
+  padding:34px 18px;
+  text-align:center;
+  font-weight:700;
+  background:color-mix(in srgb, var(--accent) 8%, transparent);
+}
+.ph.tall{min-height:240px;display:flex;align-items:center;justify-content:center}
+
+.split{display:grid;gap:26px}
+
+/* booking */
+.booking-box{
+  border:2px dashed var(--accent);
+  border-radius:20px;
+  padding:44px 26px;
+  text-align:center;
+  background:
+    radial-gradient(ellipse at 50% 0%, color-mix(in srgb, var(--accent) 12%, transparent), transparent 70%),
+    var(--bg);
+}
+.booking-box h2{font-size:clamp(2rem,6vw,3rem);margin-bottom:12px}
+.booking-box p{color:var(--muted);max-width:32em;margin:0 auto 26px}
+.hours{font-family:var(--font-head);font-size:1.6rem;color:var(--accent);margin-bottom:6px;font-weight:800}
+.hours-label{text-transform:uppercase;letter-spacing:.18em;font-size:12px;color:var(--muted);margin-bottom:4px}
+
+/* faq */
+details{border:2px dashed var(--line);border-radius:12px;padding:0 22px;margin-bottom:14px;transition:border-color .3s}
+details:hover,details[open]{border-color:var(--accent)}
+summary{cursor:pointer;list-style:none;padding:20px 0;font-weight:700;font-size:1.05rem;display:flex;justify-content:space-between;gap:14px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";color:var(--accent);font-size:1.4rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{color:var(--muted);padding-bottom:20px}
+
+/* contacts */
+.contact-list{list-style:none;display:grid;gap:14px;margin-bottom:26px}
+.contact-list li{color:var(--muted)}
+.contact-list b{display:block;color:var(--text);font-size:12px;letter-spacing:.18em;text-transform:uppercase;margin-bottom:2px}
+.contact-list a{color:var(--accent);text-decoration:none;font-weight:700}
+.contact-list a:hover{text-decoration:underline}
+.map{border:2px dashed var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+.map iframe{display:block}
+
+footer{
+  background:var(--bg);
+  border-top:2px dashed var(--line);
+  padding:36px 0;
+  color:var(--muted);
+  font-size:14.5px;
+  text-align:center;
+}
+footer .fname{font-family:var(--font-head);color:var(--text);font-size:1.3rem;font-weight:800;margin-bottom:6px}
+footer a{color:var(--accent)}
+
+/* mobile bar */
+.bar{display:none}
+@media (max-width:768px){
+  .bar{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:8px;
+    position:fixed;left:0;right:0;bottom:0;z-index:50;
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    background:var(--surface);
+    border-top:2px dashed var(--accent);
+  }
+  .bar a{
+    text-align:center;text-decoration:none;
+    padding:12px 6px;border-radius:999px;
+    font-weight:700;font-size:14.5px;
+    border:2px solid var(--accent);color:var(--accent);
+  }
+  .bar a.main{background:var(--accent);color:var(--on-accent)}
+}
+
+/* desktop */
+@media (min-width:769px){
+  body{padding-bottom:0;font-size:18px}
+  .hero-grid{grid-template-columns:1.25fr .75fr}
+  .hero h1{font-size:clamp(4.5rem,9vw,7.2rem)}
+  .grid.three{grid-template-columns:repeat(3,1fr)}
+  .grid.two{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr 1fr;align-items:start}
+  .board{padding:48px 56px}
+  .booking-box{padding:64px 40px}
+  section.blk{padding:104px 0}
+}
+
+/* reveal */
+.reveal{animation:rise .9s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@supports (animation-timeline:view()){
+  section.blk .wrap{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  .btn:hover,.card:hover{transform:none}
+}
+</style>
+<meta content="noindex,nofollow" name="robots"/><style id="lido-dress">
+@media (max-width:440px){nav.bar a,nav.mbar a,div.mbar a,nav[aria-label="Швидкі дії"] a{min-width:0;padding-left:4px;padding-right:4px;
+ font-size:clamp(12px,3.6vw,15px);letter-spacing:0;white-space:nowrap}}
+.lido-sample{border-bottom:1px dotted currentColor;opacity:.92}
+.lido-tag{display:inline-block;vertical-align:middle;margin-left:.5em;padding:.15em .55em;border-radius:999px;
+ border:1px dashed currentColor;font:600 11px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+h1 .lido-tag,h2 .lido-tag,h3 .lido-tag{font-size:11px;letter-spacing:.06em}
+.lido-sample-row{outline:1px dashed color-mix(in srgb,currentColor 35%,transparent);outline-offset:4px;border-radius:4px}
+.lido-ph{padding:0!important;overflow:hidden;position:relative;min-height:240px}
+.lido-ph>picture,.lido-ph>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lido-about{margin:0 auto 32px;max-width:1120px;border-radius:14px;overflow:hidden;aspect-ratio:16/7}
+.lido-about picture,.lido-about img{display:block;width:100%;height:100%;object-fit:cover}
+.lido-gallery{padding:56px 0}
+.lido-gwrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lido-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lido-gitem{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.lido-gitem:first-child{grid-column:1/-1;aspect-ratio:16/8}
+.lido-gitem picture,.lido-gitem img{display:block;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.lido-grid{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.lido-gitem,.lido-gitem:first-child{aspect-ratio:auto}
+ .lido-gitem:first-child{grid-column:auto;grid-row:span 2}}
+.lido-photo-note{font-size:12px;opacity:.7;text-align:center;margin:10px 0 0}
+.lido-chip{position:fixed;right:16px;bottom:18px;z-index:60;padding:10px 16px;border-radius:999px;
+ background:var(--accent,#1f2937);color:var(--on-accent,#fff);font:600 14px/1.2 system-ui,-apple-system,sans-serif;
+ text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.lido-chip{transition:opacity .3s,transform .3s}.lido-chip.wait{opacity:0;transform:translateY(12px);pointer-events:none}
+@media(max-width:768px){.lido-chip{bottom:92px;right:12px;font-size:13px;padding:9px 14px}}
+[data-lido-hero]{background-image:linear-gradient(180deg,rgba(15,26,21,0.74),rgba(15,26,21,0.88)),url('../../assets/stock/6873d72c26-1600.jpg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}@media(max-width:700px){[data-lido-hero]{background-image:linear-gradient(180deg,rgba(15,26,21,0.74),rgba(15,26,21,0.88)),url('../../assets/stock/6873d72c26-800.jpg')!important}}</style><style id="lido-protect">#lido-demo-badge{position:fixed!important;top:8px;left:8px;z-index:2147483000;display:block!important;padding:3px 9px;border-radius:999px;background:rgba(17,17,17,.78);color:#fff;font:600 11px/1.4 system-ui,-apple-system,sans-serif;letter-spacing:.04em;pointer-events:none;opacity:.9}</style><meta content="0a77fc2d89" name="lido-protect"/></head>
+<body>
+<div class="demo">Демо-версія сайту</div>
+<header class="hero" data-lido-hero="" id="top">
+<div class="wrap hero-grid">
+<div class="reveal">
+<div class="eyebrow">Кав'ярня / паб · Київ</div>
+<h1>Black Swan</h1>
+<p class="lead"><span class="lido-sample">Тут буде кілька слів про вашу кав'ярню — напишемо разом</span><span class="lido-tag">приклад</span></p>
+
+<div class="cta">
+<a class="btn btn-primary" href="#booking">Замовити з собою</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.4511895,30.5058757" rel="noopener" target="_blank">Маршрут</a>
+</div>
+</div>
+
+</div>
+</header>
+<section class="blk alt" id="taps">
+<div class="wrap">
+<div class="head">
+<span class="stamp-line">На кранах</span>
+<h2>Меню<span class="lido-tag">приклад наповнення</span></h2>
+</div>
+<div class="board">
+<h3>Сьогодні на кранах</h3>
+<p style="color:var(--muted)"><span class="lido-sample">Тут буде ваше меню — додамо разом</span><span class="lido-tag">приклад</span></p>
+<ul class="tap-list">
+<li class="lido-sample-row"><span class="n">1</span><span class="t"><span class="lido-sample">Позиція меню</span></span><span class="p"><span class="lido-sample">ціна — уточнимо</span></span></li>
+<li class="lido-sample-row"><span class="n">2</span><span class="t"><span class="lido-sample">Позиція меню</span></span><span class="p"><span class="lido-sample">ціна — уточнимо</span></span></li>
+<li class="lido-sample-row"><span class="n">3</span><span class="t"><span class="lido-sample">Позиція меню</span></span><span class="p"><span class="lido-sample">ціна — уточнимо</span></span></li>
+
+
+</ul>
+<p class="board-note"><span class="lido-sample">Розділ меню</span></p>
+</div>
+</div>
+</section>
+<section class="blk" id="kitchen">
+<div class="wrap">
+<div class="head">
+<span class="stamp-line">Кухня</span>
+<h2>Що до пива<span class="lido-tag">приклад наповнення</span></h2>
+<p><span class="lido-sample">Тут буде ваше меню — додамо разом</span><span class="lido-tag">приклад</span></p>
+</div>
+<div class="grid three">
+<article class="card lido-sample-row"><h3><span class="lido-sample">Розділ меню</span></h3><p><span class="lido-sample">Короткий опис — уточнимо</span></p><p style="margin-top:8px"><span class="lido-sample">ціна — уточнимо</span></p></article>
+<article class="card lido-sample-row"><h3><span class="lido-sample">Розділ меню</span></h3><p><span class="lido-sample">Короткий опис — уточнимо</span></p><p style="margin-top:8px"><span class="lido-sample">ціна — уточнимо</span></p></article>
+<article class="card lido-sample-row"><h3><span class="lido-sample">Розділ меню</span></h3><p><span class="lido-sample">Короткий опис — уточнимо</span></p><p style="margin-top:8px"><span class="lido-sample">ціна — уточнимо</span></p></article>
+</div>
+</div>
+</section>
+<section class="blk alt" id="evenings">
+<div class="wrap">
+<div class="head">
+<span class="stamp-line">Трансляції та вечори</span>
+<h2>Атмосфера</h2>
+<p><span class="lido-sample">Тут буде розповідь про вашу кав'ярню: що головне для гостей, чим ви відрізняєтесь. Текст підготуємо разом з вами.</span></p>
+</div>
+<div class="split lido-ph"><picture><source srcset="../../assets/stock/b09eee52d3-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="533" loading="lazy" src="../../assets/stock/b09eee52d3-800.jpg" width="800"/></picture></div>
+</div>
+</section>
+<section class="blk" id="booking">
+<div class="wrap">
+<div class="booking-box">
+<span class="stamp-line">Бронювання</span>
+<h2>Столик на вечір</h2>
+<p>Напишіть нам у соцмережах або зателефонуйте за номером . Підберемо місце для вас і вашої компанії.</p>
+<div class="hours-label">Години роботи</div>
+
+
+</div>
+</div>
+</section>
+
+<section class="blk" id="contacts">
+<div class="wrap">
+<div class="head">
+<span class="stamp-line">Контакти</span>
+<h2>Як нас знайти</h2>
+</div>
+<div class="split">
+<div>
+<ul class="contact-list">
+
+
+
+
+<li><b>Telegram</b><a href="https://t.me/" rel="noopener" target="_blank">@</a></li>
+</ul>
+<a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.4511895,30.5058757" rel="noopener" target="_blank">Маршрут</a>
+</div>
+<div class="map">
+<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=30.50188%2C50.44869%2C30.50988%2C50.45369&amp;layer=mapnik&amp;marker=50.45119%2C30.50588" style="border:0;width:100%;height:320px" title="Карта"></iframe>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="wrap">
+<div class="fname">Black Swan</div>
+
+
+<p style="margin-top:12px">Демо-версія сайту. Усі тексти в дужках — плейсхолдери.</p>
+</div>
+<p class="lido-photo-note">Фото для прикладу — замінимо на ваші</p></footer>
+
+<script id="lido-fit">(function(){function fit(){var w=document.documentElement.clientWidth;document.querySelectorAll('h1').forEach(function(h){h.style.fontSize='';var s=parseFloat(getComputedStyle(h).fontSize),i=0;while(i<40&&s>16&&(h.scrollWidth>h.clientWidth+1||h.getBoundingClientRect().right>w+1)){s*=0.93;h.style.fontSize=s+'px';i++}})}addEventListener('load',fit);addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit)})();</script><a class="lido-chip" href="../">← Усі стилі</a><script id="lido-chip-js">(function(){var c=document.querySelector('.lido-chip');if(!c)return;c.classList.add('wait');function f(){c.classList.toggle('wait',scrollY<innerHeight*.6)}addEventListener('scroll',f,{passive:true});f()})();</script><script id="lido-badge-js">(function(){var T="Демо-версія";function has(){var b=document.body;return b&&(b.textContent||'').toLowerCase().indexOf('демо-верс')>-1}var q=0;function fix(){q=0;var b=document.body;if(!b||has())return;var d=document.createElement('div');d.id='lido-demo-badge';d.setAttribute('role','note');d.textContent=T;b.appendChild(d)}function soon(){if(!q){q=1;setTimeout(fix,300)}}addEventListener('DOMContentLoaded',fix);if(window.MutationObserver)new MutationObserver(soon).observe(document.documentElement,{childList:true,subtree:true,characterData:true})})();</script></body>
+</html>

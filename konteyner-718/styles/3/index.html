@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html lang="uk">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Konteyner — бар / паб, Київ</title>
+<meta content="Konteyner — нічний бар Ярославів Вал 16. Барна карта, події, бронювання столика." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Unbounded:wght@600;800;900&amp;display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#0b0a14;
+  --surface:#15132a;
+  --text:#f1efff;
+  --muted:#a9a4cf;
+  --accent:#ff3fa4;
+  --on-accent:#0b0a14;
+  --line:color-mix(in srgb, var(--text) 14%, transparent);
+  --glow:color-mix(in srgb, var(--accent) 55%, transparent);
+  --font-head:"Unbounded", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-body:"Manrope", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);font-family:var(--font-body);
+  font-size:17px;line-height:1.6;padding-bottom:84px;overflow-x:hidden;
+}
+a{color:inherit}
+h1,h2,h3{font-family:var(--font-head);line-height:1.1;font-weight:800}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.demo{
+  background:var(--surface);color:var(--muted);text-align:center;
+  font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:8px 12px;border-bottom:1px solid var(--line);
+}
+.demo span{color:var(--accent)}
+
+/* buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  font-family:var(--font-head);font-weight:800;font-size:14px;letter-spacing:.04em;
+  text-transform:uppercase;text-decoration:none;
+  padding:16px 28px;border-radius:999px;border:2px solid var(--accent);
+  transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+  min-height:52px;
+}
+.btn-main{background:var(--accent);color:var(--on-accent);box-shadow:0 0 22px var(--glow)}
+.btn-main:hover{transform:translateY(-3px);box-shadow:0 0 38px var(--accent)}
+.btn-ghost{background:transparent;color:var(--text);box-shadow:0 0 14px color-mix(in srgb, var(--accent) 35%, transparent), inset 0 0 14px color-mix(in srgb, var(--accent) 25%, transparent)}
+.btn-ghost:hover{transform:translateY(-3px);background:color-mix(in srgb, var(--accent) 18%, transparent);box-shadow:0 0 30px var(--glow)}
+.btn:focus-visible,summary:focus-visible,a:focus-visible{outline:3px solid var(--text);outline-offset:3px}
+
+/* hero */
+.hero{
+  position:relative;min-height:calc(100vh - 34px);min-height:calc(100svh - 34px);
+  display:flex;align-items:center;overflow:hidden;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 38%, color-mix(in srgb, var(--accent) 22%, transparent), transparent 70%),
+    radial-gradient(ellipse 120% 60% at 50% 110%, color-mix(in srgb, var(--accent) 14%, transparent), transparent 70%),
+    repeating-linear-gradient(0deg, transparent 0 34px, color-mix(in srgb, var(--bg) 85%, transparent) 34px 38px),
+    repeating-linear-gradient(90deg, transparent 0 88px, color-mix(in srgb, var(--bg) 70%, transparent) 88px 91px),
+    repeating-linear-gradient(90deg, transparent 0 53px, color-mix(in srgb, var(--bg) 50%, transparent) 53px 55px),
+    linear-gradient(180deg, var(--surface), var(--bg));
+}
+.hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(135deg, transparent 0 46px, color-mix(in srgb, var(--accent) 7%, transparent) 46px 48px);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse at center, transparent 40%, var(--bg) 100%);
+}
+.hero .wrap{position:relative;z-index:2;text-align:center;padding-top:48px;padding-bottom:64px}
+.eyebrow{
+  display:inline-block;font-size:12px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:18px;
+}
+.sign{
+  display:inline-block;padding:.2em .5em .25em;margin:6px 0 22px;
+  border:3px solid var(--accent);border-radius:22px;
+  box-shadow:0 0 14px var(--glow), 0 0 42px var(--glow), inset 0 0 18px color-mix(in srgb, var(--accent) 35%, transparent);
+  background:color-mix(in srgb, var(--bg) 70%, transparent);
+}
+.sign h1{
+  font-size:clamp(2.6rem, 12.5vw, 8rem);font-weight:900;text-transform:uppercase;letter-spacing:.02em;
+  color:var(--text);
+  text-shadow:0 0 6px var(--text), 0 0 18px var(--accent), 0 0 38px var(--accent), 0 0 80px var(--accent);
+  animation:flicker 6s infinite;
+}
+.sign h1::first-letter{color:var(--accent);font-size:1.12em;text-shadow:0 0 10px var(--accent), 0 0 34px var(--accent), 0 0 70px var(--accent)}
+@keyframes flicker{
+  0%,18%,22%,62%,66%,100%{opacity:1}
+  20%{opacity:.55}
+  64%{opacity:.7}
+  65%{opacity:.4}
+}
+.lead{max-width:560px;margin:0 auto 12px;font-size:clamp(1.05rem,2.6vw,1.3rem);color:var(--muted)}
+.meta{color:var(--muted);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:32px}
+.cta{display:flex;flex-wrap:wrap;gap:14px;justify-content:center}
+
+/* ticker */
+.ticker{
+  background:var(--accent);color:var(--on-accent);overflow:hidden;white-space:nowrap;
+  transform:skewY(-1.5deg);margin:-10px 0;position:relative;z-index:3;
+  box-shadow:0 0 30px var(--glow);
+}
+.ticker-track{display:inline-flex;animation:run 28s linear infinite;padding:16px 0}
+.ticker span{font-family:var(--font-head);font-weight:900;font-size:clamp(1rem,2.6vw,1.5rem);text-transform:uppercase;letter-spacing:.06em;padding:0 22px}
+.ticker i{font-style:normal;padding:0 6px}
+@keyframes run{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.ticker-label{
+  display:block;text-align:center;font-size:11px;font-weight:800;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--on-accent);padding-top:8px;
+}
+
+/* sections */
+section{padding:96px 0;position:relative}
+.alt{background:var(--surface)}
+.alt::before,.dark-diag::before{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.8;
+  background:repeating-linear-gradient(135deg, transparent 0 38px, color-mix(in srgb, var(--text) 3%, transparent) 38px 40px);
+}
+section .wrap{position:relative}
+.kicker{display:block;font-size:12px;font-weight:800;letter-spacing:.26em;text-transform:uppercase;color:var(--accent);margin-bottom:14px;text-shadow:0 0 14px var(--glow)}
+h2{font-size:clamp(1.9rem,5.5vw,3.4rem);text-transform:uppercase;margin-bottom:18px;letter-spacing:.01em}
+.sub{color:var(--muted);max-width:620px;margin-bottom:44px}
+.ph{
+  color:var(--accent);font-weight:800;
+}
+.grid{display:grid;gap:20px;grid-template-columns:1fr}
+.card{
+  background:var(--surface);border:1.5px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  border-radius:18px;padding:26px;position:relative;overflow:hidden;
+  box-shadow:0 0 16px color-mix(in srgb, var(--accent) 22%, transparent), inset 0 0 20px color-mix(in srgb, var(--accent) 8%, transparent);
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+}
+.alt .card{background:var(--bg)}
+.card:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 0 32px var(--glow), inset 0 0 24px color-mix(in srgb, var(--accent) 14%, transparent)}
+.card::after{
+  content:"";position:absolute;right:-30px;top:-30px;width:90px;height:90px;
+  background:repeating-linear-gradient(135deg, var(--accent) 0 2px, transparent 2px 9px);opacity:.25;
+}
+.card h3{font-size:1.1rem;text-transform:uppercase;margin-bottom:10px}
+.card p{color:var(--muted);font-size:15px}
+.card .price{display:inline-block;margin-top:14px;font-weight:800;color:var(--accent)}
+.menu-ph{
+  text-align:center;font-family:var(--font-head);font-weight:800;font-size:clamp(1.1rem,3vw,1.6rem);
+  color:var(--accent);text-shadow:0 0 18px var(--glow);margin-bottom:32px;
+  padding:22px;border:2px dashed color-mix(in srgb, var(--accent) 60%, transparent);border-radius:16px;
+}
+
+/* events / atmosphere */
+.two{display:grid;gap:28px;grid-template-columns:1fr}
+.photo{
+  min-height:260px;border-radius:18px;display:flex;align-items:center;justify-content:center;text-align:center;
+  border:1.5px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  background:
+    repeating-linear-gradient(135deg, transparent 0 18px, color-mix(in srgb, var(--accent) 10%, transparent) 18px 20px),
+    var(--surface);
+  box-shadow:0 0 24px color-mix(in srgb, var(--accent) 25%, transparent);
+  font-family:var(--font-head);font-weight:800;color:var(--accent);padding:20px;
+}
+.events{display:grid;gap:14px;margin-top:30px}
+.event{
+  display:flex;gap:16px;align-items:center;padding:18px 22px;border-radius:14px;
+  border:1px solid var(--line);background:var(--surface);transition:transform .3s ease, border-color .3s ease;
+}
+.event:hover{transform:translateX(6px);border-color:var(--accent)}
+.event b{font-family:var(--font-head);color:var(--accent);min-width:92px}
+.event span{color:var(--muted)}
+
+/* booking */
+.book{
+  text-align:center;border-radius:24px;padding:56px 24px;
+  border:2px solid var(--accent);
+  background:
+    repeating-linear-gradient(135deg, transparent 0 26px, color-mix(in srgb, var(--accent) 9%, transparent) 26px 28px),
+    var(--bg);
+  box-shadow:0 0 36px var(--glow), inset 0 0 40px color-mix(in srgb, var(--accent) 14%, transparent);
+}
+.book p{color:var(--muted);max-width:520px;margin:0 auto 26px}
+.hours{
+  display:inline-block;margin:0 auto 30px;padding:14px 22px;border-radius:12px;
+  border:1px solid var(--line);background:var(--surface);color:var(--text);font-weight:700;font-size:15px;
+}
+.hours small{display:block;color:var(--muted);font-size:11px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:4px}
+
+/* faq */
+.faq{max-width:820px}
+details{border:1px solid var(--line);border-radius:14px;margin-bottom:12px;background:var(--bg);transition:border-color .3s ease, box-shadow .3s ease}
+details:hover,details[open]{border-color:var(--accent);box-shadow:0 0 18px color-mix(in srgb, var(--accent) 25%, transparent)}
+summary{cursor:pointer;list-style:none;padding:20px 22px;font-weight:800;display:flex;justify-content:space-between;gap:14px;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--font-head);color:var(--accent);font-size:1.4rem;text-shadow:0 0 12px var(--glow)}
+details[open] summary::after{content:"–"}
+details p{padding:0 22px 22px;color:var(--muted)}
+
+/* contacts */
+.contact-list{list-style:none;display:grid;gap:18px;margin-bottom:28px}
+.contact-list small{display:block;color:var(--muted);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:800;margin-bottom:2px}
+.contact-list strong{font-size:1.1rem}
+.contact-list a{text-decoration:none;border-bottom:1px solid var(--accent)}
+.mapbox{border-radius:18px;overflow:hidden;border:1.5px solid color-mix(in srgb, var(--accent) 55%, transparent);box-shadow:0 0 24px color-mix(in srgb, var(--accent) 25%, transparent)}
+.mapbox iframe{display:block}
+
+footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted);font-size:14px;text-align:center;background:var(--bg)}
+footer b{color:var(--text);font-family:var(--font-head)}
+
+/* mobile bar */
+.bar{
+  position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  background:var(--surface);border-top:1px solid var(--accent);box-shadow:0 -6px 24px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+.bar a{flex:1;text-align:center;padding:14px 8px;border-radius:999px;font-family:var(--font-head);font-weight:800;font-size:13px;text-transform:uppercase;text-decoration:none;border:2px solid var(--accent)}
+.bar .b1{background:var(--accent);color:var(--on-accent)}
+.bar .b2{color:var(--text)}
+
+@media (min-width:769px){
+  body{padding-bottom:0}
+  .bar{display:none}
+  section{padding:112px 0}
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .two{grid-template-columns:1fr 1fr;align-items:start}
+  .book{padding:72px 40px}
+}
+@media (min-width:1000px){.grid.g4{grid-template-columns:repeat(3,1fr)}}
+
+/* reveal */
+@supports (animation-timeline: view()){
+  .reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+}
+@keyframes rise{from{opacity:0;transform:translateY(34px)}to{opacity:1;transform:none}}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{animation:none !important;transition:none !important;scroll-behavior:auto !important}
+  .ticker{overflow-x:auto}
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;800&amp;family=Manrope:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/><style id="lido-palette">:root{--bg:#140b0d;--surface:#221317;--text:#f6ece6;--muted:#c4aba3;--accent:#d08b5b;--on-accent:#1a0e0a;--font-head:'Cormorant Garamond', Georgia, serif;--font-body:'Manrope', system-ui, -apple-system, sans-serif}</style><meta content="noindex,nofollow" name="robots"/><style id="lido-dress">
+@media (max-width:440px){nav.bar a,nav.mbar a,div.mbar a,nav[aria-label="Швидкі дії"] a{min-width:0;padding-left:4px;padding-right:4px;
+ font-size:clamp(12px,3.6vw,15px);letter-spacing:0;white-space:nowrap}}
+.lido-sample{border-bottom:1px dotted currentColor;opacity:.92}
+.lido-tag{display:inline-block;vertical-align:middle;margin-left:.5em;padding:.15em .55em;border-radius:999px;
+ border:1px dashed currentColor;font:600 11px/1.3 system-ui,-apple-system,sans-serif;letter-spacing:.06em;text-transform:uppercase;opacity:.75}
+h1 .lido-tag,h2 .lido-tag,h3 .lido-tag{font-size:11px;letter-spacing:.06em}
+.lido-sample-row{outline:1px dashed color-mix(in srgb,currentColor 35%,transparent);outline-offset:4px;border-radius:4px}
+.lido-ph{padding:0!important;overflow:hidden;position:relative;min-height:240px}
+.lido-ph>picture,.lido-ph>picture img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.lido-about{margin:0 auto 32px;max-width:1120px;border-radius:14px;overflow:hidden;aspect-ratio:16/7}
+.lido-about picture,.lido-about img{display:block;width:100%;height:100%;object-fit:cover}
+.lido-gallery{padding:56px 0}
+.lido-gwrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.lido-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lido-gitem{margin:0;border-radius:12px;overflow:hidden;aspect-ratio:4/3}
+.lido-gitem:first-child{grid-column:1/-1;aspect-ratio:16/8}
+.lido-gitem picture,.lido-gitem img{display:block;width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.lido-grid{grid-template-columns:2fr 1fr 1fr;grid-auto-rows:220px}.lido-gitem,.lido-gitem:first-child{aspect-ratio:auto}
+ .lido-gitem:first-child{grid-column:auto;grid-row:span 2}}
+.lido-photo-note{font-size:12px;opacity:.7;text-align:center;margin:10px 0 0}
+.lido-chip{position:fixed;right:16px;bottom:18px;z-index:60;padding:10px 16px;border-radius:999px;
+ background:var(--accent,#1f2937);color:var(--on-accent,#fff);font:600 14px/1.2 system-ui,-apple-system,sans-serif;
+ text-decoration:none;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.lido-chip{transition:opacity .3s,transform .3s}.lido-chip.wait{opacity:0;transform:translateY(12px);pointer-events:none}
+@media(max-width:768px){.lido-chip{bottom:92px;right:12px;font-size:13px;padding:9px 14px}}
+[data-lido-hero]{background-image:linear-gradient(180deg,rgba(11,10,20,0.74),rgba(11,10,20,0.88)),url('../../assets/stock/214d9a67e9-1600.jpg')!important;background-size:cover!important;background-position:center!important;background-repeat:no-repeat!important}@media(max-width:700px){[data-lido-hero]{background-image:linear-gradient(180deg,rgba(11,10,20,0.74),rgba(11,10,20,0.88)),url('../../assets/stock/214d9a67e9-800.jpg')!important}}</style><style id="lido-protect">#lido-demo-badge{position:fixed!important;top:8px;left:8px;z-index:2147483000;display:block!important;padding:3px 9px;border-radius:999px;background:rgba(17,17,17,.78);color:#fff;font:600 11px/1.4 system-ui,-apple-system,sans-serif;letter-spacing:.04em;pointer-events:none;opacity:.9}</style><meta content="0a77fc2d89" name="lido-protect"/></head>
+<body>
+<div class="demo">Демо-версія сайту</div>
+<header class="hero" data-lido-hero="" id="top">
+<div class="wrap">
+<span class="eyebrow">Бар / паб · Київ</span>
+<div class="sign"><h1>Konteyner</h1></div>
+<p class="lead"><span class="lido-sample">Тут буде кілька слів про ваш бар — напишемо разом</span><span class="lido-tag">приклад</span></p>
+
+<div class="cta">
+<a class="btn btn-main" href="tel:">Забронювати столик</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.4531812,30.5217377" rel="noopener" target="_blank">Маршрут</a>
+</div>
+</div>
+</header>
+<div aria-label="Сьогодні ввечері:" class="ticker">
+<span class="ticker-label">Сьогодні ввечері</span>
+
+</div>
+<section class="alt" id="menu">
+<div class="wrap reveal">
+<span class="kicker">Що наливаємо</span>
+<h2>Барна карта<span class="lido-tag">приклад наповнення</span></h2>
+<p class="sub"><span class="lido-sample">Тут буде ваше меню — додамо разом</span><span class="lido-tag">приклад</span> — тут буде коротко про коктейлі, пиво та закуски.</p>
+<div class="menu-ph"><span class="lido-sample">Короткий опис — уточнимо</span></div>
+<div class="grid">
+<article class="card lido-sample-row"><h3><span class="lido-sample">Розділ меню</span></h3><p><span class="lido-sample">Короткий опис — уточнимо</span></p><span class="price"><span class="lido-sample">ціна — уточнимо</span></span></article>
+<article class="card lido-sample-row"><h3><span class="lido-sample">Розділ меню</span></h3><p><span class="lido-sample">Короткий опис — уточнимо</span></p><span class="price"><span class="lido-sample">ціна — уточнимо</span></span></article>
+<article class="card lido-sample-row"><h3><span class="lido-sample">Розділ меню</span></h3><p><span class="lido-sample">Короткий опис — уточнимо</span></p><span class="price"><span class="lido-sample">ціна — уточнимо</span></span></article>
+
+
+
+</div>
+</div>
+</section>
+<section class="dark-diag" id="events">
+<div class="wrap reveal">
+<span class="kicker">Події · DJ · Атмосфера</span>
+<h2>Вечір у цеглі</h2>
+<div class="two">
+<div class="photo lido-ph"><picture><source srcset="../../assets/stock/89fe41a611-800.webp" type="image/webp"/><img alt="Фото для прикладу" decoding="async" height="505" loading="lazy" src="../../assets/stock/89fe41a611-800.jpg" width="800"/></picture></div>
+<div>
+<p class="sub" style="margin-bottom:0"><span class="lido-sample">Тут буде розповідь про ваш бар: що головне для гостей, чим ви відрізняєтесь. Текст підготуємо разом з вами.</span></p>
+
+</div>
+</div>
+</div>
+</section>
+<section class="alt" id="book">
+<div class="wrap reveal">
+<div class="book">
+<span class="kicker">Бронювання</span>
+<h2>Забронюйте столик</h2>
+<p>Подзвоніть нам — підберемо місце на вечір. <span class="lido-sample">Умови бронювання — уточнимо</span></p>
+<div class="hours"><small>Години роботи</small>Пн–Чт, Нд 14:00–24:00, Пт, Сб 14:00–01:00</div>
+
+</div>
+</div>
+</section>
+
+<section class="alt" id="contacts">
+<div class="wrap reveal">
+<span class="kicker">Як нас знайти</span>
+<h2>Контакти</h2>
+<div class="two">
+<div>
+<ul class="contact-list">
+
+
+<li><small>Години роботи</small><strong>Пн–Чт, Нд 14:00–24:00, Пт, Сб 14:00–01:00</strong></li>
+</ul>
+<div class="cta" style="justify-content:flex-start">
+<a class="btn btn-main" href="tel:">Зателефонувати</a>
+<a class="btn btn-ghost" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.4531812,30.5217377" rel="noopener" target="_blank">Маршрут</a>
+</div>
+</div>
+<div class="mapbox">
+<iframe loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=30.51774%2C50.45068%2C30.52574%2C50.45568&amp;layer=mapnik&amp;marker=50.45318%2C30.52174" style="border:0;width:100%;height:320px" title="Карта"></iframe>
+</div>
+</div>
+</div>
+</section>
+<footer>
+
+<p class="lido-photo-note">Фото для прикладу — замінимо на ваші</p></footer>
+<nav aria-label="Швидкі дії" class="bar">
+<a class="b1" href="tel:">Бронь</a>
+<a class="b2" href="https://www.google.com/maps/dir/?api=1&amp;destination=50.4531812,30.5217377" rel="noopener" target="_blank">Маршрут</a>
+</nav>
+<script id="lido-fit">(function(){function fit(){var w=document.documentElement.clientWidth;document.querySelectorAll('h1').forEach(function(h){h.style.fontSize='';var s=parseFloat(getComputedStyle(h).fontSize),i=0;while(i<40&&s>16&&(h.scrollWidth>h.clientWidth+1||h.getBoundingClientRect().right>w+1)){s*=0.93;h.style.fontSize=s+'px';i++}})}addEventListener('load',fit);addEventListener('resize',fit);if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fit)})();</script><a class="lido-chip" href="../">← Усі стилі</a><script id="lido-chip-js">(function(){var c=document.querySelector('.lido-chip');if(!c)return;c.classList.add('wait');function f(){c.classList.toggle('wait',scrollY<innerHeight*.6)}addEventListener('scroll',f,{passive:true});f()})();</script><script id="lido-badge-js">(function(){var T="Демо-версія";function has(){var b=document.body;return b&&(b.textContent||'').toLowerCase().indexOf('демо-верс')>-1}var q=0;function fix(){q=0;var b=document.body;if(!b||has())return;var d=document.createElement('div');d.id='lido-demo-badge';d.setAttribute('role','note');d.textContent=T;b.appendChild(d)}function soon(){if(!q){q=1;setTimeout(fix,300)}}addEventListener('DOMContentLoaded',fix);if(window.MutationObserver)new MutationObserver(soon).observe(document.documentElement,{childList:true,subtree:true,characterData:true})})();</script></body>
+</html>

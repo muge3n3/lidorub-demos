@@ -1,0 +1,6 @@
+stock: Coffee Beans — Anastasia Zhenina — CC0 1.0 — https://stocksnap.io/photo/coffee-beans-X2HTBSJDKF — sha256 94153c14520a1c1b
+stock: Coffee Beans — Ylanite Koppens — CC0 1.0 — https://stocksnap.io/photo/coffee-beans-RGTFS21RRA — sha256 c5529ae132dde3dc
+stock: Barista Latte — Burst — CC0 1.0 — https://stocksnap.io/photo/barista-latte-V7HJ1MBGUP — sha256 ab0fdd07c3cc89db
+stock: Coffee Cappuccino — Vicky Gu — CC0 1.0 — https://stocksnap.io/photo/coffee-cappuccino-9QUVG8OY1I — sha256 7c6093d12c34cfa2
+stock: Coffee Latte — Drew Coffman — CC0 1.0 — https://stocksnap.io/photo/coffee-latte-D322D377AD — sha256 d2523a385d95ff40
+stock: Espresso Machine — Freestocks.org — CC0 1.0 — https://stocksnap.io/photo/espresso-machine-T2BR0Q91BM — sha256 a68c148dda5f4bf8
