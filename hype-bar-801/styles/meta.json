@@ -1,0 +1,34 @@
+{
+ "current": "bar-neon-nich|forest_night",
+ "items": [
+  {
+   "n": 1,
+   "slug": "bar-kraftovyi-pab",
+   "palette": "",
+   "name": "Лісова ніч",
+   "who": "темна зелень і золото — спокійна розкіш"
+  },
+  {
+   "n": 2,
+   "slug": "bar-kraftovyi-pab",
+   "palette": "neon_night",
+   "name": "Неонова ніч",
+   "who": "для барів і нічного життя"
+  },
+  {
+   "n": 3,
+   "slug": "bar-neon-nich",
+   "palette": "premium_dark",
+   "name": "Темна елегантність",
+   "who": "для вечірніх і преміальних місць"
+  },
+  {
+   "n": 4,
+   "slug": "bar-neon-nich",
+   "palette": "wine_dark",
+   "name": "Винний вечір",
+   "who": "глибокі теплі кольори — для вечері й побачень"
+  }
+ ],
+ "protect": "0a77fc2d89"
+}

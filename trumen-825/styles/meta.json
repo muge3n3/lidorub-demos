@@ -1,0 +1,34 @@
+{
+ "current": "barbershop-brutal|premium_dark",
+ "items": [
+  {
+   "n": 1,
+   "slug": "barbershop-vintazh",
+   "palette": "",
+   "name": "Винний вечір",
+   "who": "глибокі теплі кольори — для вечері й побачень"
+  },
+  {
+   "n": 2,
+   "slug": "barbershop-vintazh",
+   "palette": "premium_dark",
+   "name": "Темна елегантність",
+   "who": "для вечірніх і преміальних місць"
+  },
+  {
+   "n": 3,
+   "slug": "barbershop-vintazh",
+   "palette": "steel_dark",
+   "name": "Сталь і вогонь",
+   "who": "строго, впевнено, по-чоловічому"
+  },
+  {
+   "n": 4,
+   "slug": "barbershop-brutal",
+   "palette": "forest_night",
+   "name": "Лісова ніч",
+   "who": "темна зелень і золото — спокійна розкіш"
+  }
+ ],
+ "protect": "0a77fc2d89"
+}
