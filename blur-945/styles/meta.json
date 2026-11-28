@@ -1,0 +1,34 @@
+{
+ "current": "kaviarnia-modern-minimal|",
+ "items": [
+  {
+   "n": 1,
+   "slug": "teplyi-kraft-kafe",
+   "palette": "",
+   "name": "Тепла класика",
+   "who": "для затишних закладів, де цінують домашню атмосферу"
+  },
+  {
+   "n": 2,
+   "slug": "kaviarnia-modern-minimal",
+   "palette": "editorial",
+   "name": "Журнальний",
+   "who": "стильно, з великими заголовками та фото"
+  },
+  {
+   "n": 3,
+   "slug": "kaviarnia-modern-minimal",
+   "palette": "sunny_pop",
+   "name": "Сонячний настрій",
+   "who": "тепло, яскраво, з усмішкою"
+  },
+  {
+   "n": 4,
+   "slug": "bar-kraftovyi-pab",
+   "palette": "",
+   "name": "Лісова ніч",
+   "who": "темна зелень і золото — спокійна розкіш"
+  }
+ ],
+ "protect": "0a77fc2d89"
+}

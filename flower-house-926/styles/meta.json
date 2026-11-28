@@ -1,0 +1,34 @@
+{
+ "current": "kvity-zhurnal|",
+ "items": [
+  {
+   "n": 1,
+   "slug": "avtopylot-druhoe",
+   "palette": "",
+   "name": "Класичний",
+   "who": "спокійна перевірена класика"
+  },
+  {
+   "n": 2,
+   "slug": "kvity-zhurnal",
+   "palette": "warm_craft",
+   "name": "Тепла класика",
+   "who": "для затишних закладів, де цінують домашню атмосферу"
+  },
+  {
+   "n": 3,
+   "slug": "kvity-zhurnal",
+   "palette": "scandi_light",
+   "name": "Скандинавський світлий",
+   "who": "м'які природні тони, спокійно й тепло"
+  },
+  {
+   "n": 4,
+   "slug": "kvity-zhurnal",
+   "palette": "editorial",
+   "name": "Журнальний",
+   "who": "стильно, з великими заголовками та фото"
+  }
+ ],
+ "protect": "0a77fc2d89"
+}
